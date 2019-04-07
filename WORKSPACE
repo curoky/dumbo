@@ -14,6 +14,12 @@ load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 boost_deps()
 
 git_repository(
+    name = "com_github_abseil_abseil",
+    branch = "master",
+    remote = "https://github.com/abseil/abseil-cpp",
+)
+
+git_repository(
     name = "com_github_google_glog",
     branch = "master",
     remote = "https://github.com/google/glog.git",
