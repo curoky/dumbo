@@ -1,6 +1,6 @@
 workspace(name = "com_github_curoky_dumbo")
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
 
 git_repository(
     name = "com_github_nelhage_rules_boost",
@@ -41,4 +41,32 @@ git_repository(
     name = "com_github_google_benchmark",
     branch = "master",
     remote = "https://github.com/google/benchmark.git",
+)
+
+new_local_repository(
+    name = "libiberty",
+    build_file_content = """
+cc_library(
+    name = "libiberty",
+    srcs = ["lib/x86_64-linux-gnu/libiberty.a"],
+    hdrs = glob(["include/libiberty/*.h"]),
+    visibility = ["//visibility:public"],
+    includes = ["include/libiberty/"],
+)
+    """,
+    path = "/usr",
+)
+
+new_local_repository(
+    name = "brew_libiberty",
+    build_file_content = """
+cc_library(
+    name = "libiberty",
+    srcs = ["lib/gcc/10/libiberty.a"],
+    hdrs = glob(["include/libiberty/*.h"]),
+    visibility = ["//visibility:public"],
+    includes = ["include/libiberty/"],
+)
+    """,
+    path = "/home/linuxbrew/.linuxbrew/Cellar/gcc10/10.2.0",
 )
