@@ -70,3 +70,10 @@ cc_library(
     """,
     path = "/home/linuxbrew/.linuxbrew/Cellar/gcc10/10.2.0",
 )
+
+new_git_repository(
+    name = "com_github_facebook_folly",
+    branch = "master",
+    build_file = "@//:third_party/folly/folly.BUILD",
+    remote = "https://github.com/facebook/folly.git",
+)
