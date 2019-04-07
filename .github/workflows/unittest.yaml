@@ -1,0 +1,21 @@
+name: unittest
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup bazel
+        run: |
+          brew tap curoky/curoky --shallow
+          brew install bazel@3
+
+      - name: bazel build
+        run: bazel build //...
+
+      - name: bazel test
+        run: bazel test //...
