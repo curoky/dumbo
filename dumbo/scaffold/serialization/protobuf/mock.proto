@@ -1,0 +1,64 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+package idl.pb;
+
+// https://developers.google.com/protocol-buffers/docs/proto3
+
+message MockRequest {
+    // basic type
+    bool var_bool = 1;
+    int32 var_int32 = 2;
+    int64 var_int64 = 3;
+    uint32 var_uint32 = 4;
+    uint64 var_uint64 = 5;
+    float var_float = 6;
+    double var_double = 7;
+    string var_str = 8;
+    bytes var_bytes = 9;
+
+    // enum
+    enum EnumType {
+        ONE = 0;
+        TWO = 1;
+        THREE = 2;
+        FOUR = 3;
+    }
+    EnumType var_enum = 10;
+
+    // container
+    repeated int32 var_int32_list = 11;
+    repeated string var_string_list = 12;
+    map<int32, string> var_map = 13;
+
+    // inner class
+    message InnerClass {
+        bool var_bool = 1;
+        int32 var_int32 = 2;
+    }
+    InnerClass var_inner_class = 14;
+
+    // any
+    google.protobuf.Any var_any = 15;
+
+    // oneof
+    oneof test_oneof {
+        bool var_oneof_bool = 16;
+        int32 var_oneof_int32 = 17;
+    }
+
+    // Field Requiredness
+    // Required fields are not allowed in proto3
+    // required int32 var_required_i32 = 18;
+    // Explicit 'optional' labels are disallowed in the Proto3 syntax. To define
+    // 'optional' fields in Proto3, simply remove the 'optional' label, as
+    // fields are 'optional' by default. optional int32 var_optional_i32 = 19;
+}
+
+message MockResponse {
+    MockRequest req = 1;
+}
+
+// The greeting service definition.
+service EchoService {
+    rpc echo(MockRequest) returns (MockResponse) {}
+}
