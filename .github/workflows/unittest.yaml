@@ -6,13 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-20.04
 
+    env:
+      CC: /home/linuxbrew/.linuxbrew/bin/gcc-10
+
     steps:
       - uses: actions/checkout@v2
+
+      - name: install
+        run: sudo apt-get install -y libiberty-dev
 
       - name: setup bazel
         run: |
           brew tap curoky/curoky --shallow
-          brew install bazel@3
+          brew install bazel@3 gcc@10
 
       - name: bazel build
         run: bazel build //...
