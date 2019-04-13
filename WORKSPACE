@@ -38,6 +38,12 @@ git_repository(
 )
 
 git_repository(
+    name = "com_github_google_flatbuffers",
+    branch = "master",
+    remote = "https://github.com/google/flatbuffers.git",
+)
+
+git_repository(
     name = "com_github_google_benchmark",
     branch = "master",
     remote = "https://github.com/google/benchmark.git",

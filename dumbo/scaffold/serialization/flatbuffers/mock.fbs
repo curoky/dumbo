@@ -1,0 +1,45 @@
+
+//https://google.github.io/flatbuffers/flatbuffers_guide_writing_schema.html
+
+namespace idl.fb;
+
+enum EnumType:byte { Red = 0, Green, Blue = 2 }
+
+// union UnionType { bool, int, double }
+
+table MockRequest {
+    // basic type
+    var_bool:bool;
+    var_byte:byte;
+    var_ubyte:ubyte;
+    var_short:short;
+    var_ushort:ushort;
+    var_int:int;
+    var_uint:uint;
+    var_long:long;
+    var_ulong:ulong;
+    var_float:float;
+    var_double:double;
+    var_string:string;
+
+    // container
+    var_int_list:[int];
+    var_byte_list:[byte];
+    var_string_list:[string];
+
+    // enum
+    var_enum:EnumType;
+
+    // union
+    // var_union:UnionType;
+}
+
+table MockResponse {
+    var_req:MockRequest;
+}
+
+rpc_service MockService {
+    echo(MockRequest):MockResponse;
+}
+
+root_type MockRequest;
