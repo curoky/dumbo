@@ -67,6 +67,36 @@ git_repository(
     remote = "https://github.com/google/flatbuffers.git",
 )
 
+new_git_repository(
+    name = "com_github_msgpack_msgpack",
+    branch = "cpp_master",
+    build_file_content = """
+cc_library(
+    name = "msgpack",
+    hdrs = glob(
+        [
+            "include/*.hpp",
+            "include/**/*.hpp",
+            "include/**/**/*.hpp",
+            "include/**/**/**/*.hpp",
+        ],
+    ),
+    deps = [
+        "@boost//:predef",
+        "@boost//:assert",
+        "@boost//:fusion",
+        "@boost//:variant",
+        "@boost//:operators",
+        "@boost//:preprocessor",
+        "@boost//:numeric_conversion",
+    ],
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+""",
+    remote = "https://github.com/msgpack/msgpack-c",
+)
+
 git_repository(
     name = "com_github_google_benchmark",
     branch = "master",
