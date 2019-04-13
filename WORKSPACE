@@ -1,6 +1,14 @@
 workspace(name = "com_github_curoky_dumbo")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "rules_python",
+    sha256 = "b5668cde8bb6e3515057ef465a35ad712214962f0b3a314e551204266c7be90c",
+    strip_prefix = "rules_python-0.0.2",
+    url = "https://github.com/bazelbuild/rules_python/releases/download/0.0.2/rules_python-0.0.2.tar.gz",
+)
 
 git_repository(
     name = "com_github_nelhage_rules_boost",
@@ -20,6 +28,7 @@ git_repository(
 )
 
 git_repository(
+    # [depend]: com_github_gflags_gflags
     name = "com_github_google_glog",
     branch = "master",
     remote = "https://github.com/google/glog.git",
@@ -35,6 +44,21 @@ git_repository(
     name = "com_github_gflags_gflags",
     branch = "master",
     remote = "https://github.com/gflags/gflags.git",
+)
+
+http_archive(
+    name = "zlib",
+    build_file = "@//:third_party/zlib/zlib.BUILD",
+    sha256 = "629380c90a77b964d896ed37163f5c3a34f6e6d897311f1df2a7016355c45eff",
+    strip_prefix = "zlib-1.2.11",
+    urls = ["https://github.com/madler/zlib/archive/v1.2.11.tar.gz"],
+)
+
+git_repository(
+    # [depend]: zlib
+    name = "com_google_protobuf",
+    branch = "master",
+    remote = "https://github.com/protocolbuffers/protobuf",
 )
 
 git_repository(
