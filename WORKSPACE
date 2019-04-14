@@ -199,3 +199,17 @@ new_git_repository(
     remote = "https://github.com/open-source-parsers/jsoncpp.git",
 )
 
+http_archive(
+    name = "com_github_google_snappy",
+    build_file = "@//:third_party/snappy/snappy.BUILD",
+    strip_prefix = "snappy-ea660b57d65d68d521287c903459b6dd3b2804d0",
+    urls = ["https://github.com/google/snappy/archive/ea660b57d65d68d521287c903459b6dd3b2804d0.tar.gz"],
+)
+
+http_archive(
+    name = "com_github_facebook_zstd",
+    build_file = "@//:third_party/zstd/zstd.BUILD",
+    sha256 = "188ba167e7a507b545c5f455af4afe3a34b2cee5551949fa000a8218ff4fda67",
+    strip_prefix = "zstd-bd2740f3476c46b9f69d59e49e7391c2762e04b3",
+    urls = ["https://github.com/facebook/zstd/archive/bd2740f3476c46b9f69d59e49e7391c2762e04b3.tar.gz"],
+)
