@@ -170,3 +170,32 @@ cc_library(
 """,
     remote = "https://github.com/google/diff-match-patch.git",
 )
+
+new_git_repository(
+    name = "com_github_nlohmann_json",
+    branch = "master",
+    build_file = "@//:third_party/nlohmann_json/json.BUILD",
+    remote = "https://github.com/nlohmann/json",
+)
+
+new_git_repository(
+    name = "com_github_cjson",
+    branch = "master",
+    build_file = "@//:third_party/cjson/cjson.BUILD",
+    remote = "https://github.com/DaveGamble/cJSON",
+)
+
+new_git_repository(
+    name = "com_github_tencent_rapidjson",
+    branch = "master",
+    build_file = "@//:third_party/rapidjson/rapidjson.BUILD",
+    remote = "https://github.com/Tencent/rapidjson",
+)
+
+new_git_repository(
+    name = "com_github_jsoncpp",
+    branch = "master",
+    build_file = "@//:third_party/jsoncpp/jsoncpp.BUILD",
+    remote = "https://github.com/open-source-parsers/jsoncpp.git",
+)
+
