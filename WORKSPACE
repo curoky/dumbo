@@ -150,3 +150,23 @@ new_local_repository(
     path = "/usr/include/x86_64-linux-gnu/qt5",
     # path = "/home/linuxbrew/.linuxbrew/opt/qt/include",
 )
+
+new_git_repository(
+    name = "com_github_google_diff_match_patch",
+    branch = "master",
+    patch_cmds = [
+        'sed -i -e "s/<QtCore>/<QtCore\/QtCore>/g" cpp/diff_match_patch.cpp',
+        'sed -i -e "s/toAscii()/toLatin1()/g" cpp/diff_match_patch.cpp',
+    ],
+    build_file_content = """
+cc_library(
+    name = "diff-match-patch",
+    hdrs = ["cpp/diff_match_patch.h"],
+    srcs = ["cpp/diff_match_patch.cpp"],
+    deps = ["@qt//:qt_core"],
+    includes = ["cpp"],
+    visibility = ["//visibility:public"],
+)
+""",
+    remote = "https://github.com/google/diff-match-patch.git",
+)
