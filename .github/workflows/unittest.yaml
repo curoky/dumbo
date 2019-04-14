@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: install
-        run: sudo apt-get install -y libiberty-dev
+        run: sudo apt-get install -y libiberty-dev qt5-default
 
       - name: setup bazel
         run: |
