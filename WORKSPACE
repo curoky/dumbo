@@ -199,6 +199,15 @@ new_git_repository(
     remote = "https://github.com/open-source-parsers/jsoncpp.git",
 )
 
+
+http_archive(
+    name = "org_openssl",
+    build_file = "@//:third_party/openssl/openssl.BUILD",
+    sha256 = "ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+    strip_prefix = "openssl-1.1.1g",
+    urls = ["https://www.openssl.org/source/openssl-1.1.1g.tar.gz"],
+)
+
 http_archive(
     name = "com_github_google_snappy",
     build_file = "@//:third_party/snappy/snappy.BUILD",
