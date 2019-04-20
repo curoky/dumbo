@@ -200,6 +200,14 @@ new_git_repository(
 )
 
 
+new_git_repository(
+    name = "com_github_cpp_httplib",
+    branch = "master",
+    build_file = "@//:third_party/cpp-httplib/cpp-httplib.BUILD",
+    remote = "https://github.com/yhirose/cpp-httplib.git",
+)
+
+
 http_archive(
     name = "org_openssl",
     build_file = "@//:third_party/openssl/openssl.BUILD",
