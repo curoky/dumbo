@@ -29,7 +29,7 @@
 TEST_CASE("[UserDefinedLiterals]: ChronoTest") {
   using namespace std::chrono_literals;
   REQUIRE(std::chrono::duration_cast<std::chrono::milliseconds>(1s).count() == 1000);
-  REQUIRE(std::chrono::duration_cast<std::chrono::seconds>(1min1).count() == 60);
+  REQUIRE(std::chrono::duration_cast<std::chrono::seconds>(1min).count() == 60);
   REQUIRE(std::chrono::duration_cast<std::chrono::minutes>(1h).count() == 60);
   // REQUIRE(std::chrono::duration_cast<std::chrono::hours>(1d).count() == 24);  // start c++20
   // REQUIRE(std::chrono::duration_cast<std::chrono::days>(1y).count() == 365);  // start c++20
