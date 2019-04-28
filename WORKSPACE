@@ -230,3 +230,17 @@ http_archive(
     strip_prefix = "zstd-bd2740f3476c46b9f69d59e49e7391c2762e04b3",
     urls = ["https://github.com/facebook/zstd/archive/bd2740f3476c46b9f69d59e49e7391c2762e04b3.tar.gz"],
 )
+
+new_git_repository(
+    name = "com_github_fmtlib_fmt",
+    branch = "master",
+    build_file = "@//:third_party/fmtlib/fmt.BUILD",
+    remote = "https://github.com/fmtlib/fmt.git",
+)
+
+
+git_repository(
+    name = "com_github_google_double_conversion",
+    branch = "master",
+    remote = "https://github.com/google/double-conversion",
+)
