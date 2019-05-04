@@ -250,3 +250,11 @@ git_repository(
     branch = "master",
     remote = "https://github.com/google/double-conversion",
 )
+
+new_git_repository(
+    name = "com_github_cameron314_concurrentqueue",
+    branch = "master",
+    build_file = "@//:third_party/concurrentqueue/concurrentqueue.BUILD",
+    remote = "https://github.com/cameron314/concurrentqueue",
+)
+
