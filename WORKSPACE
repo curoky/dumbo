@@ -258,3 +258,10 @@ new_git_repository(
     remote = "https://github.com/cameron314/concurrentqueue",
 )
 
+
+new_git_repository(
+    name = "com_github_taskflow_taskflow",
+    branch = "master",
+    build_file = "@//:third_party/taskflow/taskflow.BUILD",
+    remote = "https://github.com/taskflow/taskflow",
+)
