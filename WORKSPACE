@@ -139,6 +139,12 @@ new_git_repository(
 )
 
 git_repository(
+    name = "com_github_google_gtest",
+    branch = "master",
+    remote = "https://github.com/google/googletest.git",
+)
+
+git_repository(
     name = "com_justbuchanan_rules_qt",
     remote = "https://github.com/justbuchanan/bazel_rules_qt.git",
     branch = "master",
