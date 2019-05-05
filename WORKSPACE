@@ -279,3 +279,10 @@ new_git_repository(
     build_file = "@//:third_party/taskflow/taskflow.BUILD",
     remote = "https://github.com/taskflow/taskflow",
 )
+
+new_git_repository(
+    name = "com_github_aappleby_murmurhash",
+    branch = "master",
+    build_file = "@//:third_party/murmurhash/murmurhash.BUILD",
+    remote = "https://github.com/aappleby/smhasher",
+)
