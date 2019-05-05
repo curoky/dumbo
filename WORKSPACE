@@ -258,6 +258,13 @@ new_git_repository(
     remote = "https://github.com/cameron314/concurrentqueue",
 )
 
+new_git_repository(
+    name = "com_github_libevent_libevent",
+    branch = "2216a9bdba6252a0a7112cb0f6d8ec148178dbc0",
+    build_file = "@//:third_party/libevent/libevent.BUILD",
+    remote = "https://github.com/libevent/libevent",
+)
+
 
 new_git_repository(
     name = "com_github_taskflow_taskflow",

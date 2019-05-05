@@ -1,0 +1,23 @@
+# load("@rules_cc//cc:defs.bzl", "cc_library")
+
+# licenses(["notice"])
+
+# exports_files(
+#     visibility = ["//visibility:public"],
+# )
+
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+licenses(["notice"])
+
+cc_library(
+    name = "config",
+    hdrs = [
+        "config.h",
+        "event-config.h",
+    ],
+    includes = [
+        ".",
+    ],
+    visibility = ["//visibility:public"],
+)
