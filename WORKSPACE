@@ -238,6 +238,13 @@ http_archive(
 )
 
 new_git_repository(
+    name = "com_github_google_crc32c",
+    branch = "master",
+    build_file = "@//:third_party/crc32c/crc32c.BUILD",
+    remote = "https://github.com/google/crc32c.git",
+)
+
+new_git_repository(
     name = "com_github_fmtlib_fmt",
     branch = "master",
     build_file = "@//:third_party/fmtlib/fmt.BUILD",
