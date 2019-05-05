@@ -12,13 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install
+      - name: install depend packages
         run: sudo apt-get install -y libiberty-dev qt5-default
 
       - name: setup bazel
         run: |
           brew tap curoky/curoky --shallow
           brew install bazel@3 gcc@10
+
+      - name: mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "/home/runner/.cache/bazel"
+          key: bazel
 
       - name: bazel build
         run: bazel build //...
