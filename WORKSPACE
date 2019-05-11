@@ -286,3 +286,10 @@ new_git_repository(
     build_file = "@//:third_party/murmurhash/murmurhash.BUILD",
     remote = "https://github.com/aappleby/smhasher",
 )
+
+new_git_repository(
+    name = "com_github_google_cityhash",
+    branch = "master",
+    build_file = "@//:third_party/cityhash/cityhash.BUILD",
+    remote = "https://github.com/google/cityhash",
+)
