@@ -17,13 +17,13 @@ jobs:
 
       - name: setup bazel
         run: |
-          brew tap curoky/curoky --shallow
+          brew tap curoky/tap --shallow
           brew install bazel@3 gcc@10
 
       - name: mount bazel cache
         uses: actions/cache@v2
         with:
-          path: "/home/runner/.cache/bazel"
+          path: '/home/runner/.cache/bazel'
           key: bazel
 
       - name: bazel build
