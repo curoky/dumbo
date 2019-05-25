@@ -1,5 +1,5 @@
-/*
- * Copyright (c) Facebook, Inc. and its affiliates.
+/**
+ * Copyright 2020 curoky(cccuroky@gmail.com).
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,19 +12,22 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * ----------------------------------------------------------------------------
+ * @file: folly-config.h
+ * ----------------------------------------------------------------------------
  */
 
 #pragma once
 
 #if !defined(FOLLY_MOBILE)
 #if defined(__ANDROID__) || \
-    (defined(__APPLE__) &&  \
-     (TARGET_IPHONE_SIMULATOR || TARGET_OS_SIMULATOR || TARGET_OS_IPHONE))
+    (defined(__APPLE__) && (TARGET_IPHONE_SIMULATOR || TARGET_OS_SIMULATOR || TARGET_OS_IPHONE))
 #define FOLLY_MOBILE 1
 #else
 #define FOLLY_MOBILE 0
 #endif
-#endif // FOLLY_MOBILE
+#endif  // FOLLY_MOBILE
 
 #define FOLLY_HAVE_PTHREAD 1
 #define FOLLY_HAVE_PTHREAD_ATFORK 1

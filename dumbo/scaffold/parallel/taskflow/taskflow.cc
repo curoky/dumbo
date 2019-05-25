@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  * ----------------------------------------------------------------------------
- * @file: cpp-taskflow.cc
+ * @file: taskflow.cc
  * ----------------------------------------------------------------------------
  */
 
@@ -26,7 +26,7 @@
 #include <iostream>  // for cout
 #include <memory>    // for allocator
 
-TEST_CASE("[Cpp-taskflow]: BaseTest") {
+TEST_CASE("[Taskflow]: BaseTest") {
   tf::Executor executor;
   tf::Taskflow taskflow;
   int a = 0, b = 0, c = 0, d = 0;
@@ -64,7 +64,7 @@ TEST_CASE("[Cpp-taskflow]: BaseTest") {
   taskflow.dump(std::cout);
 }
 
-TEST_CASE("[Cpp-taskflow]: throw exception ") {
+TEST_CASE("[Taskflow]: throw exception ") {
   tf::Executor executor;
   tf::Taskflow taskflow;
   int a = 0, b = 0;

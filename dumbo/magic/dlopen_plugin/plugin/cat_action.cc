@@ -18,10 +18,10 @@
  * ----------------------------------------------------------------------------
  */
 
-#include "action.h"  // for Action
-
 #include <memory>  // for allocator, make_shared, shared_ptr
 #include <string>  // for string
+
+#include "action.h"  // for Action
 
 class CatAction : public Action {
  public:

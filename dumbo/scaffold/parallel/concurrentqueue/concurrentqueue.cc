@@ -18,9 +18,9 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <blockingconcurrentqueue.h>  // for BlockingConcurrentQueue
-#include <concurrentqueue.h>          // for ConcurrentQueue
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <concurrentqueue.h>  // for ConcurrentQueue
 
 #include <chrono>  // for milliseconds
 #include <thread>  // for thread, sleep_for

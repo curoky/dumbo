@@ -18,8 +18,9 @@
  * ----------------------------------------------------------------------------
  */
 
-#include "absl/strings/str_format.h"
 #include <catch2/catch.hpp>
+
+#include "absl/strings/str_format.h"
 
 TEST_CASE("[Strformat]: basic usage") {
   // Characters

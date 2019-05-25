@@ -18,9 +18,8 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <crc32c/crc32c.h>
-
 #include <catch2/catch.hpp>
+#include <crc32c/crc32c.h>
 
 TEST_CASE("[Crc32c]: simple test") {
   // Process a raw buffer.
