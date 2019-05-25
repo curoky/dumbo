@@ -5,7 +5,6 @@ cc_test(
     srcs = ["msgpack.cc"],
     deps = [
         "//dumbo/utilities:catch2_main",
-        "@com_github_catchorg_catch2//:catch2",
         "@com_github_msgpack_msgpack//:msgpack",
     ],
 )

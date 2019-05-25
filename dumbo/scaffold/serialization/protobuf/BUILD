@@ -18,6 +18,5 @@ cc_test(
     deps = [
         ":mock_cc_proto",
         "//dumbo/utilities:catch2_main",
-        "@com_github_catchorg_catch2//:catch2",
     ],
 )

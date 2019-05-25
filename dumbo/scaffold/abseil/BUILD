@@ -7,6 +7,5 @@ cc_test(
     deps = [
         "//dumbo/utilities:catch2_main",
         "@com_github_abseil_abseil//absl/numeric:int128",
-        "@com_github_catchorg_catch2//:catch2",
     ],
 )

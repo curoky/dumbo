@@ -10,6 +10,6 @@ cc_test(
     srcs = ["shared_ptr_test.cc"],
     deps = [
         ":shared_ptr",
-        "@com_github_catchorg_catch2//:catch2",
+        "//dumbo/utilities:catch2_main",
     ],
 )

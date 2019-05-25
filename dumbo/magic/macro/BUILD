@@ -5,6 +5,5 @@ cc_test(
     srcs = ["comma_in_macro.cc"],
     deps = [
         "//dumbo/utilities:catch2_main",
-        "@com_github_catchorg_catch2//:catch2",
     ],
 )

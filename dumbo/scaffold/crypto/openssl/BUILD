@@ -6,7 +6,6 @@ cc_test(
     copts = ["-std=c++17"],
     deps = [
         "//dumbo/utilities:catch2_main",
-        "@com_github_catchorg_catch2//:catch2",
         "@org_openssl//:crypto",
         "@org_openssl//:ssl",
     ],

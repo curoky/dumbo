@@ -9,7 +9,6 @@ cc_test(
     copts = ["-std=c++17"],
     deps = [
         "//dumbo/utilities:catch2_main",
-        "@com_github_catchorg_catch2//:catch2",
         "@com_github_cjson//:cjson",
         "@com_github_jsoncpp//:jsoncpp",
         "@com_github_nlohmann_json//:json",

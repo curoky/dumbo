@@ -10,6 +10,6 @@ cc_test(
     srcs = ["cow_string_test.cc"],
     deps = [
         ":cow_string",
-        "@com_github_catchorg_catch2//:catch2",
+        "//dumbo/utilities:catch2_main",
     ],
 )

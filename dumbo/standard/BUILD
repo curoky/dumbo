@@ -12,7 +12,6 @@ cc_test(
         "@boost//:functional",
         "@com_github_abseil_abseil//absl/algorithm",
         "@com_github_abseil_abseil//absl/debugging:demangle_internal",
-        "@com_github_catchorg_catch2//:catch2",
         "@com_github_facebook_folly//:folly",
     ],
 )
