@@ -36,7 +36,7 @@ git_repository(
 
 git_repository(
     name = "com_github_catchorg_catch2",
-    branch = "master",
+    branch = "v2.x",
     remote = "https://github.com/catchorg/Catch2.git",
 )
 
