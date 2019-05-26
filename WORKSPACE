@@ -293,3 +293,10 @@ new_git_repository(
     build_file = "@//:third_party/cityhash/cityhash.BUILD",
     remote = "https://github.com/google/cityhash",
 )
+
+new_git_repository(
+    name = "com_github_neargye_nameof",
+    branch = "master",
+    build_file = "@//:third_party/nameof/nameof.BUILD",
+    remote = "https://github.com/Neargye/nameof",
+)
