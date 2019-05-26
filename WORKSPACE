@@ -278,6 +278,12 @@ new_git_repository(
     remote = "https://github.com/libevent/libevent",
 )
 
+new_git_repository(
+    name = "com_github_cameron314_readerwriterqueue",
+    branch = "master",
+    build_file = "@//:third_party/readerwriterqueue/readerwriterqueue.BUILD",
+    remote = "https://github.com/cameron314/readerwriterqueue",
+)
 
 new_git_repository(
     name = "com_github_taskflow_taskflow",
