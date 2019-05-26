@@ -301,6 +301,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_ubpa_usrefl",
+    branch = "master",
+    build_file = "@//:third_party/usrefl/usrefl.BUILD",
+    remote = "https://github.com/Ubpa/USRefl",
+)
+
+new_git_repository(
     name = "com_github_neargye_nameof",
     branch = "master",
     build_file = "@//:third_party/nameof/nameof.BUILD",
