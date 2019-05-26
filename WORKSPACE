@@ -251,6 +251,12 @@ new_git_repository(
     remote = "https://github.com/fmtlib/fmt.git",
 )
 
+new_git_repository(
+    name = "com_github_gabime_spdlog",
+    branch = "v1.x",
+    build_file = "@//:third_party/spdlog/spdlog.BUILD",
+    remote = "https://github.com/gabime/spdlog.git",
+)
 
 git_repository(
     name = "com_github_google_double_conversion",
