@@ -46,12 +46,19 @@ git_repository(
     remote = "https://github.com/gflags/gflags.git",
 )
 
-http_archive(
+# http_archive(
+#     name = "zlib",
+#     build_file = "@//:third_party/zlib/zlib.BUILD",
+#     sha256 = "629380c90a77b964d896ed37163f5c3a34f6e6d897311f1df2a7016355c45eff",
+#     strip_prefix = "zlib-1.2.11",
+#     urls = ["https://github.com/madler/zlib/archive/v1.2.11.tar.gz"],
+# )
+
+new_git_repository(
     name = "zlib",
+    branch = "master",
     build_file = "@//:third_party/zlib/zlib.BUILD",
-    sha256 = "629380c90a77b964d896ed37163f5c3a34f6e6d897311f1df2a7016355c45eff",
-    strip_prefix = "zlib-1.2.11",
-    urls = ["https://github.com/madler/zlib/archive/v1.2.11.tar.gz"],
+    remote = "https://github.com/madler/zlib.git",
 )
 
 git_repository(
