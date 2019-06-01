@@ -228,6 +228,7 @@ http_archive(
 #     build_file = "@//:third_party/curl/curl.BUILD",
 #     remote = "https://github.com/curl/curl.git",
 # )
+
 new_git_repository(
     name = "com_github_cpp_httplib",
     branch = "master",
@@ -364,4 +365,11 @@ new_git_repository(
     branch = "master",
     build_file = "@//:third_party/nameof/nameof.BUILD",
     remote = "https://github.com/Neargye/nameof",
+)
+
+new_git_repository(
+    name = "com_github_restclient",
+    branch = "master",
+    build_file = "@//:third_party/restclient/restclient.BUILD",
+    remote = "https://github.com/mrtazz/restclient-cpp",
 )
