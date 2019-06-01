@@ -212,7 +212,22 @@ new_git_repository(
     remote = "https://github.com/open-source-parsers/jsoncpp.git",
 )
 
+http_archive(
+    name = "com_github_curl",
+    build_file = "@//:third_party/curl/curl.BUILD",
+    sha256 = "01ae0c123dee45b01bbaef94c0bc00ed2aec89cb2ee0fd598e0d302a6b5e0a98",
+    # branch = "curl-7_69_1",
+    strip_prefix = "curl-7.69.1",
+    urls = ["https://curl.haxx.se/download/curl-7.69.1.tar.gz"],
+)
 
+# new_git_repository(
+#     name = "com_github_curl",
+#     # branch = "curl-7_69_1",
+#     commit="b81e0b07784dc4c1e8d0a86194b9d28776d071c0",
+#     build_file = "@//:third_party/curl/curl.BUILD",
+#     remote = "https://github.com/curl/curl.git",
+# )
 new_git_repository(
     name = "com_github_cpp_httplib",
     branch = "master",
@@ -220,6 +235,24 @@ new_git_repository(
     remote = "https://github.com/yhirose/cpp-httplib.git",
 )
 
+
+# http_archive(
+#     name = "boringssl",
+#     build_file = "@//:third_party/boringssl/boringssl.BUILD",
+#     sha256 = "a9c3b03657d507975a32732f04563132b4553c20747cec6dc04de475c8bdf29f",
+#     strip_prefix = "boringssl-80ca9f9f6ece29ab132cce4cf807a9465a18cfac",
+#     # system_build_file = clean_dep("//third_party/systemlibs:boringssl.BUILD"),
+#     urls = [
+#         "https://github.com/google/boringssl/archive/80ca9f9f6ece29ab132cce4cf807a9465a18cfac.tar.gz",
+#     ],
+# )
+
+
+git_repository(
+    name = "com_github_google_boringssl",
+    branch = "master-with-bazel",
+    remote = "https://github.com/google/boringssl.git",
+)
 
 http_archive(
     name = "org_openssl",
