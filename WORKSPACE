@@ -235,6 +235,12 @@ new_git_repository(
     remote = "https://github.com/yhirose/cpp-httplib.git",
 )
 
+new_git_repository(
+    name = "com_github_whoshuu_cpr",
+    branch = "master",
+    build_file = "@//:third_party/cpr/cpr.BUILD",
+    remote = "https://github.com/whoshuu/cpr.git",
+)
 
 # http_archive(
 #     name = "boringssl",
