@@ -373,3 +373,17 @@ new_git_repository(
     build_file = "@//:third_party/restclient/restclient.BUILD",
     remote = "https://github.com/mrtazz/restclient-cpp",
 )
+
+new_local_repository(
+    name = "tbb",
+    build_file_content = """
+cc_library(
+    name = "tbb",
+    srcs = ["lib/libtbb.so.2"],
+    hdrs = glob(["include/**/*.h"]),
+    visibility = ["//visibility:public"],
+    includes = ["include"],
+)
+    """,
+    path = "/home/linuxbrew/.linuxbrew/opt/tbb",
+)
