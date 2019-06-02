@@ -145,6 +145,13 @@ new_git_repository(
     remote = "https://github.com/facebook/folly.git",
 )
 
+new_git_repository(
+    name = "com_github_parallel_hashmap",
+    branch = "master",
+    build_file = "@//:third_party/parallel-hashmap/parallel-hashmap.BUILD",
+    remote = "https://github.com/greg7mdp/parallel-hashmap",
+)
+
 git_repository(
     name = "com_github_google_gtest",
     branch = "master",
