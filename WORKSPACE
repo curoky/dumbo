@@ -153,6 +153,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_facebook_proxygen",
+    branch = "v2020.10.19.00",
+    build_file = "@//:third_party/proxygen/proxygen.BUILD",
+    remote = "https://github.com/facebook/proxygen.git",
+)
+
+new_git_repository(
     name = "com_github_facebook_wangle",
     branch = "v2020.10.19.00",
     build_file = "@//:third_party/wangle/wangle.BUILD",
