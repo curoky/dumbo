@@ -146,6 +146,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_facebookincubator_fizz",
+    branch = "master",
+    build_file = "@//:third_party/fizz/fizz.BUILD",
+    remote = "https://github.com/facebookincubator/fizz.git",
+)
+
+new_git_repository(
     name = "com_github_parallel_hashmap",
     branch = "master",
     build_file = "@//:third_party/parallel-hashmap/parallel-hashmap.BUILD",
