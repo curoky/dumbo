@@ -219,6 +219,13 @@ new_git_repository(
     remote = "https://github.com/open-source-parsers/jsoncpp.git",
 )
 
+new_git_repository(
+    name = "com_github_apache_thrift",
+    branch = "0.13.0",
+    build_file = "@//:third_party/thrift/thrift.BUILD",
+    remote = "https://github.com/apache/thrift.git",
+)
+
 http_archive(
     name = "com_github_curl",
     build_file = "@//:third_party/curl/curl.BUILD",
