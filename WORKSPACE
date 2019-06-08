@@ -327,7 +327,7 @@ new_git_repository(
 
 new_git_repository(
     name = "com_github_libevent_libevent",
-    branch = "2216a9bdba6252a0a7112cb0f6d8ec148178dbc0",
+    branch = "5df3037d10556bfcb675bc73e516978b75fc7bc7", # release-2.1.12-stable
     build_file = "@//:third_party/libevent/libevent.BUILD",
     remote = "https://github.com/libevent/libevent",
 )

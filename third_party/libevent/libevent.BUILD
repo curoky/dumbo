@@ -4,42 +4,31 @@ licenses(["notice"])
 
 cc_library(
     name = "libevent",
-    srcs = [
-        "buffer.c",
-        "epoll.c",
-        "evbuffer.c",
-        "evdns.c",
-        "evdns.h",
-        "event.c",
-        "event-internal.h",
-        "event_tagging.c",
-        "evrpc.h",
-        "evrpc-internal.h",
-        "evsignal.h",
-        "evutil.c",
-        "evutil.h",
-        "http.c",
-        "http-internal.h",
-        "log.c",
-        "log.h",
-        "min_heap.h",
-        "poll.c",
-        "select.c",
-        "signal.c",
-        "strlcpy.c",
-        "strlcpy-internal.h",
-    ],
-    hdrs = [
-        "event.h",
-        "evhttp.h",
-    ],
+    srcs = glob(
+        [
+            "*.h",
+            "*.c",
+        ],
+        [
+            "arc4random.c",  # this is a header
+            "bufferevent_async.c",
+            "event_iocp.c",
+            "buffer_iocp.c",
+            "win32select.c",
+            "evthread_win32.c",
+        ],
+    ),
+    hdrs = glob(["include/**/*.h"]) + ["arc4random.c"],
     copts = [
+        "-I.",
         "-DHAVE_CONFIG_H",
         "-Wno-unused-but-set-variable",
     ],
-    includes = [
-        ".",
-    ],
+    includes = ["include"],
     visibility = ["//visibility:public"],
-    deps = ["@//third_party/libevent/extra:config"],
+    deps = [
+        "@//third_party/libevent/extra:config",
+        "@//third_party/libevent/extra:config-private",
+        "@org_openssl//:ssl",
+    ],
 )
