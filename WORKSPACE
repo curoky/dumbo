@@ -181,6 +181,12 @@ new_git_repository(
 )
 
 git_repository(
+    name = "com_github_google_re2",
+    branch = "master",
+    remote = "https://github.com/google/re2",
+)
+
+git_repository(
     name = "com_github_google_gtest",
     branch = "master",
     remote = "https://github.com/google/googletest.git",
