@@ -7,13 +7,14 @@ jobs:
     runs-on: ubuntu-20.04
 
     env:
-      CC: /home/linuxbrew/.linuxbrew/bin/gcc-10
+      CC: /home/linuxbrew/.linuxbrew/opt/gcc@10/bin/gcc-10
+      CXX: /home/linuxbrew/.linuxbrew/opt/gcc@10/bin/g++-10
 
     steps:
       - uses: actions/checkout@v2
 
       - name: install depend packages
-        run: sudo apt-get install -y libiberty-dev qt5-default libaio-dev
+        run: sudo apt-get install -y libiberty-dev qt5-default libaio-dev libsodium
 
       - name: setup bazel
         run: |
