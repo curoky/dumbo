@@ -421,6 +421,13 @@ new_git_repository(
 )
 
 new_git_repository(
+    name = "com_github_lz4",
+    branch = "master",
+    build_file = "@//:third_party/lz4/lz4.BUILD",
+    remote = "https://github.com/lz4/lz4.git",
+)
+
+new_git_repository(
     name = "com_github_restclient",
     branch = "master",
     build_file = "@//:third_party/restclient/restclient.BUILD",
