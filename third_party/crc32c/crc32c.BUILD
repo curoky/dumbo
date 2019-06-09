@@ -14,9 +14,7 @@ cc_library(
         ],
     ),
     hdrs = glob(["include/crc32c/*.h"]),
-    copts = [
-        "-Isrc",
-    ],
+    copts = ["-Isrc"],
     includes = ["include"],
     visibility = ["//visibility:public"],
     deps = ["@//third_party/crc32c/extra:config"],

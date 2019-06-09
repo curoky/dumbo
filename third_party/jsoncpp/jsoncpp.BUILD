@@ -8,7 +8,6 @@ exports_files(["LICENSE"])
 cc_library(
     name = "jsoncpp",
     srcs = glob([
-        "include/json/*.h",
         "src/lib_json/*.h",
         "src/lib_json/*.cpp",
     ]),

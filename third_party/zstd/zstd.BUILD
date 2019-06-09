@@ -1,3 +1,5 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
@@ -13,13 +15,13 @@ cc_library(
 
 cc_library(
     name = "zdict",
+    srcs = glob(["lib/dictBuilder/*.c"]),
     hdrs = [
-        "lib/dictBuilder/zdict.h",
-        "lib/dictBuilder/divsufsort.h",
         "lib/dictBuilder/cover.h",
+        "lib/dictBuilder/divsufsort.h",
+        "lib/dictBuilder/zdict.h",
     ],
     strip_include_prefix = "lib/dictBuilder",
-    srcs = glob(["lib/dictBuilder/*.c"]),
     deps = [":common"],
 )
 
@@ -49,11 +51,11 @@ cc_library(
 
 cc_library(
     name = "errors",
+    srcs = ["lib/common/error_private.c"],
     hdrs = [
         "lib/common/error_private.h",
         "lib/common/zstd_errors.h",
     ],
-    srcs = ["lib/common/error_private.c"],
     strip_include_prefix = "lib/common",
 )
 
@@ -67,20 +69,20 @@ cc_library(
 
 cc_library(
     name = "legacy",
-    hdrs = glob(["lib/legacy/*.h"]),
     srcs = glob(["lib/legacy/*.c"]),
-    deps = [":common"],
+    hdrs = glob(["lib/legacy/*.h"]),
     copts = ["-DZSTD_LEGACY_SUPPORT=4"],
+    deps = [":common"],
 )
 
 cc_library(
     name = "decompress",
-    hdrs = glob([("lib/decompress/*_impl.h")]),
     srcs = glob(["lib/decompress/zstd*.c"]) + [
         "lib/decompress/zstd_decompress_block.h",
         "lib/decompress/zstd_decompress_internal.h",
         "lib/decompress/zstd_ddict.h",
     ],
+    hdrs = glob(["lib/decompress/*_impl.h"]),
     strip_include_prefix = "lib/decompress",
     deps = [
         ":common",
@@ -90,31 +92,31 @@ cc_library(
 
 cc_library(
     name = "deprecated",
-    hdrs = glob(["lib/deprecated/*.h"]),
     srcs = glob(["lib/deprecated/*.c"]),
+    hdrs = glob(["lib/deprecated/*.h"]),
     deps = [":common"],
 )
 
 cc_library(
     name = "compress",
+    srcs = [
+        "lib/compress/hist.c",
+        "lib/compress/zstd_compress.c",
+        "lib/compress/zstd_double_fast.c",
+        "lib/compress/zstd_fast.c",
+        "lib/compress/zstd_lazy.c",
+        "lib/compress/zstd_ldm.c",
+        "lib/compress/zstd_opt.c",
+        "lib/compress/zstdmt_compress.c",
+    ],
     hdrs = [
         "lib/compress/zstd_compress_internal.h",
         "lib/compress/zstd_double_fast.h",
         "lib/compress/zstd_fast.h",
         "lib/compress/zstd_lazy.h",
         "lib/compress/zstd_ldm.h",
-        "lib/compress/zstdmt_compress.h",
         "lib/compress/zstd_opt.h",
-    ],
-    srcs = [
-        "lib/compress/zstd_compress.c",
-        "lib/compress/zstd_double_fast.c",
-        "lib/compress/zstd_fast.c",
-        "lib/compress/zstd_lazy.c",
-        "lib/compress/zstd_ldm.c",
-        "lib/compress/zstdmt_compress.c",
-        "lib/compress/zstd_opt.c",
-        "lib/compress/hist.c",
+        "lib/compress/zstdmt_compress.h",
     ],
     deps = [":common"],
 )
@@ -127,16 +129,16 @@ cc_library(
 
 cc_library(
     name = "threading",
-    hdrs = ["lib/common/threading.h"],
     srcs = ["lib/common/threading.c"],
-    linkopts = ["-pthread"],
+    hdrs = ["lib/common/threading.h"],
     copts = ["-DZSTD_MULTITHREAD"],
+    linkopts = ["-pthread"],
 )
 
 cc_library(
     name = "pool",
-    hdrs = ["lib/common/pool.h"],
     srcs = ["lib/common/pool.c"],
+    hdrs = ["lib/common/pool.h"],
     deps = [
         ":debug",
         ":threading",
@@ -146,10 +148,10 @@ cc_library(
 
 cc_library(
     name = "xxhash",
+    srcs = ["lib/common/xxhash.c"],
     hdrs = [
         "lib/common/xxhash.h",
     ],
-    srcs = ["lib/common/xxhash.c"],
     # copts = [
     #     "-DXXH_NAMESPACE=ZSTD_",
     # ],
@@ -163,10 +165,10 @@ cc_library(
 
 cc_library(
     name = "zstd_common",
+    srcs = ["lib/common/zstd_common.c"],
     hdrs = [
         "lib/common/zstd_internal.h",
     ],
-    srcs = ["lib/common/zstd_common.c"],
     deps = [
         ":compiler",
         ":debug",
@@ -179,10 +181,6 @@ cc_library(
 
 cc_library(
     name = "entropy",
-    hdrs = [
-        "lib/common/fse.h",
-        "lib/common/huf.h",
-    ],
     srcs = [
         "lib/common/entropy_common.c",
         "lib/common/fse_decompress.c",
@@ -190,11 +188,15 @@ cc_library(
         "lib/compress/huf_compress.c",
         "lib/decompress/huf_decompress.c",
     ],
+    hdrs = [
+        "lib/common/fse.h",
+        "lib/common/huf.h",
+    ],
     includes = ["lib/common"],
     deps = [
-        ":debug",
         ":bitstream",
         ":compiler",
+        ":debug",
         ":errors",
         ":hist",
         ":mem",
@@ -206,10 +208,10 @@ cc_library(
 cc_library(
     name = "common",
     deps = [
-        ":debug",
         ":bitstream",
         ":compiler",
         ":cpu",
+        ":debug",
         ":entropy",
         ":errors",
         ":mem",
@@ -223,14 +225,20 @@ cc_library(
 cc_library(
     name = "util",
     hdrs = ["programs/util.h"],
-    deps = [":mem", ":platform"],
+    deps = [
+        ":mem",
+        ":platform",
+    ],
 )
 
 cc_library(
     name = "datagen",
-    hdrs = ["programs/datagen.h"],
     srcs = ["programs/datagen.c"],
-    deps = [":mem", ":platform"],
+    hdrs = ["programs/datagen.h"],
+    deps = [
+        ":mem",
+        ":platform",
+    ],
 )
 
 cc_library(
@@ -246,16 +254,21 @@ cc_binary(
 
 cc_library(
     name = "zstd_lib",
-    hdrs = glob(["programs/*.h"], exclude = ["programs/datagen.h", "programs/platform.h", "programs/util.h"]),
-    srcs = glob(["programs/*.c"], exclude = ["programs/datagen.c", "programs/zstdcli.c"]),
-    deps = [
-        ":datagen",
-        ":util",
-        ":libzstd",
-        ":zdict",
-        ":mem",
-        ":xxhash",
-    ],
+    srcs = glob(
+        ["programs/*.c"],
+        exclude = [
+            "programs/datagen.c",
+            "programs/zstdcli.c",
+        ],
+    ),
+    hdrs = glob(
+        ["programs/*.h"],
+        exclude = [
+            "programs/datagen.h",
+            "programs/platform.h",
+            "programs/util.h",
+        ],
+    ),
     copts = [
         "-DZSTD_GZCOMPRESS",
         "-DZSTD_GZDECOMPRESS",
@@ -268,5 +281,13 @@ cc_library(
         "-lz",
         "-llzma",
         "-llz4",
+    ],
+    deps = [
+        ":datagen",
+        ":libzstd",
+        ":mem",
+        ":util",
+        ":xxhash",
+        ":zdict",
     ],
 )

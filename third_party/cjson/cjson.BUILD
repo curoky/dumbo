@@ -2,14 +2,12 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
     name = "cjson",
-    srcs = [
-        "cJSON.c",
-        "cJSON.h",
-    ],
-    hdrs = [
-        "cJSON.h",
-    ],
+    srcs = glob([
+        "*.h",
+        "*.c",
+    ]),
+    hdrs = glob(["*.h"]),
     include_prefix = "cjson",
-    # includes = ["include"],
+    includes = ["."],
     visibility = ["//visibility:public"],
 )

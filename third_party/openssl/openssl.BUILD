@@ -1,6 +1,8 @@
 # copy from https://github.com/dropbox/dbx_build_tools/blob/master/thirdparty/openssl/BUILD.openssl
 # BEGIN GENERATED CODE (see bazelify.sh)
 
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+
 OPENSSL_VERSION = "1.1.1g"
 
 OPENSSLCONF_H = """#include <openssl/opensslv.h>

@@ -18,7 +18,6 @@ cc_library(
     copts = [
         "-Ilib/cpp/src/",
     ],
-    # defines = ["SPDLOG_FMT_EXTERNAL"],
     includes = ["lib/cpp/src"],
     visibility = ["//visibility:public"],
     deps = [
