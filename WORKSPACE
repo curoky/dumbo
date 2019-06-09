@@ -441,3 +441,17 @@ cc_library(
     """,
     path = "/home/linuxbrew/.linuxbrew/opt/tbb",
 )
+
+new_local_repository(
+    name = "libsodium",
+    build_file_content = """
+cc_library(
+    name = "libsodium",
+    srcs = ["lib/libsodium.so.23.3.0"],
+    hdrs = glob(["include/**/*.h"]),
+    visibility = ["//visibility:public"],
+    includes = ["include"],
+)
+    """,
+    path = "/home/linuxbrew/.linuxbrew/opt/libsodium",
+)
