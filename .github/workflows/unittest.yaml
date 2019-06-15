@@ -25,7 +25,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '/home/runner/.cache/bazel'
-          key: bazel
+          key: bazel-cache-${{ github.sha	 }}
+          restore-keys: |
+            bazel-cache-
 
       - name: bazel build
         run: bazel build //...
