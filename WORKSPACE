@@ -78,32 +78,32 @@ git_repository(
     remote = "https://github.com/google/benchmark.git",
 )
 
-new_local_repository(
-    name = "libiberty",
-    build_file_content = """
-cc_library(
-    name = "libiberty",
-    srcs = ["lib/x86_64-linux-gnu/libiberty.a"],
-    hdrs = glob(["include/libiberty/*.h"]),
-    visibility = ["//visibility:public"],
-    includes = ["include/libiberty/"],
-)
-    """,
-    path = "/usr",
-)
+# new_local_repository(
+#     name = "libiberty",
+#     build_file_content = """
+# cc_library(
+#     name = "libiberty",
+#     srcs = ["lib/x86_64-linux-gnu/libiberty.a"],
+#     hdrs = glob(["include/libiberty/*.h"]),
+#     visibility = ["//visibility:public"],
+#     includes = ["include/libiberty/"],
+# )
+#     """,
+#     path = "/usr",
+# )
 
 new_local_repository(
-    name = "brew_libiberty",
+    name = "libiberty",
     build_file_content = """
 cc_library(
     name = "libiberty",
-    srcs = ["lib/gcc/10/libiberty.a"],
+    srcs = ["lib/libiberty.a"],
     hdrs = glob(["include/libiberty/*.h"]),
     visibility = ["//visibility:public"],
-    includes = ["include/libiberty/"],
+    includes = ["include/libiberty"],
 )
     """,
-    path = "/home/linuxbrew/.linuxbrew/Cellar/gcc10/10.2.0",
+    path = "/home/linuxbrew/.linuxbrew/opt/libiberty",
 )
 
 new_git_repository(
