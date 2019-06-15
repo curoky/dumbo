@@ -15,13 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install depend packages
-        run: sudo apt-get install -y libiberty-dev libaio-dev
-
       - name: setup bazel
         run: |
-          brew tap curoky/tap --shallow
-          brew install bazel@3 gcc@10 tbb python gperf qt@5.13.2
+          brew tap curoky/tap
+          # git -C $(brew --prefix)/Homebrew/Library/Taps/curoky/homebrew-tap checkout dev
+          brew install bazel@3 gcc@10 tbb python gperf qt@5.13.2 libaio libiberty
 
       - name: mount bazel cache
         uses: actions/cache@v2
@@ -29,7 +27,7 @@ jobs:
           path: |
             '/home/runner/.cache/bazel'
             '/home/curoky/.cache/Homebrew'
-          key: bazel-cache-${{ github.sha	 }}
+          key: bazel-cache-${{ github.sha	}}
           restore-keys: |
             bazel-cache-
 
