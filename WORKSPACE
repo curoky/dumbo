@@ -174,9 +174,9 @@ git_repository(
 
 new_local_repository(
     name = "qt",
-    build_file = "@com_justbuchanan_rules_qt//:qt.BUILD",
-    path = "/usr/include/x86_64-linux-gnu/qt5",
-    # path = "/home/linuxbrew/.linuxbrew/opt/qt/include",
+    build_file = "@//:third_party/qt/qt.BUILD",
+    # path = "/usr/include/x86_64-linux-gnu/qt5",
+    path = "/home/linuxbrew/.linuxbrew/opt/qt@5.13.2",
 )
 
 new_git_repository(
