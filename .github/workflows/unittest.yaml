@@ -14,12 +14,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: install depend packages
-        run: sudo apt-get install -y libiberty-dev qt5-default libaio-dev libsodium
+        run: sudo apt-get install -y libiberty-dev qt5-default libaio-dev
 
       - name: setup bazel
         run: |
           brew tap curoky/tap --shallow
-          brew install bazel@3 gcc@10 tbb
+          brew install bazel@3 gcc@10 tbb libsodium python gperf
 
       - name: mount bazel cache
         uses: actions/cache@v2
