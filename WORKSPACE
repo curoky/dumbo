@@ -115,7 +115,7 @@ new_git_repository(
 
 new_git_repository(
     name = "com_github_facebookincubator_fizz",
-    branch = "master",
+    branch = "v2020.11.02.00",
     build_file = "@//:third_party/fizz/fizz.BUILD",
     remote = "https://github.com/facebookincubator/fizz.git",
 )
