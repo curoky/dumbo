@@ -22,6 +22,6 @@ cc_library(
         "@com_github_google_brotli//:brotlidec",
         "@com_github_google_brotli//:brotlienc",
         "@com_github_google_double_conversion//:double-conversion",
-        "@libsodium",
+        "@com_github_libsodium//:sodium",
     ],
 )

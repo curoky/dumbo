@@ -396,6 +396,19 @@ cc_library(
     path = "/home/linuxbrew/.linuxbrew/opt/tbb",
 )
 
+# new_local_repository(
+#     name = "libsodium",
+#     build_file_content = """
+# cc_library(
+#     name = "libsodium",
+#     srcs = ["lib/libsodium.so.23.3.0"],
+#     hdrs = glob(["include/**/*.h"]),
+#     visibility = ["//visibility:public"],
+#     includes = ["include"],
+# )
+#     """,
+#     path = "/home/linuxbrew/.linuxbrew/opt/libsodium",
+# )
 
 http_archive(
     name = "com_github_argon2",
@@ -404,8 +417,13 @@ http_archive(
     strip_prefix = "phc-winner-argon2-20171227",
     url = "https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz",
 )
-    """,
-    path = "/home/linuxbrew/.linuxbrew/opt/libsodium",
+
+http_archive(
+    name = "com_github_libsodium",
+    build_file = "@//:third_party/libsodium/libsodium.BUILD",
+    sha256 = "0c14604bbeab2e82a803215d65c3b6e74bb28291aaee6236d65c699ccfe1a98c",
+    strip_prefix = "libsodium-1.0.16",
+    url = "https://github.com/jedisct1/libsodium/archive/1.0.16.tar.gz",
 )
 
 http_archive(
