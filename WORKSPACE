@@ -46,14 +46,6 @@ git_repository(
     remote = "https://github.com/gflags/gflags.git",
 )
 
-# http_archive(
-#     name = "zlib",
-#     build_file = "@//:third_party/zlib/zlib.BUILD",
-#     sha256 = "629380c90a77b964d896ed37163f5c3a34f6e6d897311f1df2a7016355c45eff",
-#     strip_prefix = "zlib-1.2.11",
-#     urls = ["https://github.com/madler/zlib/archive/v1.2.11.tar.gz"],
-# )
-
 new_git_repository(
     name = "zlib",
     branch = "master",
@@ -62,7 +54,6 @@ new_git_repository(
 )
 
 git_repository(
-    # [depend]: zlib
     name = "com_google_protobuf",
     branch = "master",
     remote = "https://github.com/protocolbuffers/protobuf",
@@ -77,30 +68,7 @@ git_repository(
 new_git_repository(
     name = "com_github_msgpack_msgpack",
     branch = "cpp_master",
-    build_file_content = """
-cc_library(
-    name = "msgpack",
-    hdrs = glob(
-        [
-            "include/*.hpp",
-            "include/**/*.hpp",
-            "include/**/**/*.hpp",
-            "include/**/**/**/*.hpp",
-        ],
-    ),
-    deps = [
-        "@boost//:predef",
-        "@boost//:assert",
-        "@boost//:fusion",
-        "@boost//:variant",
-        "@boost//:operators",
-        "@boost//:preprocessor",
-        "@boost//:numeric_conversion",
-    ],
-    includes = ["include"],
-    visibility = ["//visibility:public"],
-)
-""",
+    build_file = "@//:third_party/msgpack/msgpack.BUILD",
     remote = "https://github.com/msgpack/msgpack-c",
 )
 
@@ -214,16 +182,7 @@ new_local_repository(
 new_git_repository(
     name = "com_github_google_diff_match_patch",
     branch = "master",
-    build_file_content = """
-cc_library(
-    name = "diff-match-patch",
-    hdrs = ["cpp/diff_match_patch.h"],
-    srcs = ["cpp/diff_match_patch.cpp"],
-    deps = ["@qt//:qt_core"],
-    includes = ["cpp"],
-    visibility = ["//visibility:public"],
-)
-""",
+    build_file = "@//:third_party/diff-match-patch/diff-match-patch.BUILD",
     patch_cmds = [
         "sed -i -e \"s/<QtCore>/<QtCore\\/QtCore>/g\" cpp/diff_match_patch.cpp",
         'sed -i -e "s/toAscii()/toLatin1()/g" cpp/diff_match_patch.cpp',
@@ -296,17 +255,6 @@ new_git_repository(
     build_file = "@//:third_party/cpr/cpr.BUILD",
     remote = "https://github.com/whoshuu/cpr.git",
 )
-
-# http_archive(
-#     name = "boringssl",
-#     build_file = "@//:third_party/boringssl/boringssl.BUILD",
-#     sha256 = "a9c3b03657d507975a32732f04563132b4553c20747cec6dc04de475c8bdf29f",
-#     strip_prefix = "boringssl-80ca9f9f6ece29ab132cce4cf807a9465a18cfac",
-#     # system_build_file = clean_dep("//third_party/systemlibs:boringssl.BUILD"),
-#     urls = [
-#         "https://github.com/google/boringssl/archive/80ca9f9f6ece29ab132cce4cf807a9465a18cfac.tar.gz",
-#     ],
-# )
 
 git_repository(
     name = "com_github_google_boringssl",
