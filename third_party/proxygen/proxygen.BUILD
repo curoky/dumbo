@@ -73,6 +73,7 @@ cc_library(
     includes = ["."],
     visibility = ["//visibility:public"],
     deps = [
+        "@boost//:iostreams",
         "@com_github_facebook_folly//:folly",
         "@com_github_facebook_wangle//:wangle",
         "@com_github_google_double_conversion//:double-conversion",

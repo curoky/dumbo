@@ -280,7 +280,6 @@ cc_library(
     linkopts = [
         "-lz",
         "-llzma",
-        "-llz4",
     ],
     deps = [
         ":datagen",
@@ -289,5 +288,6 @@ cc_library(
         ":util",
         ":xxhash",
         ":zdict",
+        "@com_github_lz4//:lz4"
     ],
 )
