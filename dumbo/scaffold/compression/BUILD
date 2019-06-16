@@ -6,7 +6,7 @@ cc_test(
     copts = ["-std=c++17"],
     deps = [
         "//dumbo/utilities:catch2_main",
-        "@com_github_facebook_zstd//:libzstd",
+        "@com_github_facebook_zstd//:zstd",
         "@com_github_google_snappy//:snappy",
     ],
 )
