@@ -1,7 +1,7 @@
 load("@rules_cc//cc:defs.bzl", "cc_test")
 
 cc_test(
-    name = "compression_example",
+    name = "example",
     srcs = glob(["*.cc"]),
     copts = ["-std=c++17"],
     deps = [

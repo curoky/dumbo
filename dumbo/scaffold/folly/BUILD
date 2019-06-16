@@ -5,7 +5,6 @@ cc_test(
     srcs = glob(["*.cc"]),
     copts = [
         "-std=c++17",
-        "-Iexternal/com_github_google_double_conversion",
     ],
     deps = [
         "//dumbo/utilities:catch2_main",
