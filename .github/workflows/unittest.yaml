@@ -6,11 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-20.04
 
+    container:
+      image: curoky/homebrew:ubunut20.10
+
     env:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
-      CC: /home/linuxbrew/.linuxbrew/opt/gcc@10/bin/gcc-10
-      CXX: /home/linuxbrew/.linuxbrew/opt/gcc@10/bin/g++-10
+      PATH: /home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
 
     steps:
       - uses: actions/checkout@v2
@@ -19,14 +21,13 @@ jobs:
         run: |
           brew tap curoky/tap
           # git -C $(brew --prefix)/Homebrew/Library/Taps/curoky/homebrew-tap checkout dev
-          brew install bazel@3 gcc@10 tbb python gperf qt@5.13.2 libaio libiberty
+          brew install bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
+          sudo ln -s /home/linuxbrew/.linuxbrew/opt/python@3.9/bin/python3 /usr/bin/python
 
       - name: mount bazel cache
         uses: actions/cache@v2
         with:
-          path: |
-            '/home/runner/.cache/bazel'
-            '/home/curoky/.cache/Homebrew'
+          path: '~/.cache/bazel'
           key: bazel-cache-${{ github.sha	}}
           restore-keys: |
             bazel-cache-
