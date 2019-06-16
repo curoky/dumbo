@@ -382,6 +382,13 @@ new_git_repository(
     remote = "https://github.com/mrtazz/restclient-cpp",
 )
 
+new_git_repository(
+    name = "com_pagure_libaio",
+    branch = "master",
+    build_file = "@//:third_party/libaio/libaio.BUILD",
+    remote = "https://pagure.io/libaio.git",
+)
+
 new_local_repository(
     name = "tbb",
     build_file_content = """
