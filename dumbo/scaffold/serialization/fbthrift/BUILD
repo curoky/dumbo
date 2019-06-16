@@ -10,10 +10,27 @@ cc_library(
     copts = [
         "-g",
         "-std=c++17",
-        "-Iexternal/com_github_google_double_conversion",
+    ],
+    includes = ["."],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_facebook_fbthrift//:thriftcpp2",
+    ],
+)
+
+cc_test(
+    name = "example",
+    srcs = glob([
+        "*.h",
+        "*.cc",
+    ]),
+    copts = [
+        "-g",
+        "-std=c++17",
     ],
     deps = [
-        "@com_github_google_double_conversion//:double-conversion",
+        ":mock_fbthrift",
+        "//dumbo/utilities:catch2_main",
         "@com_github_facebook_fbthrift//:thriftcpp2",
     ],
 )
