@@ -389,6 +389,13 @@ new_git_repository(
     remote = "https://pagure.io/libaio.git",
 )
 
+new_git_repository(
+    name = "com_axboe_liburing",
+    branch = "master",
+    build_file = "@//:third_party/liburing/liburing.BUILD",
+    remote = "https://github.com/axboe/liburing.git",
+)
+
 new_local_repository(
     name = "tbb",
     build_file_content = """
