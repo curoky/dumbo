@@ -404,6 +404,20 @@ cc_library(
 )
 
 # new_local_repository(
+#     name = "lzma",
+#     build_file_content = """
+# cc_library(
+#     name = "lzma",
+#     srcs = ["lib/liblzma.so"],
+#     hdrs = glob(["include/**/*.h"]),
+#     visibility = ["//visibility:public"],
+#     includes = ["include"],
+# )
+#     """,
+#     path = "/home/linuxbrew/.linuxbrew/opt/xz",
+# )
+
+# new_local_repository(
 #     name = "libsodium",
 #     build_file_content = """
 # cc_library(
@@ -431,6 +445,14 @@ http_archive(
     sha256 = "0c14604bbeab2e82a803215d65c3b6e74bb28291aaee6236d65c699ccfe1a98c",
     strip_prefix = "libsodium-1.0.16",
     url = "https://github.com/jedisct1/libsodium/archive/1.0.16.tar.gz",
+)
+
+http_archive(
+    name = "xz",
+    build_file = "@//:third_party/xz/xz.BUILD",
+    sha256 = "f6f4910fd033078738bd82bfba4f49219d03b17eb0794eb91efbae419f4aba10",
+    strip_prefix = "xz-5.2.5",
+    url = "https://udomain.dl.sourceforge.net/project/lzmautils/xz-5.2.5.tar.gz",
 )
 
 http_archive(
