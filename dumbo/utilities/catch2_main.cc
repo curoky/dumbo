@@ -18,5 +18,33 @@
  * ----------------------------------------------------------------------------
  */
 
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#define CATCH_CONFIG_RUNNER
+#include <catch2/catch.hpp>  // for Session
+#include <folly/Singleton.h>
+// #include <folly/init/Init.h>                              // for SingletonVault
+#include <folly/init/Phase.h>  // for set_process_phases
+// #include <folly/logging/Init.h>
+#include <folly/synchronization/HazptrThreadPoolExecutor.h>  // for enable_hazptr_thread_pool_executor
+#include <gflags/gflags.h>                                   // for DEFINE_string
+#include <glog/logging.h>                                    // for InitGoogleLogging
+
+// Just for vscode test plugin
+DEFINE_string(catch2, "Catch v2.12.2", "Catch v2.12.2");
+
+int main(int argc, char* argv[]) {
+  // google::AllowCommandLineReparsing();
+
+  // folly::init(&argc, &argv, false);
+  // copy from folly init
+  // google::InstallFailureSignalHandler();
+  folly::set_process_phases();
+  // folly::initLoggingOrDie(true);
+
+  folly::SingletonVault::singleton()->registrationComplete();
+  folly::enable_hazptr_thread_pool_executor();
+
+  // google::ParseCommandLineFlags(&argc, &argv, false);
+  google::InitGoogleLogging(argv[0]);
+  int result = Catch::Session().run(argc, argv);
+  return result;
+}
