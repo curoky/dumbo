@@ -278,8 +278,8 @@ cc_library(
         "-DZSTD_LZ4DECOMPRES",
     ],
     linkopts = [
-        "-lz",
-        "-llzma",
+        # "-lz",
+        # "-llzma",
     ],
     deps = [
         ":datagen",
@@ -288,6 +288,8 @@ cc_library(
         ":util",
         ":xxhash",
         ":zdict",
-        "@com_github_lz4//:lz4"
+        "@com_github_lz4//:lz4",
+        "@xz",
+        "@zlib",
     ],
 )
