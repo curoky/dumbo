@@ -17,8 +17,14 @@ git_repository(
 git_repository(
     name = "rules_3rd",
     branch = "master",
+    # branch = "dev",
     remote = "https://github.com/curoky/rules_cc",
 )
+
+# local_repository(
+#     name = "rules_3rd",
+#     path = "/home/curoky/repos/cpp/rules_cc",
+# )
 
 load("@rules_3rd//:defs.bzl", "load_all_repo")
 

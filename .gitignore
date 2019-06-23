@@ -4,3 +4,6 @@
 # bazel
 bazel-*
 compile_commands.json
+
+# binary
+*.out
