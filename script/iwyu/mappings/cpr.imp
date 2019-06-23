@@ -1,0 +1,4 @@
+[
+   {include: ["@<cpr/.*>", private, "<cpr/cpr.h>", public]},
+   {include: ["@\"cpr/.*\"", private, "<cpr/cpr.h>", public]},
+]

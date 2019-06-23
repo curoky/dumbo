@@ -1,0 +1,45 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+#
+# This file contains Linux-specific mappings for IWYU.
+#
+# For instance, some of these mappings take care of variation in system
+# headers between different versions of Linux. From the point of better
+# compatibility, it makes sense to favor the most compatible option
+# among different system versions and flavors.
+#
+
+[
+  { include: ["<asm-generic/int-ll64.h>", private, "<linux/types.h>", public] },
+  { include: ["<asm/int-ll64.h>", private, "<linux/types.h>", public] },
+  { include: ["<asm-generic/int-l64.h>", private, "<linux/types.h>", public] },
+  { include: ["<asm/int-l64.h>", private, "<linux/types.h>", public] },
+  { include: ["<asm/ioctl.h>", private, "<linux/ioctl.h>", public] },
+  { include: ["<bits/types/__sigval_t.h>", private, "<signal.h>", public] },
+  { include: ["<bits/types/siginfo_t.h>", private, "<signal.h>", public] },
+  { include: ["<bits/types/struct_rusage.h>", private, "<sys/resource.h>", public] },
+  { include: ["<bits/types/struct_tm.h>", private, "<time.h>", public] },
+  { include: ["<linux/sysinfo.h>", private, "<linux/kernel.h>", public] },
+  { symbol: ["clockid_t", private, "<time.h>", public] },
+  { symbol: ["iovec", private, "<sys/socket.h>", public] },
+  { symbol: ["iovec", private, "<sys/types.h>", public] },
+  { symbol: ["strcasecmp", private, "<strings.h>", public] },
+  { symbol: ["strncasecmp", private, "<strings.h>", public] },
+  { symbol: ["statfs", private, "<sys/vfs.h>", public] },
+  { symbol: ["IOV_MAX", private, "<limits.h>", public] },
+]
