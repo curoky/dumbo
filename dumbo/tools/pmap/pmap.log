@@ -1,0 +1,53 @@
+142366:   /home/curoky/.cache/bazel/_bazel_curoky/f0e58dbe6103f5cef1c1f24a78b6f904/execroot/com_github_curoky_dumbo/bazel-out/k8-fastbuild/bin/dumbo/tools/pmap/case0
+Address           Kbytes     RSS   Dirty Mode  Mapping
+000055ad525b5000      12      12       0 r-x-- case0
+000055ad525b9000       4       4       4 r---- case0
+000055ad525ba000       4       4       4 rw--- case0
+000055ad54058000     132      12      12 rw---   [ anon ]
+00007f04eaec3000       4       0       0 -----   [ anon ]
+00007f04eaec4000   10240    1032    1032 rw---   [ anon ]
+00007f04eb8c4000       4       0       0 -----   [ anon ]
+00007f04eb8c5000    1024      56      56 rw---   [ anon ]
+00007f04eb9c5000       4       0       0 -----   [ anon ]
+00007f04eb9c6000    1044      24      24 rw---   [ anon ]
+00007f04ebacb000     148     148       0 r---- libc-2.31.so
+00007f04ebaf0000    1504     704       0 r-x-- libc-2.31.so
+00007f04ebc68000     296     128       0 r---- libc-2.31.so
+00007f04ebcb2000       4       0       0 ----- libc-2.31.so
+00007f04ebcb3000      12      12      12 r---- libc-2.31.so
+00007f04ebcb6000      12      12      12 rw--- libc-2.31.so
+00007f04ebcb9000      16      16      16 rw---   [ anon ]
+00007f04ebcbd000      12      12       0 r---- libgcc_s.so.1
+00007f04ebcc0000      72      64       0 r-x-- libgcc_s.so.1
+00007f04ebcd2000      16      16       0 r---- libgcc_s.so.1
+00007f04ebcd6000       4       4       4 r---- libgcc_s.so.1
+00007f04ebcd7000       4       4       4 rw--- libgcc_s.so.1
+00007f04ebcd8000      28      28       0 r---- libpthread-2.31.so
+00007f04ebcdf000      68      68       0 r-x-- libpthread-2.31.so
+00007f04ebcf0000      20       0       0 r---- libpthread-2.31.so
+00007f04ebcf5000       4       4       4 r---- libpthread-2.31.so
+00007f04ebcf6000       4       4       4 rw--- libpthread-2.31.so
+00007f04ebcf7000      16       4       4 rw---   [ anon ]
+00007f04ebcfb000      60      60       0 r---- libm-2.31.so
+00007f04ebd0a000     668     256       0 r-x-- libm-2.31.so
+00007f04ebdb1000     604       0       0 r---- libm-2.31.so
+00007f04ebe48000       4       4       4 r---- libm-2.31.so
+00007f04ebe49000       4       4       4 rw--- libm-2.31.so
+00007f04ebe4a000     600     600       0 r---- libstdc++.so.6.0.28
+00007f04ebee0000     960     192       0 r-x-- libstdc++.so.6.0.28
+00007f04ebfd0000     292      64       0 r---- libstdc++.so.6.0.28
+00007f04ec019000       4       0       0 ----- libstdc++.so.6.0.28
+00007f04ec01a000      44      44      44 r---- libstdc++.so.6.0.28
+00007f04ec025000      12      12      12 rw--- libstdc++.so.6.0.28
+00007f04ec028000      20      16      16 rw---   [ anon ]
+00007f04ec035000       4       4       0 r---- ld-2.31.so
+00007f04ec036000     140     140       0 r-x-- ld-2.31.so
+00007f04ec059000      32      32       0 r---- ld-2.31.so
+00007f04ec062000       4       4       4 r---- ld-2.31.so
+00007f04ec063000       4       4       4 rw--- ld-2.31.so
+00007f04ec064000       4       4       4 rw---   [ anon ]
+00007fffa7593000     136      16      16 rw---   [ stack ]
+00007fffa75cf000      12       0       0 r----   [ anon ]
+00007fffa75d2000       8       4       0 r-x--   [ anon ]
+---------------- ------- ------- ------- 
+total kB           18328    3832    1300
