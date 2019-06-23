@@ -11,6 +11,7 @@ cc_library(
 
 cc_test(
     name = "example",
+    testonly = False,
     srcs = glob([
         "*.h",
         "*.cc",

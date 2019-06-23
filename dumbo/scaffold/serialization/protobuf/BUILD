@@ -14,6 +14,7 @@ cc_proto_library(
 
 cc_test(
     name = "type_test",
+    testonly = False,
     srcs = glob(["*.cc"]),
     deps = [
         ":mock_cc_proto",

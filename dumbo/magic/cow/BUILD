@@ -7,6 +7,7 @@ cc_library(
 
 cc_test(
     name = "cow_string_test",
+    testonly = False,
     srcs = ["cow_string_test.cc"],
     deps = [
         ":cow_string",

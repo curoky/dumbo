@@ -7,6 +7,7 @@ cc_library(
 
 cc_test(
     name = "shared_ptr_test",
+    testonly = False,
     srcs = ["shared_ptr_test.cc"],
     deps = [
         ":shared_ptr",
