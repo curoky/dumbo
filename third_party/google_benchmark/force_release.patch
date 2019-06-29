@@ -1,0 +1,22 @@
+diff --git a/BUILD.bazel b/BUILD.bazel
+index d97a019..3771213 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -41,4 +41,8 @@ cc_library(
+         exclude = ["src/benchmark_main.cc"],
+     ),
+     hdrs = ["include/benchmark/benchmark.h"],
++    copts = [
++        "-O2",
++        "-DNDEBUG",
++    ],
+     linkopts = select({
+@@ -55,4 +59,8 @@ cc_library(
+     name = "benchmark_main",
+     srcs = ["src/benchmark_main.cc"],
+     hdrs = ["include/benchmark/benchmark.h"],
++    copts = [
++        "-O2",
++        "-DNDEBUG",
++    ],
+     strip_include_prefix = "include",

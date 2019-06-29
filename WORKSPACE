@@ -29,3 +29,13 @@ git_repository(
 load("@rules_3rd//:defs.bzl", "load_all_repo")
 
 load_all_repo()
+
+git_repository(
+    name = "com_github_google_benchmark_O2",
+    branch = "master",
+    patch_args = ["-p1"],
+    patches = [
+        "@//:third_party/google_benchmark/force_release.patch",  # -O2 -DNDEBUG
+    ],
+    remote = "https://github.com/google/benchmark.git",
+)
