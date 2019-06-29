@@ -19,12 +19,15 @@
  */
 
 #include <boost/context/detail/exception.hpp>  // for forced_unwind
-#include <boost/coroutine2/coroutine.hpp>  // for coroutine<>::push_type, coroutine<>::pull_type, coroutine
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
-#include <cxxabi.h>  // for __forced_unwind
-
-#include <functional>  // for bind, ref, _1
-#include <vector>      // for vector, operator==
+#include <boost/coroutine2/coroutine.hpp>      // for coroutine<>::push_type, coroutine<>::pull_type, coroutine
+#include <catch2/catch.hpp>                    // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
+#include <cxxabi.h>                            // for __forced_unwind
+#include <detail/pull_coroutine.ipp>           // for pull_coroutine<>::operator()
+#include <detail/push_control_block_cc.ipp>    // for push_coroutine<>::control_block::control_block
+#include <detail/push_coroutine.ipp>           // for push_coroutine<>::operator(), push_coroutine<>::push_coroutine, push_coroutine<>::~push_coroutine
+#include <algorithm>                           // for copy, max
+#include <functional>                          // for bind, ref, _1
+#include <vector>                              // for vector, allocator, operator==
 
 namespace {
 void foo(boost::coroutines2::coroutine<void>::pull_type& pull, std::vector<int>& vec) {

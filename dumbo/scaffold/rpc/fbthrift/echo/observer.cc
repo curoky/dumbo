@@ -18,16 +18,32 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <folly/io/async/Request.h>
-#include <glog/logging.h>
-#include <thrift/lib/cpp/concurrency/ThreadManager.h>
-#include <thrift/lib/cpp2/async/HeaderClientChannel.h>
+#include <catch2/catch.hpp>                             // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <folly/SocketAddress.h>                        // for SocketAddress
+#include <folly/io/async/AsyncSocket.h>                 // for AsyncSocket, AsyncSocket::UniquePtr
+#include <folly/io/async/EventBase.h>                   // for EventBase
+#include <gen-cpp2/EchoServiceAsyncClient.h>            // for EchoServiceAsyncClient
+#include <gen-cpp2/mock_types.h>                        // for MockRequest, MockResponse
+#include <glog/logging.h>                               // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
+#include <thrift/lib/cpp/concurrency/ThreadManager.h>   // for ThreadManager, ThreadManager::Observer, ThreadManager::RunStats
+#include <thrift/lib/cpp/protocol/TProtocolTypes.h>     // for T_BINARY_PROTOCOL
+#include <thrift/lib/cpp2/async/HeaderClientChannel.h>  // for HeaderClientChannel
+#include <thrift/lib/cpp2/server/BaseThriftServer.h>    // for ThriftServerAsyncProcessorFactory
+#include <thrift/lib/cpp2/server/ThriftServer.h>        // for ThriftServer
 // #include <thrift/perf/cpp2/util/Util.h>
 
-#include <thread>
+#include <atomic>                                       // for atomic, atomic_bool, __atomic_base
+#include <chrono>                                       // for seconds
+#include <memory>                                       // for unique_ptr, make_shared, __shared_ptr_access, shared_ptr, make_unique
+#include <ostream>                                      // for basic_ostream::operator<<, operator<<, basic_ostream
+#include <thread>                                       // for sleep_for, thread
+#include <utility>                                      // for move
 
-#include "echo_service_handler.h"
+#include "echo_service_handler.h"                       // for EchoServiceHandler
+
+namespace folly {
+class RequestContext;
+}  // namespace folly
 
 std::unique_ptr<apache::thrift::ThriftServer> create_echo_server(int port) {
   auto handler = std::make_shared<EchoServiceHandler>();

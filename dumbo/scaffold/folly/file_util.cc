@@ -18,9 +18,11 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
-#include <folly/FBString.h>  // for fbstring, basic_fbstring, fbstring_core, operator==, operator<<
+#include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, StartsWith, REQUIRE, REQUIRE_THAT, TEST_CASE
+#include <folly/FBString.h>  // for fbstring
 #include <folly/FileUtil.h>  // for readFile
+#include <stdlib.h>          // for free
+#include <memory>            // for allocator
 
 TEST_CASE("[FileUtil]: read file") {
   folly::fbstring content;

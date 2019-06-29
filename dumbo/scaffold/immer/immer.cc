@@ -18,8 +18,9 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <immer/vector.hpp>
+#include <assert.h>          // for assert
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
+#include <immer/vector.hpp>  // for vector
 
 TEST_CASE("[Immer]: basic usage") {
   const auto v0 = immer::vector<int>{};

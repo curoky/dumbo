@@ -20,7 +20,8 @@
 
 #include "cow_string.h"
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <string>            // for operator==, string
 
 TEST_CASE("[CowString]: basic usage") {
   cry::CowString str(5, 'a');

@@ -6,6 +6,16 @@
  */
 #include "EchoService.h"
 
+#include <bits/exception.h>                                          // for exception
+#include <stddef.h>                                                  // for NULL
+#include <thrift/TApplicationException.h>                            // for TApplicationException, TApplicationException::MISSING_RESULT, TApplicationExcept...
+#include <thrift/async/TConcurrentClientSyncInfo.h>                  // for TConcurrentClientSyncInfo, TConcurrentRecvSentry, TConcurrentSendSentry
+#include <thrift/protocol/TProtocol.h>                               // for TProtocol, T_STRUCT, TInputRecursionTracker, TOutputRecursionTracker, TType, T_E...
+#include <thrift/protocol/TProtocolException.h>                      // for TProtocolException, TProtocolException::INVALID_DATA
+#include <thrift/transport/TTransport.h>                             // for TTransport
+
+#include "dumbo/scaffold/serialization/thrift/gen-cpp/mock_types.h"  // for MockRequest, MockException, MockResponse
+
 namespace idl { namespace thrift {
 
 

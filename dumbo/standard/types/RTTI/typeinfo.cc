@@ -18,12 +18,13 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, AssertionHandler, TEST_CASE, operator""_catch_sr, REQUIRE
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, AssertionHandler, operator""_catch_sr, TEST_CASE, REQUIRE
 #include <folly/Demangle.h>  // for demangle
-#include <folly/FBString.h>  // for basic_fbstring, operator==, operator<<, fbstring
-
-#include <string_view>  // for literals
-#include <typeinfo>     // for type_info
+#include <folly/FBString.h>  // for basic_fbstring, operator==, operator<<, fbstring_core::category_type, fbstring
+#include <stdlib.h>          // for free
+#include <string>            // for string
+#include <string_view>       // for literals
+#include <typeinfo>          // for type_info
 
 // FIXME(@curoky): why not < ?
 #include "absl/debugging/internal/demangle.h"

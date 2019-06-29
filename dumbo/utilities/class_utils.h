@@ -20,10 +20,9 @@
 
 #pragma once
 #include <glog/logging.h>  // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
-
-#include <iostream>  // for operator<<, basic_ostream
+#include <iostream>        // for operator<<
 #include <memory>
-#include <string>   // for operator<<, char_traits, allocator, move, string
+#include <string>          // for size_t
 #include <utility>  // for move
 
 namespace taro {

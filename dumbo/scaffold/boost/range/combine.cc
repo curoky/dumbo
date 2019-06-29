@@ -24,13 +24,10 @@
  * https://stackoverflow.com/questions/8511035/sequence-zip-function-for-c11
  */
 
-#include <boost/foreach.hpp>  // for auto_any_base, BOOST_FOREACH
-#include <boost/range/combine.hpp>
-#include <boost/tuple/tuple.hpp>  // for tie, tie_mapper<>::type
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-
-#include <list>    // for list
-#include <vector>  // for vector
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
+#include <algorithm>         // for max
+#include <list>              // for list
+#include <vector>            // for vector
 
 TEST_CASE("[Combine]: basic usage") {
   std::vector<int> v;

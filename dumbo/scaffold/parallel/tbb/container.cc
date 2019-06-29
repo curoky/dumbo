@@ -18,15 +18,16 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
+#include <catch2/catch.hpp>         // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
 #include <tbb/concurrent_vector.h>  // for concurrent_vector
 #include <tbb/tbb_allocator.h>      // for tbb_allocator
 
 #define TBB_PREVIEW_CONCURRENT_ORDERED_CONTAINERS 1
-#include <tbb/concurrent_map.h>  // for concurrent_map
-#include <tbb/concurrent_set.h>  // for concurrent_set
-
-#include <utility>  // for move
+#include <tbb/concurrent_map.h>     // for concurrent_map
+#include <tbb/concurrent_set.h>     // for concurrent_set
+#include <functional>               // for less
+#include <tuple>                    // for forward_as_tuple
+#include <utility>                  // for move
 
 TEST_CASE("[Container]: concurrent_vector") {
   tbb::concurrent_vector<int> nub;

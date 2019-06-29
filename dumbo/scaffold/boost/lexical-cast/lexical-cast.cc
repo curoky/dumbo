@@ -18,11 +18,14 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <boost/lexical_cast.hpp>  // for lexical_cast, basic_pointerbuf<>::pos_type, basic_pointerbuf<>::base_type
-#include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, REQUIRE_THROWS_AS, TEST_CASE
+#include <boost/lexical_cast.hpp>  // for lexical_cast
+#include <catch2/catch.hpp>        // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, REQUIRE_THROWS_AS, TEST_CASE
+#include <sstream>                 // for basic_stringbuf<>::int_type, basic_stringbuf<>::pos_type, basic_stringbuf<>::__streambuf_type, ios_base::failure
+#include <string>                  // for string, operator==, basic_string
 
-#include <ios>     // for ios_base::failure
-#include <string>  // for string, operator==, basic_string
+namespace boost {
+class bad_lexical_cast;
+}  // namespace boost
 
 TEST_CASE("[Lexical-cast]: BaseTest") {
   // string <=> int

@@ -18,8 +18,13 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <spdlog/spdlog.h>
+#include <bits/exception.h>     // for exception
+#include <catch2/catch.hpp>     // for SourceLineInfo, StringRef, TEST_CASE
+#include <fmt/format.h>         // for format_to
+#include <spdlog/common.h>      // for debug
+#include <spdlog/spdlog.h>      // for info, critical, debug, error, warn, SPDLOG_DEBUG, SPDLOG_TRACE
+#include <spdlog/spdlog-inl.h>  // for set_level, set_pattern
+#include <memory>               // for allocator
 
 TEST_CASE("[Spdlog]: basic usage") {
   spdlog::info("Welcome to spdlog!");

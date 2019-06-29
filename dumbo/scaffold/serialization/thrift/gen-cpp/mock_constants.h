@@ -7,6 +7,8 @@
 #ifndef mock_CONSTANTS_H
 #define mock_CONSTANTS_H
 
+#include <string>  // for string
+
 #include "mock_types.h"
 
 namespace idl { namespace thrift {

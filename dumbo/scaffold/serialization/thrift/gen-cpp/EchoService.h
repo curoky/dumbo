@@ -7,10 +7,23 @@
 #ifndef EchoService_H
 #define EchoService_H
 
-#include <thrift/TDispatchProcessor.h>
+#include <stdint.h>                     // for uint32_t, int32_t
+#include <thrift/TDispatchProcessor.h>  // for TDispatchProcessor
+#include <thrift/TProcessor.h>          // for TConnectionInfo (ptr only), TProcessor (ptr only), TProcessorFactory
 #include <thrift/async/TConcurrentClientSyncInfo.h>
-#include <memory>
-#include "mock_types.h"
+#include <map>                          // for map, map<>::value_compare
+#include <memory>                       // for shared_ptr, __alloc_traits<>::value_type, __shared_ptr_access
+#include <string>                       // for string, basic_string, operator<
+#include <vector>                       // for vector, size_t
+
+#include "mock_types.h"                 // for MockRequest, MockException, MockResponse
+
+namespace apache::thrift::async {
+class TConcurrentClientSyncInfo;
+}  // namespace apache::thrift::async
+namespace apache::thrift::protocol {
+class TProtocol;
+}  // namespace apache::thrift::protocol
 
 namespace idl { namespace thrift {
 

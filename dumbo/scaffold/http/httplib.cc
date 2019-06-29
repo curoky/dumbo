@@ -18,8 +18,10 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <httplib.h>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
+#include <httplib.h>         // for Request, Server, Response, Match
+#include <memory>            // for allocator
+#include <regex>             // for sub_match
 
 TEST_CASE("[Httplib]: basic usage") {
   // using namespace httplib;

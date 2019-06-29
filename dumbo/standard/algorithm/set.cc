@@ -32,15 +32,15 @@
  *        - ranges::set_union
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
+#include <catch2/catch.hpp>        // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <ctype.h>                 // for tolower
+#include <algorithm>               // for includes, __includes_fn, set_difference, __set_intersection_fn, set_intersection, __set_difference_fn, __set_symme...
+#include <concepts>                // for ranges
+#include <functional>              // for identity, less
+#include <iterator>                // for back_insert_iterator, insert_iterator, __range_iter_t, back_inserter, inserter
+#include <vector>                  // for vector, operator==, allocator
 
-#include <algorithm>
-#include <algorithm>  // for set_difference
-#include <iterator>   // for insert_iterator, inserter
-#include <set>
-#include <vector>  // for vector, operator==
-
-#include "dumbo/utilities/conv.h"
+#include "dumbo/utilities/conv.h"  // for toVec
 
 TEST_CASE("[Set]: set_difference") {
   // A - B

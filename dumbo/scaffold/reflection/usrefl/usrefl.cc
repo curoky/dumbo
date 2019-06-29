@@ -18,7 +18,6 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <USRefl_99.h>
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
 TEST_CASE("[Usrefl]: basic usage") {}

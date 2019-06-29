@@ -23,8 +23,6 @@
 #include <catch2/catch.hpp>  // for Benchmark, AssertionHandler, BENCHMARK, operator""_catch_sr, SourceLineInfo, StringRef, CHECK, TEST_CASE
 #include <stdint.h>          // for uint64_t
 
-#include <memory>  // for allocator
-
 std::uint64_t Fibonacci(std::uint64_t number) {
   return number < 2 ? 1 : Fibonacci(number - 1) + Fibonacci(number - 2);
 }

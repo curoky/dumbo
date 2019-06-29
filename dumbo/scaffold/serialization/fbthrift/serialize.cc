@@ -18,12 +18,12 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <folly/File.h>
-#include <folly/FileUtil.h>
-#include <folly/ScopeGuard.h>
+#include <catch2/catch.hpp>       // for SourceLineInfo, StringRef, TEST_CASE
+#include <folly/File.h>           // for File
+#include <folly/ScopeGuard.h>     // for SCOPE_EXIT
+#include <utility>                // for forward
 
-#include "gen-cpp2/mock_types.h"  // for MockRequest, operator<<
+#include "gen-cpp2/mock_types.h"  // for MockRequest
 
 TEST_CASE("[Serialize]: zero copy") {
   {

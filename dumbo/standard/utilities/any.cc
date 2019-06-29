@@ -18,17 +18,17 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, Section, SECTION, SectionInfo, TEST_CASE
+#include <catch2/catch.hpp>               // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, Section, SECTION, SectionInfo
+#include <memory>                         // for allocator
+#include <type_traits>                    // for remove_reference<>::type
+#include <utility>                        // for move
 
-#include <memory>   // for allocator
-#include <utility>  // for move
-
-#include "dumbo/utilities/class_utils.h"  // for ClassMetrics::Counter, ClassMetrics
+#include "dumbo/utilities/class_utils.h"  // for ClassMetrics, ClassMetrics::Counter
 
 #define USE_STD
 
 #ifdef USE_STD
-#include <any>  // for any_cast, any, bad_any_cast
+#include <any>                            // for any_cast, any, bad_any_cast
 
 namespace detail {
 using std::any;

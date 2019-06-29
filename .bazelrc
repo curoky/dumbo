@@ -8,3 +8,5 @@ build:clang_config --cpu=k8
 # build.
 
 build:clang_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+
+build --check_visibility=false

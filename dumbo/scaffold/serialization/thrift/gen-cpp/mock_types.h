@@ -7,16 +7,23 @@
 #ifndef mock_TYPES_H
 #define mock_TYPES_H
 
-#include <iosfwd>
-
-#include <thrift/Thrift.h>
+#include <stdint.h>         // for int32_t, uint32_t, int16_t, int64_t, int8_t
 #include <thrift/TApplicationException.h>
-#include <thrift/TBase.h>
+#include <thrift/TBase.h>   // for TBase
+#include <thrift/Thrift.h>  // for TException
 #include <thrift/protocol/TProtocol.h>
 #include <thrift/transport/TTransport.h>
-
 #include <functional>
+#include <iosfwd>           // for ostream
+#include <map>              // for map, operator==
 #include <memory>
+#include <set>              // for operator==, set
+#include <string>           // for string, operator==, basic_string
+#include <vector>           // for operator==, vector
+
+namespace apache::thrift::protocol {
+class TProtocol;
+}  // namespace apache::thrift::protocol
 
 
 namespace idl { namespace thrift {
@@ -38,13 +45,10 @@ std::string to_string(const EnumType::type& val);
 
 typedef std::string StrType;
 
-class UnionType;
-
-class MockRequest;
-
-class MockResponse;
-
 class MockException;
+class MockRequest;
+class MockResponse;
+class UnionType;
 
 typedef struct _UnionType__isset {
   _UnionType__isset() : var_i16(false), var_i32(false) {}

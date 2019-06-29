@@ -19,11 +19,12 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE, Section, REQUIRE_FALSE, SECTION
-
-#include <functional>  // for _Bind_helper<>::type, bind, ref, reference_wrapper, _1, _2, _3, placeholders
-#include <memory>  // for allocator
-#include <tuple>  // for tuple, make_tuple, tie, operator==, apply, tuple_cat, __tuple_cat_result<>::__type, make_from_tuple, ignore
-#include <utility>  // for move
+#include <compare>           // for operator<, common_comparison_category_t
+#include <functional>        // for _Bind_helper<>::type, bind, ref, reference_wrapper, _1, _2, _3, placeholders
+#include <memory>            // for allocator
+#include <tuple>             // for make_tuple, tie, operator==, tuple, apply, tuple_cat, __tuple_cat_result<>::__type, make_from_tuple, operator<=>, ignore
+#include <type_traits>       // for remove_reference<>::type
+#include <utility>           // for move
 
 // #include <absl/utility/utility.h>
 // using absl::apply;

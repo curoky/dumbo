@@ -31,11 +31,11 @@
  *    - search_n      searches a range for a number of consecutive copies of an element
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_...
-
-#include <algorithm>  // for find, find_end, find_first_of, adjacent_find, find_if, find_if_not
-#include <iterator>   // for distance
-#include <vector>     // for vector
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <algorithm>         // for __find_fn, find
+#include <functional>        // for identity
+#include <ranges>            // for borrowed_iterator_t
+#include <vector>            // for vector
 
 TEST_CASE("[Find]: FindTest") {
   std::vector<int> nub = {0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5};

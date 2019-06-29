@@ -19,14 +19,23 @@
  */
 
 #pragma once
-#include <thrift/protocol/TBinaryProtocol.h>
+#include <stdint.h>                              // for uint8_t, uint32_t
+#include <thrift/protocol/TBinaryProtocol.h>     // for TBinaryProtocol
 #include <thrift/protocol/TCompactProtocol.h>
 #include <thrift/protocol/TDebugProtocol.h>
 #include <thrift/protocol/THeaderProtocol.h>
 #include <thrift/protocol/TJSONProtocol.h>
+#include <thrift/transport/TBufferTransports.h>  // for TMemoryBuffer, TMemoryBuffer::COPY, TMemoryBuffer::MemoryPolicy
+#include <memory>                                // for shared_ptr
+#include <string>                                // for string
 
-#include <memory>
-#include <string>
+namespace apache::thrift::protocol {
+class TDebugProtocol;
+class TJSONProtocol;
+}  // namespace apache::thrift::protocol
+namespace apache::thrift::transport {
+class TTransport;
+}  // namespace apache::thrift::transport
 
 using apache::thrift::protocol::TBinaryProtocol;
 using apache::thrift::protocol::TDebugProtocol;

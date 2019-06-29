@@ -18,13 +18,13 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <rapidjson/document.h>
-#include <rapidjson/rapidjson.h>
+#include <catch2/catch.hpp>                 // for AssertionHandler, operator""_catch_sr, StringRef, SourceLineInfo, REQUIRE, REQUIRE_FALSE, CAPTURE, Capturer
+#include <rapidjson/document.h>             // for GenericValue, Document, Value, GenericMemberIterator, SelectIfImpl<>::Apply<>::Type, GenericDocument, Gen...
+#include <rapidjson/rapidjson.h>            // for rapidjson
+#include <string>                           // for operator""s, operator==, basic_string, string
+#include <string_view>                      // for literals
 
-#include <iostream>
-
-#include "dumbo/scaffold/json/json_data.h"
+#include "dumbo/scaffold/json/json_data.h"  // for json_data
 
 namespace rp = rapidjson;
 using namespace std::literals;

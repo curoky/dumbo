@@ -18,7 +18,8 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <benchmark/benchmark.h>
+#include <benchmark/benchmark.h>  // for State, State::StateIterator, BENCHMARK, BENCHMARK_MAIN
+#include <string>                 // for string
 
 static void BM_StringCreation(benchmark::State &state) {
   for (auto _ : state) std::string empty_string;

@@ -19,20 +19,23 @@
  */
 
 #include <boost/algorithm/string/case_conv.hpp>       // for to_lower_copy, to_upper_copy
-#include <boost/algorithm/string/classification.hpp>  // for is_any_ofF, is_any_of
+#include <boost/algorithm/string/classification.hpp>  // for is_any_of
 #include <boost/algorithm/string/constants.hpp>       // for token_compress_on
-#include <boost/algorithm/string/erase.hpp>  // for erase_all_copy, erase_first_copy, erase_last_copy, erase_nth_copy
-#include <boost/algorithm/string/join.hpp>       // for join
-#include <boost/algorithm/string/predicate.hpp>  // for contains, ends_with, iequals, starts_with
-#include <boost/algorithm/string/replace.hpp>    // for replace_all_copy
-#include <boost/algorithm/string/split.hpp>      // for split
-#include <boost/algorithm/string/trim.hpp>  // for trim_copy, trim_copy_if, trim_left_copy, trim_left_copy_if, trim_right_copy, trim_right_copy_if
-#include <boost/iterator/iterator_traits.hpp>  // for iterator_value<>::type
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-
-#include <string>       // for string, basic_string, operator==, operator""s, allocator
-#include <string_view>  // for literals
-#include <vector>       // for vector, operator==
+#include <boost/algorithm/string/erase.hpp>           // for erase_all_copy, erase_first_copy, erase_last_copy, erase_nth_copy
+#include <boost/algorithm/string/join.hpp>            // for join
+#include <boost/algorithm/string/predicate.hpp>       // for contains, ends_with, iequals, starts_with
+#include <boost/algorithm/string/replace.hpp>         // for replace_all_copy
+#include <boost/algorithm/string/split.hpp>           // for split
+#include <boost/algorithm/string/trim.hpp>            // for trim_copy, trim_copy_if, trim_left_copy, trim_left_copy_if, trim_right_copy, trim_right_copy_if
+#include <boost/iterator/iterator_traits.hpp>         // for iterator_value<>::type
+#include <catch2/catch.hpp>                           // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <distance.hpp>                               // for distance
+#include <iterator_facade.hpp>                        // for operator!=
+#include <string/detail/classification.hpp>           // for is_any_ofF
+#include <algorithm>                                  // for equal
+#include <string>                                     // for string, basic_string, operator==, operator""s, allocator
+#include <string_view>                                // for literals
+#include <vector>                                     // for vector, operator==
 
 using namespace std::literals;
 

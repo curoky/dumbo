@@ -1,15 +1,18 @@
+#include <begin.hpp>                             // for begin
 #include <boost/algorithm/string/join.hpp>       // for join
 #include <boost/range/adaptor/argument_fwd.hpp>  // for forwarder
-#include <boost/range/adaptor/map.hpp>
-#include <boost/range/adaptor/transformed.hpp>  // for transformed_range, operator|, transform_holder, transformed
-#include <boost/range/algorithm/copy.hpp>
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
-
-#include <list>
-#include <map>
-#include <set>
-#include <string>  // for basic_string, operator==, string, to_string
-#include <vector>  // for vector
+#include <boost/range/adaptor/map.hpp>           // for select_first_range, select_second_mutable_range, operator|, map_keys, map_keys_forwarder, map_values
+#include <boost/range/adaptor/transformed.hpp>   // for transformed_range, operator|, transform_holder, transformed
+#include <boost/range/algorithm/copy.hpp>        // for copy
+#include <catch2/catch.hpp>                      // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <end.hpp>                               // for end
+#include <iterator_facade.hpp>                   // for operator!=
+#include <algorithm>                             // for copy, equal
+#include <iterator>                              // for back_insert_iterator, back_inserter
+#include <list>                                  // for list, operator==, operator!=
+#include <map>                                   // for map, operator==
+#include <string>                                // for basic_string, allocator, operator==, string, to_string
+#include <vector>                                // for vector, operator==
 
 TEST_CASE("[Range]: copy") {
   std::map<int, int> foo = {{1, 2}, {2, 3}};

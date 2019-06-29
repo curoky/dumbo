@@ -18,14 +18,15 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE, CAPTURE, Capturer, AssertionHandler, operator""_catch_sr, REQUIRE
-#include "dumbo/scaffold/http/httpbin.h"         // for MapString, HttpBin
-#include <nlohmann/json.hpp>            // for basic_json<>::object_t, json
-#include <restclient-cpp/connection.h>  // for Connection
-#include <restclient-cpp/restclient.h>  // for Response, disable, init, HeaderFields, get
+#include <catch2/catch.hpp>               // for SourceLineInfo, StringRef, TEST_CASE, CAPTURE, Capturer, AssertionHandler, operator""_catch_sr, REQUIRE
+#include <nlohmann/json.hpp>              // for basic_json<>::object_t, json
+#include <restclient-cpp/connection.h>    // for Connection
+#include <restclient-cpp/restclient.h>    // for Response, disable, init, HeaderFields, get
+#include <map>                            // for map, operator!=
+#include <memory>                         // for allocator, make_unique, unique_ptr
+#include <string>                         // for string, to_string, operator+, char_traits, basic_string
 
-#include <memory>  // for allocator, make_unique, unique_ptr
-#include <string>  // for to_string, operator+, string, char_traits, basic_string
+#include "dumbo/scaffold/http/httpbin.h"  // for MapString, HttpBin
 
 using json = nlohmann::json;
 

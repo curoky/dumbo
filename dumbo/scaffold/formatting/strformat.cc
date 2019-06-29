@@ -18,9 +18,10 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>           // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <string>                     // for operator==, string, basic_string
 
-#include "absl/strings/str_format.h"
+#include "absl/strings/str_format.h"  // for StrFormat, FormatCountCapture
 
 TEST_CASE("[Strformat]: basic usage") {
   // Characters

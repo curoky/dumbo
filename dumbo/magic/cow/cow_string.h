@@ -18,8 +18,9 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <algorithm>
-#include <atomic>
+#include <stddef.h>   // for size_t
+#include <algorithm>  // for copy_n, fill_n
+#include <atomic>     // for atomic_long
 
 namespace cry {
 

@@ -15,8 +15,10 @@
  *
  */
 
-#include <catch2/catch.hpp>
-#include <icecream.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
+#include <icecream.hpp>      // for IC
+#include <string>            // for allocator, string
+#include <tuple>             // for tuple
 
 TEST_CASE("[Icecream]: basic usage") {
   auto a = int{7};

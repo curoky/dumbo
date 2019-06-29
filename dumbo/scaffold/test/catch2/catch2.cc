@@ -20,8 +20,6 @@
 
 #include <catch2/catch.hpp>  // for Approx, operator""_catch_sr, AssertionHandler, operator==, SourceLineInfo, StringRef, operator!=, MatchAllOf, REQUIRE
 
-#include <memory>  // for allocator
-
 TEST_CASE("[Catch2]: floating point comparisons") {
   REQUIRE(2 == Approx(2.000000000001));
 

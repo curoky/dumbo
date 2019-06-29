@@ -32,8 +32,13 @@
  *  3. 迭代器永不失效
  */
 
-#include <catch2/catch.hpp>
-#include <folly/AtomicHashMap.h>
+#include <catch2/catch.hpp>          // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <folly/AtomicHashMap.h>     // for AtomicHashMap<>::ahm_iterator, AtomicHashMap, AtomicHashMap<>::Config
+#include <folly/detail/Futex-inl.h>  // for futexWake, futexWait
+#include <folly/detail/Iterators.h>  // for IteratorFacade
+#include <sys/types.h>               // for ushort
+#include <cstdint>                   // for int32_t
+#include <map>                       // for pair
 
 TEST_CASE("[Atomichashmap]: simple test") {
   folly::AtomicHashMap<int32_t, ushort>::Config config;

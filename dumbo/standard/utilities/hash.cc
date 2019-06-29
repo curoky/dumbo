@@ -19,13 +19,11 @@
  */
 
 #include <boost/container_hash/extensions.hpp>  // for hash
-#include <boost/functional/hash.hpp>
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-
-#include <iosfwd>         // for size_t
-#include <string>         // for allocator, hash, string, u16string, u32string, wstring
-#include <unordered_map>  // for hash, unordered_map, pair
-#include <variant>        // for hash
+#include <catch2/catch.hpp>                     // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <iosfwd>                               // for size_t
+#include <string>                               // for allocator, hash, string, u16string, u32string, wstring
+#include <unordered_map>                        // for hash, unordered_map, pair
+#include <variant>                              // for hash
 
 TEST_CASE("[Hash]: basic types") {
   // basic types

@@ -34,13 +34,12 @@
  *        - ranges::sort_heap
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_...
-
-#include <algorithm>   // for shuffle
-#include <functional>  // for less
-#include <queue>       // for make_heap, pop_heap, push_heap
-#include <random>      // for random_device
-#include <vector>      // for vector
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE
+#include <algorithm>         // for __is_heap_fn, is_heap, __is_heap_until_fn, is_heap_until, __make_heap_fn, __pop_heap_fn, __push_heap_fn, make_heap, pop_...
+#include <functional>        // for identity, less
+#include <iterator>          // for distance
+#include <ranges>            // for borrowed_iterator_t
+#include <vector>            // for vector
 
 TEST_CASE("[Heap]: basic usage") {
   std::vector<int> heap = {1, 2, 3, 4, 5};

@@ -18,13 +18,13 @@
  * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>
-#include <nameof.hpp>
-
-#include <iostream>
-#include <sstream>
-#include <stdexcept>
-#include <string>
+#include <bits/exception.h>  // for exception
+#include <nameof.hpp>        // for cstring, operator<<, NAMEOF, nameof_type, nameof_enum, NAMEOF_TYPE, NAMEOF_TYPE_EXPR, nameof_enum_flag, nameof_full_type
+#include <iostream>          // for endl, cout, basic_ostream, ostream, basic_ostream::put, operator<<, basic_ostream::operator<<, basic_ostream<>::__ostrea...
+#include <stdexcept>         // for invalid_argument
+#include <string>            // for operator<<, char_traits, operator+, string
+#include <string_view>       // for operator<<, operator""sv, basic_string_view, string_view, string_view_literals
+#include <utility>           // for declval
 
 struct Base {
   virtual ~Base() = default;

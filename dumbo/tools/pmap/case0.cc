@@ -2,12 +2,12 @@
 // Ref: https://my.oschina.net/tz8101/blog/629739
 // Run: pmap -X $(pidof case0) > pmap.log
 
-#include <gflags/gflags.h>
-#include <pthread.h>
-
-#include <cassert>
-#include <chrono>
-#include <thread>
+#include <pthread.h>    // for pthread_t, pthread_attr_init, pthread_attr_setstacksize, pthread_attr_t, pthread_create, pthread_join
+#include <sys/types.h>  // for int8_t
+#include <cassert>      // for assert
+#include <chrono>       // for seconds
+#include <thread>       // for sleep_for
+#include <vector>       // for vector, size_t
 
 static const size_t KB = 1024;
 static const size_t MB = 1024 * KB;

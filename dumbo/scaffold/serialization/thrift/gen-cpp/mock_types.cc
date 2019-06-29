@@ -6,10 +6,13 @@
  */
 #include "mock_types.h"
 
-#include <algorithm>
-#include <ostream>
-
-#include <thrift/TToString.h>
+#include <bits/exception.h>                      // for exception
+#include <stddef.h>                              // for NULL
+#include <thrift/TToString.h>                    // for to_string
+#include <thrift/protocol/TProtocol.h>           // for TProtocol, T_STRING, T_I32, TType, TInputRecursionTracker, TOutputRecursionTracker, T_I16, T_LIST
+#include <thrift/protocol/TProtocolException.h>  // for TProtocolException, TProtocolException::INVALID_DATA
+#include <ostream>                               // for operator<<, basic_ostream, char_traits, basic_ostream::operator<<
+#include <utility>                               // for swap
 
 namespace idl { namespace thrift {
 
