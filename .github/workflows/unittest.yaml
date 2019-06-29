@@ -32,9 +32,9 @@ jobs:
           restore-keys: |
             bazel-cache-
 
-      - name: bazel clean
-        # if: ${{ github.event_name == 'schedule' }}
-        run: rm -rf ~/.cache/bazel
+      # - name: bazel clean
+      #   if: ${{ github.event_name == 'schedule' }}
+      #   run: rm -rf ~/.cache/bazel
 
       - name: bazel build
         run: bazel build //...
