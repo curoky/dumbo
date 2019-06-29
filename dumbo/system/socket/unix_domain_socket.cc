@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: unix_domain_socket.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for Section, SourceLineInfo, SectionInfo, AssertionHandler, StringRef, WHEN, operator""_catch_sr, GIVEN, REQUIRE, SCENARIO

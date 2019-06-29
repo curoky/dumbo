@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: rapidjson.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>                 // for AssertionHandler, operator""_catch_sr, StringRef, SourceLineInfo, REQUIRE, REQUIRE_FALSE, CAPTURE, Capturer
-#include <rapidjson/document.h>             // for GenericValue, Document, Value, GenericMemberIterator, SelectIfImpl<>::Apply<>::Type, GenericDocument, Gen...
-#include <rapidjson/rapidjson.h>            // for rapidjson
-#include <string>                           // for operator""s, operator==, basic_string, string
-#include <string_view>                      // for literals
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, StringRef, SourceLineInfo, REQUIRE, REQUIRE_FALSE, CAPTURE, Capturer
+#include <rapidjson/document.h>  // for GenericValue, Document, Value, GenericMemberIterator, SelectIfImpl<>::Apply<>::Type, GenericDocument, Gen...
+#include <rapidjson/rapidjson.h>  // for rapidjson
+
+#include <string>       // for operator""s, operator==, basic_string, string
+#include <string_view>  // for literals
 
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 

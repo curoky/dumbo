@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: packaged_task.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
-#include <cxxabi.h>          // for __forced_unwind
-#include <functional>        // for _Bind_helper<>::type, bind
-#include <future>            // for future, packaged_task
-#include <memory>            // for shared_ptr
-#include <thread>            // for thread
-#include <type_traits>       // for remove_reference<>::type
-#include <utility>           // for move
+#include <cxxabi.h>  // for __forced_unwind
+
+#include <functional>   // for _Bind_helper<>::type, bind
+#include <future>       // for future, packaged_task
+#include <memory>       // for shared_ptr
+#include <thread>       // for thread
+#include <type_traits>  // for remove_reference<>::type
+#include <utility>      // for move
 
 namespace {
 int add(int a, int b) { return a + b; }

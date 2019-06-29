@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: string.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <boost/algorithm/string/join.hpp>       // for join
 #include <boost/range/adaptor/argument_fwd.hpp>  // for forwarder
-#include <boost/range/adaptor/map.hpp>           // for select_first_range, select_second_mutable_range, operator|, map_keys, map_keys_forwarder, map_values
-#include <boost/range/adaptor/transformed.hpp>   // for transformed_range, operator|, transform_holder, transformed
-#include <boost/range/algorithm/copy.hpp>        // for copy
-#include <catch2/catch.hpp>                      // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <algorithm>                             // for copy, equal
-#include <iterator>                              // for back_insert_iterator, back_inserter
-#include <list>                                  // for list, operator==, operator!=
-#include <map>                                   // for map, operator==
-#include <string>                                // for basic_string, allocator, operator==, string, to_string
-#include <vector>                                // for vector, operator==
+#include <boost/range/adaptor/map.hpp>  // for select_first_range, select_second_mutable_range, operator|, map_keys, map_keys_forwarder, map_values
+#include <boost/range/adaptor/transformed.hpp>  // for transformed_range, operator|, transform_holder, transformed
+#include <boost/range/algorithm/copy.hpp>  // for copy
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+
+#include <algorithm>  // for copy, equal
+#include <iterator>   // for back_insert_iterator, back_inserter
+#include <list>       // for list, operator==, operator!=
+#include <map>        // for map, operator==
+#include <string>     // for basic_string, allocator, operator==, string, to_string
+#include <vector>     // for vector, operator==
 
 TEST_CASE("[Range]: copy") {
   std::map<int, int> foo = {{1, 2}, {2, 3}};

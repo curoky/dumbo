@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: poly.cc
- * ----------------------------------------------------------------------------
  */
 
 // This example is an adaptation of one found in Louis Dionne's dyno library.

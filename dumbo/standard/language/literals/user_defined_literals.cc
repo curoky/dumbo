@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: user_defined_literals.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, StringRef, SourceLineInfo, REQUIRE, TEST_...

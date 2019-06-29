@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: serialize.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for Section, SourceLineInfo, AssertionHandler, operator""_catch_sr, SECTION, SectionInfo, StringRef, REQUIRE, TEST_CASE

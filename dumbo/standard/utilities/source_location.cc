@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: source_location.cc
- * ----------------------------------------------------------------------------
  */
 
 #if __has_include(<source_location>)

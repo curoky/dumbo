@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: solution.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <glog/logging.h>  // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage

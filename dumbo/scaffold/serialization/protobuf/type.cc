@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: type.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>                                 // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <google/protobuf/any.pb.h>                         // for RepeatedField, RepeatedPtrField, Any
-#include <google/protobuf/stubs/common.h>                   // for string
-#include <cstdint>                                          // for int32_t, int64_t, uint32_t, uint64_t
-#include <string>                                           // for string
-#include <typeinfo>                                         // for type_info
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <google/protobuf/any.pb.h>        // for RepeatedField, RepeatedPtrField, Any
+#include <google/protobuf/stubs/common.h>  // for string
+
+#include <cstdint>   // for int32_t, int64_t, uint32_t, uint64_t
+#include <string>    // for string
+#include <typeinfo>  // for type_info
 
 #include "dumbo/scaffold/serialization/protobuf/mock.pb.h"  // for MockRequest, MockRequest_EnumType, MockRequest_InnerClass, Map
 

@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cjson.cc
- * ----------------------------------------------------------------------------
  */
 
 // https://cloud.tencent.com/developer/article/1055318

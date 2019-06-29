@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cow_string.h
- * ----------------------------------------------------------------------------
  */
 
-#include <stddef.h>   // for size_t
+#include <stddef.h>  // for size_t
+
 #include <algorithm>  // for copy_n, fill_n
 #include <atomic>     // for atomic_long
 

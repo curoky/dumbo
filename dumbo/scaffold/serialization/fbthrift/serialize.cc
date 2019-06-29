@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: serialize.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>       // for SourceLineInfo, StringRef, TEST_CASE
-#include <folly/File.h>           // for File
-#include <folly/ScopeGuard.h>     // for SCOPE_EXIT
-#include <utility>                // for forward
+#include <catch2/catch.hpp>    // for SourceLineInfo, StringRef, TEST_CASE
+#include <folly/File.h>        // for File
+#include <folly/ScopeGuard.h>  // for SCOPE_EXIT
+
+#include <utility>  // for forward
 
 #include "gen-cpp2/mock_types.h"  // for MockRequest
 

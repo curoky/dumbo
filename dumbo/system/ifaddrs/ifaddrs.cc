@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: ifaddrs.cc
- * ----------------------------------------------------------------------------
  */
 
 // http://man7.org/linux/man-pages/man3/getifaddrs.3.html#EXAMPLE

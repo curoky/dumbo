@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: thread_name.cc
- * ----------------------------------------------------------------------------
  */
 
 // Ref: <https://linux.die.net/man/3/pthread_getname_np>
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <pthread.h>         // for pthread_self, pthread_getname_np, pthread_setname_np
-#include <stdio.h>           // for snprintf
-#include <string>            // for allocator, basic_string, string, operator==
+#include <pthread.h>  // for pthread_self, pthread_getname_np, pthread_setname_np
+#include <stdio.h>    // for snprintf
+
+#include <string>  // for allocator, basic_string, string, operator==
 
 TEST_CASE("[ThreadName]: basic usage") {
   char buffer[16];

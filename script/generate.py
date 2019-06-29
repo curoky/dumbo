@@ -13,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# -----------------------------------------------------------------------------
-# @file: gen-code.py
-# -----------------------------------------------------------------------------
+
 
 import os
 import sys

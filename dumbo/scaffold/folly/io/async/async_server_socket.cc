@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: async_server_socket.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <bits/exception.h>  // for exception

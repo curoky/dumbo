@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: folly-fmt.cc
- * ----------------------------------------------------------------------------
  */
 
 // https://github.com/facebook/folly/blob/master/folly/docs/Format.md

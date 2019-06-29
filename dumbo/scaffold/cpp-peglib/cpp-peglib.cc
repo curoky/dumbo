@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cpp-peglib.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <assert.h>          // for assert
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 #include <peglib.h>          // for any_cast, SemanticValues, parser, Definition, peg
-#include <iostream>          // for std
-#include <string>            // for stoi
-#include <vector>            // for vector
+
+#include <iostream>  // for std
+#include <string>    // for stoi
+#include <vector>    // for vector
 
 using namespace peg;
 using namespace std;

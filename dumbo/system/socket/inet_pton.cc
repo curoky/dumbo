@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: inet_pton.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <arpa/inet.h>       // for inet_pton

@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: combine.cc
- * ----------------------------------------------------------------------------
  */
 
 /** Refference
@@ -25,8 +22,9 @@
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <list>              // for list
-#include <vector>            // for vector
+
+#include <list>    // for list
+#include <vector>  // for vector
 
 TEST_CASE("[Combine]: basic usage") {
   std::vector<int> v;

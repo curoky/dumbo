@@ -13,21 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: echo_service_handler.h
- * ----------------------------------------------------------------------------
  */
 
 #pragma once
 
-#include <gen-cpp2/mock_types.h>   // for MockRequest (ptr only), MockResponse
-#include <glog/logging.h>          // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
+#include <gen-cpp2/mock_types.h>  // for MockRequest (ptr only), MockResponse
+#include <glog/logging.h>         // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
 #include <thrift/lib/cpp2/server/ThriftServer.h>
 #include <thrift/lib/cpp2/transport/core/ThriftProcessor.h>
-#include <atomic>                  // for atomic, __atomic_base
-#include <memory>                  // for unique_ptr
-#include <ostream>                 // for basic_ostream::operator<<, operator<<, basic_ostream
-#include <utility>                 // for forward
+
+#include <atomic>   // for atomic, __atomic_base
+#include <memory>   // for unique_ptr
+#include <ostream>  // for basic_ostream::operator<<, operator<<, basic_ostream
+#include <utility>  // for forward
 
 #include "gen-cpp2/EchoService.h"  // for EchoServiceSvIf
 

@@ -13,18 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: typeinfo.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, AssertionHandler, operator""_catch_sr, TEST_CASE, REQUIRE
 #include <folly/Demangle.h>  // for demangle
 #include <folly/FBString.h>  // for basic_fbstring, operator==, operator<<, fbstring_core::category_type, fbstring
-#include <stdlib.h>          // for free
-#include <string>            // for string
-#include <string_view>       // for literals
-#include <typeinfo>          // for type_info
+#include <stdlib.h>  // for free
+
+#include <string>       // for string
+#include <string_view>  // for literals
+#include <typeinfo>     // for type_info
 
 // FIXME(@curoky): why not < ?
 #include "absl/debugging/internal/demangle.h"

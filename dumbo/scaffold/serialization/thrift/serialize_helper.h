@@ -13,21 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: serialize_helper.h
- * ----------------------------------------------------------------------------
  */
 
 #pragma once
-#include <stdint.h>                              // for uint8_t, uint32_t
-#include <thrift/protocol/TBinaryProtocol.h>     // for TBinaryProtocol
+#include <stdint.h>                           // for uint8_t, uint32_t
+#include <thrift/protocol/TBinaryProtocol.h>  // for TBinaryProtocol
 #include <thrift/protocol/TCompactProtocol.h>
 #include <thrift/protocol/TDebugProtocol.h>
 #include <thrift/protocol/THeaderProtocol.h>
 #include <thrift/protocol/TJSONProtocol.h>
 #include <thrift/transport/TBufferTransports.h>  // for TMemoryBuffer, TMemoryBuffer::COPY, TMemoryBuffer::MemoryPolicy
-#include <memory>                                // for shared_ptr
-#include <string>                                // for string
+
+#include <memory>  // for shared_ptr
+#include <string>  // for string
 
 namespace apache::thrift::protocol {
 class TDebugProtocol;

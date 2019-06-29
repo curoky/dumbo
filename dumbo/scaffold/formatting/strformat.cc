@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: strformat.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>           // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <string>                     // for operator==, string, basic_string
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+
+#include <string>  // for operator==, string, basic_string
 
 #include "absl/strings/str_format.h"  // for StrFormat, FormatCountCapture
 

@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: parallel-hashmap.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>          // for SourceLineInfo, StringRef, TEST_CASE
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 #include <parallel_hashmap/phmap.h>  // for flat_hash_map, BitMask, operator!=, raw_hash_set<>::iterator, raw_hash_map
-#include <iostream>                  // for operator<<, basic_ostream, cout, ostream
-#include <map>                       // for pair
-#include <string>                    // for string, operator<<, char_traits, basic_string
+
+#include <iostream>  // for operator<<, basic_ostream, cout, ostream
+#include <map>       // for pair
+#include <string>    // for string, operator<<, char_traits, basic_string
 
 TEST_CASE("[Parallel-hashmap]: basic usage") {
   // Create an unordered_map of three strings (that map to strings)

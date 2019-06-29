@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: delayed_destruction.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, SourceLineInfo, MessageBuilder, AssertionHandler, StringRef, INFO, REQUIRE

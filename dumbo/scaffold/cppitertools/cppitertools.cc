@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cppitertools.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>      // for SourceLineInfo, StringRef, TEST_CASE
 #include <cppitertools/zip.hpp>  // for Zipped, Zipped<>::Iterator, zip
-#include <iostream>              // for operator<<, basic_ostream, basic_ostream::operator<<, char_traits, cout, ostream, basic_ostream<>::__ostream_type
-#include <string>                // for string, basic_string, allocator, operator<<
-#include <vector>                // for vector
+
+#include <iostream>  // for operator<<, basic_ostream, basic_ostream::operator<<, char_traits, cout, ostream, basic_ostream<>::__ostream_type
+#include <string>    // for string, basic_string, allocator, operator<<
+#include <vector>    // for vector
 
 TEST_CASE("[Cppitertools]: zip") {
   std::vector<int> ivec{1, 4, 9, 16, 25, 36};

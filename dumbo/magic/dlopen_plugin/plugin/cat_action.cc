@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cat_action.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <memory>  // for allocator, make_shared, shared_ptr

@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: solution.cc
- * ----------------------------------------------------------------------------
  */
 
 // reference: http://www.cplusplus.com/reference/thread/thread/get_id/

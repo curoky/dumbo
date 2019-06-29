@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: file_util.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, StartsWith, REQUIRE, REQUIRE_THAT, TEST_CASE
 #include <folly/FBString.h>  // for fbstring
 #include <folly/FileUtil.h>  // for readFile
 #include <stdlib.h>          // for free
-#include <memory>            // for allocator
+
+#include <memory>  // for allocator
 
 TEST_CASE("[FileUtil]: read file") {
   folly::fbstring content;

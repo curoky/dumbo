@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: cow_string_test.cc
- * ----------------------------------------------------------------------------
  */
 
 #include "cow_string.h"
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <string>            // for operator==, string
+
+#include <string>  // for operator==, string
 
 TEST_CASE("[CowString]: basic usage") {
   cry::CowString str(5, 'a');

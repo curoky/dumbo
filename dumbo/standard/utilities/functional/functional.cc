@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: functional.cc
- * ----------------------------------------------------------------------------
  */
 
 // std::function 对象可以用 Callable type 对象构造

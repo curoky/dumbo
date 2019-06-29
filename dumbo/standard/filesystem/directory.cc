@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: directory.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE, REQUIRE_THROWS_AS

@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: comma_in_macro.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>

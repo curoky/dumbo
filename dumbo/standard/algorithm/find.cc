@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: find.cc
- * ----------------------------------------------------------------------------
  */
 
 /**
@@ -32,10 +29,11 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <algorithm>         // for __find_fn, find
-#include <functional>        // for identity
-#include <ranges>            // for borrowed_iterator_t
-#include <vector>            // for vector
+
+#include <algorithm>   // for __find_fn, find
+#include <functional>  // for identity
+#include <ranges>      // for borrowed_iterator_t
+#include <vector>      // for vector
 
 TEST_CASE("[Find]: FindTest") {
   std::vector<int> nub = {0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5};

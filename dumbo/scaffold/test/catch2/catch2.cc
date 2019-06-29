@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: catch2.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for Approx, operator""_catch_sr, AssertionHandler, operator==, SourceLineInfo, StringRef, operator!=, MatchAllOf, REQUIRE

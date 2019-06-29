@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: httplib.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 #include <httplib.h>         // for Request, Server, Response, Match
-#include <memory>            // for allocator
-#include <regex>             // for sub_match
+
+#include <memory>  // for allocator
+#include <regex>   // for sub_match
 
 TEST_CASE("[Httplib]: basic usage") {
   // using namespace httplib;

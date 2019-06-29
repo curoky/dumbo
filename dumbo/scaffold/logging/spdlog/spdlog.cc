@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: spdlog.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <bits/exception.h>  // for exception
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <spdlog/spdlog.h>   // for info, debug, critical, error, set_level, set_pattern, warn, SPDLOG_DEBUG, SPDLOG_TRACE
-#include <memory>            // for allocator
+#include <spdlog/spdlog.h>  // for info, debug, critical, error, set_level, set_pattern, warn, SPDLOG_DEBUG, SPDLOG_TRACE
+
+#include <memory>  // for allocator
 
 TEST_CASE("[Spdlog]: basic usage") {
   spdlog::info("Welcome to spdlog!");

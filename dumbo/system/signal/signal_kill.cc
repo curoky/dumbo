@@ -1,13 +1,31 @@
+/**
+ * Copyright 2020 curoky(cccuroky@gmail.com).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 // REF: https://www.cnblogs.com/clover-toeic/p/4126594.html
-#include <pthread.h>   // for pthread_self, pthread_t
-#include <signal.h>    // for signal, sigaddset, pthread_kill, pthread_sigmask, sigemptyset, sigwait, SIGINT, SIGTERM, sigset_t, SIGPIPE, SIG_IGN, SIG_SETMASK
-#include <stddef.h>    // for NULL
+#include <pthread.h>  // for pthread_self, pthread_t
+#include <signal.h>  // for signal, sigaddset, pthread_kill, pthread_sigmask, sigemptyset, sigwait, SIGINT, SIGTERM, sigset_t, SIGPIPE, SIG_IGN, SIG_SETMASK
+#include <stddef.h>  // for NULL
+
 #include <chrono>      // for seconds
 #include <functional>  // for ref
-#include <iostream>    // for operator<<, basic_ostream, char_traits, endl, basic_ostream<>::__ostream_type, basic_ostream::operator<<, cout, ostream
-#include <memory>      // for make_shared, allocator, __shared_ptr_access, shared_ptr
-#include <string>      // for operator<<, size_t, string
-#include <thread>      // for sleep_for, thread
+#include <iostream>  // for operator<<, basic_ostream, char_traits, endl, basic_ostream<>::__ostream_type, basic_ostream::operator<<, cout, ostream
+#include <memory>    // for make_shared, allocator, __shared_ptr_access, shared_ptr
+#include <string>    // for operator<<, size_t, string
+#include <thread>    // for sleep_for, thread
 
 #define INFO std::cout << "[" << pthread_self() << "]: " << __func__ << ": "
 
@@ -48,8 +66,8 @@ void __signal_thread_handler__(sigset_t& sigset) {
 
   size_t check_round = 0;
   while (true) {
-    INFO << "sleep_for 1s, message " << destructor_fast->message << ", check_round " << check_round++
-         << std::endl;
+    INFO << "sleep_for 1s, message " << destructor_fast->message << ", check_round "
+         << check_round++ << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
   INFO << "exit..." << std::endl;

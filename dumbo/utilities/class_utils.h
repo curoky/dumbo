@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: class_utils.h
- * ----------------------------------------------------------------------------
  */
 
 #pragma once
 #include <glog/logging.h>  // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
-#include <iostream>        // for operator<<
+
+#include <iostream>  // for operator<<
 #include <memory>
-#include <string>          // for size_t
+#include <string>   // for size_t
 #include <utility>  // for move
 
 namespace taro {

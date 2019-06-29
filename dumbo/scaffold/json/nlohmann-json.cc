@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: nlohmann-json.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <catch2/catch.hpp>                 // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE
-#include <nlohmann/json.hpp>                // for basic_json, operator==, basic_json<>::object_t, operator<<, json
-#include <initializer_list>                 // for initializer_list
-#include <stdexcept>                        // for out_of_range
-#include <vector>                           // for vector, allocator
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE
+#include <nlohmann/json.hpp>  // for basic_json, operator==, basic_json<>::object_t, operator<<, json
+
+#include <initializer_list>  // for initializer_list
+#include <stdexcept>         // for out_of_range
+#include <vector>            // for vector, allocator
 
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 

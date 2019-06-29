@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: main.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <benchmark/benchmark.h>  // for State, State::StateIterator, BENCHMARK, BENCHMARK_MAIN
-#include <string>                 // for string
+
+#include <string>  // for string
 
 static void BM_StringCreation(benchmark::State &state) {
   for (auto _ : state) std::string empty_string;

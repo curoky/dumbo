@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: crc32c.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <crc32c/crc32c.h>   // for Crc32c
-#include <stdint.h>          // for uint8_t
-#include <string>            // for string, allocator
-#include <string_view>       // for string_view
+#include <crc32c/crc32c.h>  // for Crc32c
+#include <stdint.h>         // for uint8_t
+
+#include <string>       // for string, allocator
+#include <string_view>  // for string_view
 
 TEST_CASE("[Crc32c]: simple test") {
   // Process a raw buffer.

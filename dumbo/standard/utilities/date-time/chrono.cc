@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: chrono.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE, AssertionHandler, operator""_catch_sr, REQUIRE

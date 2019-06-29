@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: catch2_bm.cc
- * ----------------------------------------------------------------------------
  */
 
 #define CATCH_CONFIG_MAIN

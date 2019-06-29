@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: predefined_macros_gcc.cc
- * ----------------------------------------------------------------------------
  */
 
 // https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html

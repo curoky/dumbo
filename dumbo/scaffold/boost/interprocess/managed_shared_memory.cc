@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: managed_shared_memory.cc
- * ----------------------------------------------------------------------------
  */
 
 #include <boost/interprocess/creation_tags.hpp>          // for create_only, open_only

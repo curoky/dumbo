@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * ----------------------------------------------------------------------------
- * @file: taskflow.cc
- * ----------------------------------------------------------------------------
  */
 
-#include <bits/exception.h>       // for exception
-#include <catch2/catch.hpp>       // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <bits/exception.h>  // for exception
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <taskflow/taskflow.hpp>  // for Task, Taskflow, Executor
-#include <future>                 // for future
-#include <iostream>               // for cout
-#include <memory>                 // for allocator
+
+#include <future>    // for future
+#include <iostream>  // for cout
+#include <memory>    // for allocator
 
 TEST_CASE("[Taskflow]: BaseTest") {
   tf::Executor executor;
