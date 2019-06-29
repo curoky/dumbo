@@ -51,6 +51,7 @@ iwyu_tool.py -j 190 -p $EXEC_ROOT $EXEC_ROOT/dumbo -- \
   -Xiwyu --mapping_file=$IWYU_MAP/system-linux.imp \
   -Xiwyu --mapping_file=$IWYU_MAP/nlohmann_json.imp \
   -Xiwyu --mapping_file=$IWYU_MAP/cpr.imp \
+  -Xiwyu --mapping_file=$IWYU_MAP/spdlog.imp \
   -Xiwyu --mapping_file=$IWYU_MAP/cpp-taskflow.imp \
   -Xiwyu --mapping_file=$IWYU_MAP/fmt.imp \
   -Xiwyu --mapping_file=$IWYU_MAP/jsoncpp.imp \
