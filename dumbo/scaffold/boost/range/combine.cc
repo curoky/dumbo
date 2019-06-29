@@ -25,7 +25,6 @@
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <algorithm>         // for max
 #include <list>              // for list
 #include <vector>            // for vector
 
