@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 #include <boost/lexical_cast.hpp>  // for basic_pointerbuf<>::pos_type, basic_pointerbuf<>::base_type, lexical_cast
