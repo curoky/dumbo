@@ -126,10 +126,10 @@ class EchoServiceAsyncProcessor : public ::apache::thrift::GeneratedAsyncProcess
 
  private:
   template <typename ProtocolIn_, typename ProtocolOut_>
-  void _processInThread_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
-                             apache::thrift::SerializedRequest&& serializedRequest,
-                             apache::thrift::Cpp2RequestContext* ctx, folly::EventBase* eb,
-                             apache::thrift::concurrency::ThreadManager* tm);
+  void setUpAndProcess_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
+                            apache::thrift::SerializedRequest&& serializedRequest,
+                            apache::thrift::Cpp2RequestContext* ctx, folly::EventBase* eb,
+                            apache::thrift::concurrency::ThreadManager* tm);
   template <typename ProtocolIn_, typename ProtocolOut_>
   void process_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
                     apache::thrift::SerializedRequest&& serializedRequest,
@@ -144,10 +144,10 @@ class EchoServiceAsyncProcessor : public ::apache::thrift::GeneratedAsyncProcess
                                  folly::exception_wrapper ew,
                                  apache::thrift::Cpp2RequestContext* reqCtx);
   template <typename ProtocolIn_, typename ProtocolOut_>
-  void _processInThread_oneway_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
-                                    apache::thrift::SerializedRequest&& serializedRequest,
-                                    apache::thrift::Cpp2RequestContext* ctx, folly::EventBase* eb,
-                                    apache::thrift::concurrency::ThreadManager* tm);
+  void setUpAndProcess_oneway_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
+                                   apache::thrift::SerializedRequest&& serializedRequest,
+                                   apache::thrift::Cpp2RequestContext* ctx, folly::EventBase* eb,
+                                   apache::thrift::concurrency::ThreadManager* tm);
   template <typename ProtocolIn_, typename ProtocolOut_>
   void process_oneway_echo(apache::thrift::ResponseChannelRequest::UniquePtr req,
                            apache::thrift::SerializedRequest&& serializedRequest,

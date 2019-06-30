@@ -299,8 +299,7 @@ _readField_var_double:
   }
 _readField_var_string:
   {
-    
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::read(*iprot, this->var_string);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::readWithContext(*iprot, this->var_string, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_string = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -315,8 +314,7 @@ _readField_var_string:
   }
 _readField_var_binary:
   {
-    
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::binary, ::std::string>::read(*iprot, this->var_binary);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::binary, ::std::string>::readWithContext(*iprot, this->var_binary, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_binary = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -331,8 +329,7 @@ _readField_var_binary:
   }
 _readField_var_string_type:
   {
-    
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string,  ::idl::thrift::cpp2::StrType>::read(*iprot, this->var_string_type);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string,  ::idl::thrift::cpp2::StrType>::readWithContext(*iprot, this->var_string_type, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_string_type = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -348,9 +345,8 @@ _readField_var_string_type:
 _readField_var_string_list:
   {
     _readState.beforeSubobject(iprot);
-    
     this->var_string_list = ::std::vector<::std::string>();
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::list<::apache::thrift::type_class::string>, ::std::vector<::std::string>>::read(*iprot, this->var_string_list);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::list<::apache::thrift::type_class::string>, ::std::vector<::std::string>>::readWithContext(*iprot, this->var_string_list, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_string_list = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -367,9 +363,8 @@ _readField_var_string_list:
 _readField_var_binary_list:
   {
     _readState.beforeSubobject(iprot);
-    
     this->var_binary_list = ::std::vector<::std::string>();
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::list<::apache::thrift::type_class::binary>, ::std::vector<::std::string>>::read(*iprot, this->var_binary_list);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::list<::apache::thrift::type_class::binary>, ::std::vector<::std::string>>::readWithContext(*iprot, this->var_binary_list, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_binary_list = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -386,9 +381,8 @@ _readField_var_binary_list:
 _readField_var_string_set:
   {
     _readState.beforeSubobject(iprot);
-    
     this->var_string_set = ::std::set<::std::string>();
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::string>, ::std::set<::std::string>>::read(*iprot, this->var_string_set);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::string>, ::std::set<::std::string>>::readWithContext(*iprot, this->var_string_set, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_string_set = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -405,9 +399,8 @@ _readField_var_string_set:
 _readField_var_string_binary_map:
   {
     _readState.beforeSubobject(iprot);
-    
     this->var_string_binary_map = ::std::map<::std::string, ::std::string>();
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::map<::apache::thrift::type_class::string, ::apache::thrift::type_class::binary>, ::std::map<::std::string, ::std::string>>::read(*iprot, this->var_string_binary_map);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::map<::apache::thrift::type_class::string, ::apache::thrift::type_class::binary>, ::std::map<::std::string, ::std::string>>::readWithContext(*iprot, this->var_string_binary_map, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_string_binary_map = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -439,9 +432,8 @@ _readField_var_enum:
 _readField_var_enum_set:
   {
     _readState.beforeSubobject(iprot);
-    
     this->var_enum_set = ::std::set< ::idl::thrift::cpp2::EnumType>();
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::enumeration>, ::std::set< ::idl::thrift::cpp2::EnumType>>::read(*iprot, this->var_enum_set);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::enumeration>, ::std::set< ::idl::thrift::cpp2::EnumType>>::readWithContext(*iprot, this->var_enum_set, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_enum_set = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -458,7 +450,7 @@ _readField_var_enum_set:
 _readField_var_union:
   {
     _readState.beforeSubobject(iprot);
-    ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::UnionType>::read(iprot, &this->var_union);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::variant,  ::idl::thrift::cpp2::UnionType>::readWithContext(*iprot, this->var_union, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.var_union = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -675,7 +667,7 @@ uint32_t MockRequest::serializedSize(Protocol_ const* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->serializedStructSize("MockRequest");
   xfer += prot_->serializedFieldSize("var_bool", apache::thrift::protocol::T_BOOL, 1);
-  xfer += prot_->serializedSizeBool(this->var_bool);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, bool>::serializedSize<false>(*prot_, this->var_bool);
   xfer += prot_->serializedFieldSize("var_byte", apache::thrift::protocol::T_BYTE, 2);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int8_t>::serializedSize<false>(*prot_, this->var_byte);
   xfer += prot_->serializedFieldSize("var_i16", apache::thrift::protocol::T_I16, 3);
@@ -685,7 +677,7 @@ uint32_t MockRequest::serializedSize(Protocol_ const* prot_) const {
   xfer += prot_->serializedFieldSize("var_i64", apache::thrift::protocol::T_I64, 5);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int64_t>::serializedSize<false>(*prot_, this->var_i64);
   xfer += prot_->serializedFieldSize("var_double", apache::thrift::protocol::T_DOUBLE, 6);
-  xfer += prot_->serializedSizeDouble(this->var_double);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::floating_point, double>::serializedSize<false>(*prot_, this->var_double);
   xfer += prot_->serializedFieldSize("var_string", apache::thrift::protocol::T_STRING, 7);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::serializedSize<false>(*prot_, this->var_string);
   xfer += prot_->serializedFieldSize("var_binary", apache::thrift::protocol::T_STRING, 8);
@@ -705,7 +697,7 @@ uint32_t MockRequest::serializedSize(Protocol_ const* prot_) const {
   xfer += prot_->serializedFieldSize("var_enum_set", apache::thrift::protocol::T_SET, 15);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::enumeration>, ::std::set< ::idl::thrift::cpp2::EnumType>>::serializedSize<false>(*prot_, this->var_enum_set);
   xfer += prot_->serializedFieldSize("var_union", apache::thrift::protocol::T_STRUCT, 16);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::UnionType>::serializedSize(prot_, &this->var_union);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::variant,  ::idl::thrift::cpp2::UnionType>::serializedSize<false>(*prot_, this->var_union);
   xfer += prot_->serializedFieldSize("var_required_i32", apache::thrift::protocol::T_I32, 17);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int32_t>::serializedSize<false>(*prot_, this->var_required_i32);
   if (this->var_optional_i32_ref().has_value()) {
@@ -721,7 +713,7 @@ uint32_t MockRequest::serializedSizeZC(Protocol_ const* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->serializedStructSize("MockRequest");
   xfer += prot_->serializedFieldSize("var_bool", apache::thrift::protocol::T_BOOL, 1);
-  xfer += prot_->serializedSizeBool(this->var_bool);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, bool>::serializedSize<false>(*prot_, this->var_bool);
   xfer += prot_->serializedFieldSize("var_byte", apache::thrift::protocol::T_BYTE, 2);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int8_t>::serializedSize<false>(*prot_, this->var_byte);
   xfer += prot_->serializedFieldSize("var_i16", apache::thrift::protocol::T_I16, 3);
@@ -731,7 +723,7 @@ uint32_t MockRequest::serializedSizeZC(Protocol_ const* prot_) const {
   xfer += prot_->serializedFieldSize("var_i64", apache::thrift::protocol::T_I64, 5);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int64_t>::serializedSize<false>(*prot_, this->var_i64);
   xfer += prot_->serializedFieldSize("var_double", apache::thrift::protocol::T_DOUBLE, 6);
-  xfer += prot_->serializedSizeDouble(this->var_double);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::floating_point, double>::serializedSize<false>(*prot_, this->var_double);
   xfer += prot_->serializedFieldSize("var_string", apache::thrift::protocol::T_STRING, 7);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::serializedSize<false>(*prot_, this->var_string);
   xfer += prot_->serializedFieldSize("var_binary", apache::thrift::protocol::T_STRING, 8);
@@ -751,7 +743,7 @@ uint32_t MockRequest::serializedSizeZC(Protocol_ const* prot_) const {
   xfer += prot_->serializedFieldSize("var_enum_set", apache::thrift::protocol::T_SET, 15);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::enumeration>, ::std::set< ::idl::thrift::cpp2::EnumType>>::serializedSize<false>(*prot_, this->var_enum_set);
   xfer += prot_->serializedFieldSize("var_union", apache::thrift::protocol::T_STRUCT, 16);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::UnionType>::serializedSizeZC(prot_, &this->var_union);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::variant,  ::idl::thrift::cpp2::UnionType>::serializedSize<true>(*prot_, this->var_union);
   xfer += prot_->serializedFieldSize("var_required_i32", apache::thrift::protocol::T_I32, 17);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int32_t>::serializedSize<false>(*prot_, this->var_required_i32);
   if (this->var_optional_i32_ref().has_value()) {
@@ -767,7 +759,7 @@ uint32_t MockRequest::write(Protocol_* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->writeStructBegin("MockRequest");
   xfer += prot_->writeFieldBegin("var_bool", apache::thrift::protocol::T_BOOL, 1);
-  xfer += prot_->writeBool(this->var_bool);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, bool>::write(*prot_, this->var_bool);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldBegin("var_byte", apache::thrift::protocol::T_BYTE, 2);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int8_t>::write(*prot_, this->var_byte);
@@ -782,7 +774,7 @@ uint32_t MockRequest::write(Protocol_* prot_) const {
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int64_t>::write(*prot_, this->var_i64);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldBegin("var_double", apache::thrift::protocol::T_DOUBLE, 6);
-  xfer += prot_->writeDouble(this->var_double);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::floating_point, double>::write(*prot_, this->var_double);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldBegin("var_string", apache::thrift::protocol::T_STRING, 7);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::write(*prot_, this->var_string);
@@ -812,7 +804,7 @@ uint32_t MockRequest::write(Protocol_* prot_) const {
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::set<::apache::thrift::type_class::enumeration>, ::std::set< ::idl::thrift::cpp2::EnumType>>::write(*prot_, this->var_enum_set);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldBegin("var_union", apache::thrift::protocol::T_STRUCT, 16);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::UnionType>::write(prot_, &this->var_union);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::variant,  ::idl::thrift::cpp2::UnionType>::write(*prot_, this->var_union);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldBegin("var_required_i32", apache::thrift::protocol::T_I32, 17);
   xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::integral, int32_t>::write(*prot_, this->var_required_i32);
@@ -858,7 +850,7 @@ void MockResponse::readNoXfer(Protocol_* iprot) {
 _readField_req:
   {
     _readState.beforeSubobject(iprot);
-    ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::MockRequest>::read(iprot, &this->req);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::structure,  ::idl::thrift::cpp2::MockRequest>::readWithContext(*iprot, this->req, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.req = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -912,7 +904,7 @@ uint32_t MockResponse::serializedSize(Protocol_ const* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->serializedStructSize("MockResponse");
   xfer += prot_->serializedFieldSize("req", apache::thrift::protocol::T_STRUCT, 1);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::MockRequest>::serializedSize(prot_, &this->req);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::structure,  ::idl::thrift::cpp2::MockRequest>::serializedSize<false>(*prot_, this->req);
   xfer += prot_->serializedSizeStop();
   return xfer;
 }
@@ -922,7 +914,7 @@ uint32_t MockResponse::serializedSizeZC(Protocol_ const* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->serializedStructSize("MockResponse");
   xfer += prot_->serializedFieldSize("req", apache::thrift::protocol::T_STRUCT, 1);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::MockRequest>::serializedSizeZC(prot_, &this->req);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::structure,  ::idl::thrift::cpp2::MockRequest>::serializedSize<true>(*prot_, this->req);
   xfer += prot_->serializedSizeStop();
   return xfer;
 }
@@ -932,7 +924,7 @@ uint32_t MockResponse::write(Protocol_* prot_) const {
   uint32_t xfer = 0;
   xfer += prot_->writeStructBegin("MockResponse");
   xfer += prot_->writeFieldBegin("req", apache::thrift::protocol::T_STRUCT, 1);
-  xfer += ::apache::thrift::Cpp2Ops<  ::idl::thrift::cpp2::MockRequest>::write(prot_, &this->req);
+  xfer += ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::structure,  ::idl::thrift::cpp2::MockRequest>::write(*prot_, this->req);
   xfer += prot_->writeFieldEnd();
   xfer += prot_->writeFieldStop();
   xfer += prot_->writeStructEnd();
@@ -969,8 +961,7 @@ void MockException::readNoXfer(Protocol_* iprot) {
   }
 _readField_msg:
   {
-    
-    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::read(*iprot, this->msg);
+    ::apache::thrift::detail::pm::protocol_methods< ::apache::thrift::type_class::string, ::std::string>::readWithContext(*iprot, this->msg, _readState);
     THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
     this->__isset.msg = true;
     THRIFT_IGNORE_ISSET_USE_WARNING_END

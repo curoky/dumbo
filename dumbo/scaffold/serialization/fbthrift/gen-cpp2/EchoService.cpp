@@ -101,11 +101,11 @@ EchoServiceAsyncProcessor::getBinaryProtocolProcessMap() {
 
 const EchoServiceAsyncProcessor::ProcessMap EchoServiceAsyncProcessor::binaryProcessMap_{
     {"echo",
-     &EchoServiceAsyncProcessor::_processInThread_echo<apache::thrift::BinaryProtocolReader,
-                                                       apache::thrift::BinaryProtocolWriter>},
+     &EchoServiceAsyncProcessor::setUpAndProcess_echo<apache::thrift::BinaryProtocolReader,
+                                                      apache::thrift::BinaryProtocolWriter>},
     {"oneway_echo",
-     &EchoServiceAsyncProcessor::_processInThread_oneway_echo<
-         apache::thrift::BinaryProtocolReader, apache::thrift::BinaryProtocolWriter>},
+     &EchoServiceAsyncProcessor::setUpAndProcess_oneway_echo<apache::thrift::BinaryProtocolReader,
+                                                             apache::thrift::BinaryProtocolWriter>},
 };
 
 const EchoServiceAsyncProcessor::ProcessMap&
@@ -115,10 +115,10 @@ EchoServiceAsyncProcessor::getCompactProtocolProcessMap() {
 
 const EchoServiceAsyncProcessor::ProcessMap EchoServiceAsyncProcessor::compactProcessMap_{
     {"echo",
-     &EchoServiceAsyncProcessor::_processInThread_echo<apache::thrift::CompactProtocolReader,
-                                                       apache::thrift::CompactProtocolWriter>},
+     &EchoServiceAsyncProcessor::setUpAndProcess_echo<apache::thrift::CompactProtocolReader,
+                                                      apache::thrift::CompactProtocolWriter>},
     {"oneway_echo",
-     &EchoServiceAsyncProcessor::_processInThread_oneway_echo<
+     &EchoServiceAsyncProcessor::setUpAndProcess_oneway_echo<
          apache::thrift::CompactProtocolReader, apache::thrift::CompactProtocolWriter>},
 };
 

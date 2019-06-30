@@ -302,15 +302,16 @@ void EchoServiceAsyncClient::sync_oneway_echo(apache::thrift::RpcOptions& rpcOpt
                                               const ::idl::thrift::cpp2::MockRequest& req) {
   apache::thrift::ClientReceiveState _returnState;
   apache::thrift::ClientSyncCallback<true> callback(&_returnState);
+  auto protocolId = apache::thrift::GeneratedAsyncClient::getChannel()->getProtocolId();
   auto evb = apache::thrift::GeneratedAsyncClient::getChannel()->getEventBase();
   auto ctx = std::make_shared<apache::thrift::detail::ac::ClientRequestContext>(
-      apache::thrift::GeneratedAsyncClient::getChannel()->getProtocolId(),
-      rpcOptions.releaseWriteHeaders(), this->handlers_, this->getServiceName(),
+      protocolId, rpcOptions.releaseWriteHeaders(), this->handlers_, this->getServiceName(),
       "EchoService.oneway_echo");
-  oneway_echoImpl(rpcOptions, std::move(ctx), apache::thrift::RequestClientCallback::Ptr(&callback),
-                  req);
+  auto wrappedCallback = apache::thrift::RequestClientCallback::Ptr(&callback);
+  oneway_echoImpl(rpcOptions, ctx, std::move(wrappedCallback), req);
   callback.waitUntilDone(evb);
 }
+
 folly::Future<folly::Unit> EchoServiceAsyncClient::future_oneway_echo(
     const ::idl::thrift::cpp2::MockRequest& req) {
   ::apache::thrift::RpcOptions rpcOptions;
@@ -340,6 +341,7 @@ folly::SemiFuture<folly::Unit> EchoServiceAsyncClient::semifuture_oneway_echo(
   oneway_echo(rpcOptions, std::move(callback), req);
   return std::move(callbackAndFuture.second);
 }
+
 void EchoServiceAsyncClient::oneway_echo(
     folly::Function<void(::apache::thrift::ClientReceiveState&&)> callback,
     const ::idl::thrift::cpp2::MockRequest& req) {

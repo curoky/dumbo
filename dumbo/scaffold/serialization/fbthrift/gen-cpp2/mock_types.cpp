@@ -61,23 +61,11 @@ namespace thrift {
 namespace detail {
 
 void TccStructTraits<::idl::thrift::cpp2::UnionType>::translateFieldName(
-    FOLLY_MAYBE_UNUSED folly::StringPiece _fname, FOLLY_MAYBE_UNUSED int16_t& fid,
-    FOLLY_MAYBE_UNUSED apache::thrift::protocol::TType& _ftype) noexcept {
-  using TType = apache::thrift::protocol::TType;
-  constexpr size_t _size = 2;
-  static constexpr folly::StringPiece _names[] = {
-      "var_i16",
-      "var_i32",
-  };
-  static constexpr int16_t _ids[] = {
-      1,
-      2,
-  };
-  static constexpr TType _types[] = {
-      TType::T_I16,
-      TType::T_I32,
-  };
-  static constexpr st::translate_field_name_table table{_size, _names, _ids, _types};
+    folly::StringPiece _fname, int16_t& fid, apache::thrift::protocol::TType& _ftype) noexcept {
+  using data = apache::thrift::TStructDataStorage<::idl::thrift::cpp2::UnionType>;
+  static const st::translate_field_name_table table{data::fields_size, data::fields_names.data(),
+                                                    data::fields_ids.data(),
+                                                    data::fields_types.data()};
   st::translate_field_name(_fname, fid, _ftype, table);
 }
 
@@ -185,45 +173,17 @@ template uint32_t UnionType::serializedSizeZC<>(apache::thrift::CompactProtocolW
 }  // namespace cpp2
 }  // namespace thrift
 }  // namespace idl
+
 namespace apache {
 namespace thrift {
 namespace detail {
 
 void TccStructTraits<::idl::thrift::cpp2::MockRequest>::translateFieldName(
-    FOLLY_MAYBE_UNUSED folly::StringPiece _fname, FOLLY_MAYBE_UNUSED int16_t& fid,
-    FOLLY_MAYBE_UNUSED apache::thrift::protocol::TType& _ftype) noexcept {
-  using TType = apache::thrift::protocol::TType;
-  constexpr size_t _size = 18;
-  static constexpr folly::StringPiece _names[] = {
-      "var_bool",
-      "var_byte",
-      "var_i16",
-      "var_i32",
-      "var_i64",
-      "var_double",
-      "var_string",
-      "var_binary",
-      "var_string_type",
-      "var_string_list",
-      "var_binary_list",
-      "var_string_set",
-      "var_string_binary_map",
-      "var_enum",
-      "var_enum_set",
-      "var_union",
-      "var_required_i32",
-      "var_optional_i32",
-  };
-  static constexpr int16_t _ids[] = {
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-  };
-  static constexpr TType _types[] = {
-      TType::T_BOOL,   TType::T_BYTE,   TType::T_I16,    TType::T_I32,    TType::T_I64,
-      TType::T_DOUBLE, TType::T_STRING, TType::T_STRING, TType::T_STRING, TType::T_LIST,
-      TType::T_LIST,   TType::T_SET,    TType::T_MAP,    TType::T_I32,    TType::T_SET,
-      TType::T_STRUCT, TType::T_I32,    TType::T_I32,
-  };
-  static constexpr st::translate_field_name_table table{_size, _names, _ids, _types};
+    folly::StringPiece _fname, int16_t& fid, apache::thrift::protocol::TType& _ftype) noexcept {
+  using data = apache::thrift::TStructDataStorage<::idl::thrift::cpp2::MockRequest>;
+  static const st::translate_field_name_table table{data::fields_size, data::fields_names.data(),
+                                                    data::fields_ids.data(),
+                                                    data::fields_types.data()};
   st::translate_field_name(_fname, fid, _ftype, table);
 }
 
@@ -318,7 +278,7 @@ void MockRequest::__clear() {
   var_string_binary_map.clear();
   var_enum = ::idl::thrift::cpp2::EnumType::ZERO;
   var_enum_set.clear();
-  ::apache::thrift::Cpp2Ops<::idl::thrift::cpp2::UnionType>::clear(&var_union);
+  var_union.__clear();
   var_required_i32 = 0;
   var_optional_i32 = 0;
   THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
@@ -537,25 +497,17 @@ static_assert(
 }  // namespace cpp2
 }  // namespace thrift
 }  // namespace idl
+
 namespace apache {
 namespace thrift {
 namespace detail {
 
 void TccStructTraits<::idl::thrift::cpp2::MockResponse>::translateFieldName(
-    FOLLY_MAYBE_UNUSED folly::StringPiece _fname, FOLLY_MAYBE_UNUSED int16_t& fid,
-    FOLLY_MAYBE_UNUSED apache::thrift::protocol::TType& _ftype) noexcept {
-  using TType = apache::thrift::protocol::TType;
-  constexpr size_t _size = 1;
-  static constexpr folly::StringPiece _names[] = {
-      "req",
-  };
-  static constexpr int16_t _ids[] = {
-      1,
-  };
-  static constexpr TType _types[] = {
-      TType::T_STRUCT,
-  };
-  static constexpr st::translate_field_name_table table{_size, _names, _ids, _types};
+    folly::StringPiece _fname, int16_t& fid, apache::thrift::protocol::TType& _ftype) noexcept {
+  using data = apache::thrift::TStructDataStorage<::idl::thrift::cpp2::MockResponse>;
+  static const st::translate_field_name_table table{data::fields_size, data::fields_names.data(),
+                                                    data::fields_ids.data(),
+                                                    data::fields_types.data()};
   st::translate_field_name(_fname, fid, _ftype, table);
 }
 
@@ -576,7 +528,7 @@ MockResponse::MockResponse(apache::thrift::FragileConstructor,
 THRIFT_IGNORE_ISSET_USE_WARNING_END
 void MockResponse::__clear() {
   // clear all fields
-  ::apache::thrift::Cpp2Ops<::idl::thrift::cpp2::MockRequest>::clear(&req);
+  req.__clear();
   THRIFT_IGNORE_ISSET_USE_WARNING_BEGIN
   __isset = {};
   THRIFT_IGNORE_ISSET_USE_WARNING_END
@@ -639,25 +591,17 @@ static_assert(
 }  // namespace cpp2
 }  // namespace thrift
 }  // namespace idl
+
 namespace apache {
 namespace thrift {
 namespace detail {
 
 void TccStructTraits<::idl::thrift::cpp2::MockException>::translateFieldName(
-    FOLLY_MAYBE_UNUSED folly::StringPiece _fname, FOLLY_MAYBE_UNUSED int16_t& fid,
-    FOLLY_MAYBE_UNUSED apache::thrift::protocol::TType& _ftype) noexcept {
-  using TType = apache::thrift::protocol::TType;
-  constexpr size_t _size = 1;
-  static constexpr folly::StringPiece _names[] = {
-      "msg",
-  };
-  static constexpr int16_t _ids[] = {
-      1,
-  };
-  static constexpr TType _types[] = {
-      TType::T_STRING,
-  };
-  static constexpr st::translate_field_name_table table{_size, _names, _ids, _types};
+    folly::StringPiece _fname, int16_t& fid, apache::thrift::protocol::TType& _ftype) noexcept {
+  using data = apache::thrift::TStructDataStorage<::idl::thrift::cpp2::MockException>;
+  static const st::translate_field_name_table table{data::fields_size, data::fields_names.data(),
+                                                    data::fields_ids.data(),
+                                                    data::fields_types.data()};
   st::translate_field_name(_fname, fid, _ftype, table);
 }
 

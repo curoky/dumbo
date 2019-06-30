@@ -55,5 +55,131 @@ struct TEnumDataStorage<::idl::thrift::cpp2::UnionType::Type> {
   }};
 };
 
+template <>
+struct TStructDataStorage<::idl::thrift::cpp2::UnionType> {
+ private:
+  using TType = apache::thrift::protocol::TType;
+
+ public:
+  static constexpr const std::size_t fields_size = 2;
+  static constexpr std::array<folly::StringPiece, fields_size> fields_names = {{
+      "var_i16",
+      "var_i32",
+  }};
+  static constexpr std::array<int16_t, fields_size> fields_ids = {{
+      1,
+      2,
+  }};
+  static constexpr std::array<TType, fields_size> fields_types = {{
+      TType::T_I16,
+      TType::T_I32,
+  }};
+};
+
+template <>
+struct TStructDataStorage<::idl::thrift::cpp2::MockRequest> {
+ private:
+  using TType = apache::thrift::protocol::TType;
+
+ public:
+  static constexpr const std::size_t fields_size = 18;
+  static constexpr std::array<folly::StringPiece, fields_size> fields_names = {{
+      "var_bool",
+      "var_byte",
+      "var_i16",
+      "var_i32",
+      "var_i64",
+      "var_double",
+      "var_string",
+      "var_binary",
+      "var_string_type",
+      "var_string_list",
+      "var_binary_list",
+      "var_string_set",
+      "var_string_binary_map",
+      "var_enum",
+      "var_enum_set",
+      "var_union",
+      "var_required_i32",
+      "var_optional_i32",
+  }};
+  static constexpr std::array<int16_t, fields_size> fields_ids = {{
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+  }};
+  static constexpr std::array<TType, fields_size> fields_types = {{
+      TType::T_BOOL,
+      TType::T_BYTE,
+      TType::T_I16,
+      TType::T_I32,
+      TType::T_I64,
+      TType::T_DOUBLE,
+      TType::T_STRING,
+      TType::T_STRING,
+      TType::T_STRING,
+      TType::T_LIST,
+      TType::T_LIST,
+      TType::T_SET,
+      TType::T_MAP,
+      TType::T_I32,
+      TType::T_SET,
+      TType::T_STRUCT,
+      TType::T_I32,
+      TType::T_I32,
+  }};
+};
+
+template <>
+struct TStructDataStorage<::idl::thrift::cpp2::MockResponse> {
+ private:
+  using TType = apache::thrift::protocol::TType;
+
+ public:
+  static constexpr const std::size_t fields_size = 1;
+  static constexpr std::array<folly::StringPiece, fields_size> fields_names = {{
+      "req",
+  }};
+  static constexpr std::array<int16_t, fields_size> fields_ids = {{
+      1,
+  }};
+  static constexpr std::array<TType, fields_size> fields_types = {{
+      TType::T_STRUCT,
+  }};
+};
+
+template <>
+struct TStructDataStorage<::idl::thrift::cpp2::MockException> {
+ private:
+  using TType = apache::thrift::protocol::TType;
+
+ public:
+  static constexpr const std::size_t fields_size = 1;
+  static constexpr std::array<folly::StringPiece, fields_size> fields_names = {{
+      "msg",
+  }};
+  static constexpr std::array<int16_t, fields_size> fields_ids = {{
+      1,
+  }};
+  static constexpr std::array<TType, fields_size> fields_types = {{
+      TType::T_STRING,
+  }};
+};
+
 }  // namespace thrift
 }  // namespace apache

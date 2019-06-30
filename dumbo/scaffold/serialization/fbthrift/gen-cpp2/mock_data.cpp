@@ -25,5 +25,45 @@ constexpr const std::array<::idl::thrift::cpp2::UnionType::Type, 2>
 constexpr const std::array<folly::StringPiece, 2>
     TEnumDataStorage<::idl::thrift::cpp2::UnionType::Type>::names;
 
+constexpr const std::size_t TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_size;
+constexpr const std::array<folly::StringPiece,
+                           TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_names;
+constexpr const std::array<int16_t, TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_ids;
+constexpr const std::array<apache::thrift::protocol::TType,
+                           TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::UnionType>::fields_types;
+constexpr const std::size_t TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_size;
+constexpr const std::array<folly::StringPiece,
+                           TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_names;
+constexpr const std::array<int16_t,
+                           TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_ids;
+constexpr const std::array<apache::thrift::protocol::TType,
+                           TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockRequest>::fields_types;
+constexpr const std::size_t TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_size;
+constexpr const std::array<folly::StringPiece,
+                           TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_names;
+constexpr const std::array<int16_t,
+                           TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_ids;
+constexpr const std::array<apache::thrift::protocol::TType,
+                           TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockResponse>::fields_types;
+constexpr const std::size_t TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_size;
+constexpr const std::array<folly::StringPiece,
+                           TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_names;
+constexpr const std::array<int16_t,
+                           TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_ids;
+constexpr const std::array<apache::thrift::protocol::TType,
+                           TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_size>
+    TStructDataStorage<::idl::thrift::cpp2::MockException>::fields_types;
+
 }  // namespace thrift
 }  // namespace apache

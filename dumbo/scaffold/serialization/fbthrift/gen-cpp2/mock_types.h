@@ -205,9 +205,6 @@ using _EnumType_EnumMapFactory = apache::thrift::detail::TEnumMapFactory<EnumTyp
 }  // namespace idl
 
 // END declare_enums
-// BEGIN struct_indirection
-
-// END struct_indirection
 // BEGIN forward_declare
 namespace idl {
 namespace thrift {
@@ -242,6 +239,7 @@ class UnionType final {
   //  used by a static_assert in the corresponding source
   static constexpr bool __fbthrift_cpp2_gen_json = false;
   static constexpr bool __fbthrift_cpp2_gen_nimble = false;
+  static constexpr bool __fbthrift_cpp2_gen_has_thrift_uri = false;
 
  public:
   using __fbthrift_cpp2_type = UnionType;
@@ -426,7 +424,7 @@ class UnionType final {
 
   template <typename..., typename T = int16_t>
   FOLLY_ERASE ::apache::thrift::union_field_ref<const T&&> var_i16_ref() const&& {
-    return {value_.var_i16, type_, var_i16, this,
+    return {std::move(value_.var_i16), type_, var_i16, this,
             ::apache::thrift::detail::union_field_ref_owner_vtable_for<decltype(*this)>};
   }
 
@@ -438,7 +436,7 @@ class UnionType final {
 
   template <typename..., typename T = int16_t>
   FOLLY_ERASE ::apache::thrift::union_field_ref<T&&> var_i16_ref() && {
-    return {value_.var_i16, type_, var_i16, this,
+    return {std::move(value_.var_i16), type_, var_i16, this,
             ::apache::thrift::detail::union_field_ref_owner_vtable_for<decltype(*this)>};
   }
   template <typename..., typename T = int32_t>
@@ -449,7 +447,7 @@ class UnionType final {
 
   template <typename..., typename T = int32_t>
   FOLLY_ERASE ::apache::thrift::union_field_ref<const T&&> var_i32_ref() const&& {
-    return {value_.var_i32, type_, var_i32, this,
+    return {std::move(value_.var_i32), type_, var_i32, this,
             ::apache::thrift::detail::union_field_ref_owner_vtable_for<decltype(*this)>};
   }
 
@@ -461,7 +459,7 @@ class UnionType final {
 
   template <typename..., typename T = int32_t>
   FOLLY_ERASE ::apache::thrift::union_field_ref<T&&> var_i32_ref() && {
-    return {value_.var_i32, type_, var_i32, this,
+    return {std::move(value_.var_i32), type_, var_i32, this,
             ::apache::thrift::detail::union_field_ref_owner_vtable_for<decltype(*this)>};
   }
   Type getType() const { return static_cast<Type>(type_); }
@@ -512,6 +510,7 @@ class MockRequest final {
   //  used by a static_assert in the corresponding source
   static constexpr bool __fbthrift_cpp2_gen_json = false;
   static constexpr bool __fbthrift_cpp2_gen_nimble = false;
+  static constexpr bool __fbthrift_cpp2_gen_has_thrift_uri = false;
 
  public:
   using __fbthrift_cpp2_type = MockRequest;
@@ -987,22 +986,22 @@ class MockRequest final {
   }
   THRIFT_IGNORE_ISSET_USE_WARNING_END
   template <typename..., typename T = int32_t>
-  FOLLY_ERASE auto var_required_i32_ref() const& {
+  FOLLY_ERASE ::apache::thrift::required_field_ref<const T&> var_required_i32_ref() const& {
     return ::apache::thrift::required_field_ref<const T&>{this->var_required_i32};
   }
 
   template <typename..., typename T = int32_t>
-  FOLLY_ERASE auto var_required_i32_ref() const&& {
+  FOLLY_ERASE ::apache::thrift::required_field_ref<const T&&> var_required_i32_ref() const&& {
     return ::apache::thrift::required_field_ref<const T&&>{std::move(this->var_required_i32)};
   }
 
   template <typename..., typename T = int32_t>
-  FOLLY_ERASE auto var_required_i32_ref() & {
+  FOLLY_ERASE ::apache::thrift::required_field_ref<T&> var_required_i32_ref() & {
     return ::apache::thrift::required_field_ref<T&>{this->var_required_i32};
   }
 
   template <typename..., typename T = int32_t>
-  FOLLY_ERASE auto var_required_i32_ref() && {
+  FOLLY_ERASE ::apache::thrift::required_field_ref<T&&> var_required_i32_ref() && {
     return ::apache::thrift::required_field_ref<T&&>{std::move(this->var_required_i32)};
   }
 
@@ -1274,6 +1273,7 @@ class MockResponse final {
   //  used by a static_assert in the corresponding source
   static constexpr bool __fbthrift_cpp2_gen_json = false;
   static constexpr bool __fbthrift_cpp2_gen_nimble = false;
+  static constexpr bool __fbthrift_cpp2_gen_has_thrift_uri = false;
 
  public:
   using __fbthrift_cpp2_type = MockResponse;
@@ -1386,6 +1386,7 @@ class MockException final : public apache::thrift::TException {
   //  used by a static_assert in the corresponding source
   static constexpr bool __fbthrift_cpp2_gen_json = false;
   static constexpr bool __fbthrift_cpp2_gen_nimble = false;
+  static constexpr bool __fbthrift_cpp2_gen_has_thrift_uri = false;
 
  public:
   using __fbthrift_cpp2_type = MockException;
