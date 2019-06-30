@@ -113,6 +113,44 @@ jobs:
       - name: show diff
         run: git --no-pager diff
 
+  # https://github.com/cybrown-zoox/bazel-clang-analyzer/blob/master/README.md
+  clang_analyzer:
+    name: check with clang analyzer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install clang analyzer
+        run: |
+          brew tap curoky/tap
+          brew install llvm bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
+          pip install scan-build
+      - name: check version
+        run: which scan-build
+      - name: run clang analyzer
+        run: bash script/analyzer/analyzer.sh
+
+  protolint:
+    name: check with protolint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install protolint
+        run: |
+          brew tap yoheimuta/protolint
+          brew install protolint
+      - name: run protolint
+        run: protolint lint .
+
+  markdownlint:
+    name: check with markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install markdownlint
+        run: brew install markdownlint-cli -s
+      - name: run markdownlint
+        run: markdownlint '**/*.md'
+
   # - name: publish report
   #   uses: mikeal/publish-to-github-action@master
   #   env:
