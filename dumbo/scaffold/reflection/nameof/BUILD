@@ -5,7 +5,7 @@ cc_test(
     testonly = False,
     srcs = glob(["*.cc"]),
     copts = [
-        "-std=c++17",
+        "-std=c++2a",
     ],
     deps = [
         "//dumbo/utilities:catch2_main",
