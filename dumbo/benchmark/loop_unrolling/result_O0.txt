@@ -1,0 +1,48 @@
+2020-08-24T10:45:13+08:00
+Running /home/curoky/.cache/bazel/_bazel_curoky/277b50a8b5076ce8133b833fc2b0e713/execroot/com_github_curoky_benchmark/bazel-out/k8-fastbuild/bin/src/loop_unrolling/loop_unrolling_O0
+Run on (32 X 2500.01 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 33792 KiB (x1)
+Load Average: 1.86, 1.68, 1.64
+***WARNING*** Library was built as DEBUG. Timings may be affected.
+----------------------------------------------------------------------
+Benchmark                            Time             CPU   Iterations
+----------------------------------------------------------------------
+BM_memset_simp/4                  16.8 ns         16.7 ns     41658199
+BM_memset_simp/48                  150 ns          150 ns      4660298
+BM_memset_simp/2304               7803 ns         7802 ns        89860
+BM_memset_simp/110592           372976 ns       372964 ns         1873
+BM_memset_simp/5308416        17934272 ns     17933738 ns           38
+BM_memset_simp/254803968    1003338814 ns   1002781366 ns            1
+BM_memset_simp/1073741824   4227151632 ns   4224121453 ns            1
+BM_memset_unroll/4                17.5 ns         17.5 ns     39938069
+BM_memset_unroll/48               40.2 ns         40.1 ns     17422606
+BM_memset_unroll/2304             1487 ns         1485 ns       470206
+BM_memset_unroll/110592          70721 ns        70638 ns         9892
+BM_memset_unroll/5308416       3469683 ns      3469354 ns          199
+BM_memset_unroll/254803968   224453767 ns    224231968 ns            3
+BM_memset_unroll/1073741824 1303608894 ns   1301374342 ns            1
+BM_fill/4                         18.0 ns         18.0 ns     38691704
+BM_fill/48                        18.0 ns         18.0 ns     39062200
+BM_fill/2304                      55.7 ns         55.6 ns     12696755
+BM_fill/110592                    2295 ns         2291 ns       261833
+BM_fill/5308416                 204933 ns       204924 ns         3313
+BM_fill/254803968             65736691 ns     65733723 ns            9
+BM_fill/1073741824           701462507 ns    700262465 ns            1
+BM_memset/4                       8.88 ns         8.88 ns     77519285
+BM_memset/48                      8.39 ns         8.39 ns     83552304
+BM_memset/2304                    42.6 ns         42.6 ns     16434235
+BM_memset/110592                  2192 ns         2192 ns       265079
+BM_memset/5308416               207889 ns       207714 ns         3390
+BM_memset/254803968           66146957 ns     66144152 ns            9
+BM_memset/1073741824         700138330 ns    699564906 ns            1
+BM_glibc_memset/4                 17.3 ns         17.3 ns     40411829
+BM_glibc_memset/48                28.4 ns         28.3 ns     24739349
+BM_glibc_memset/2304               205 ns          204 ns      3430151
+BM_glibc_memset/110592           10259 ns        10251 ns        68534
+BM_glibc_memset/5308416         535866 ns       535849 ns         1307
+BM_glibc_memset/254803968     60986890 ns     60910094 ns            9
+BM_glibc_memset/1073741824   699016094 ns    698437818 ns            1
