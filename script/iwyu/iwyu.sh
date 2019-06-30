@@ -12,21 +12,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-# -----------------------------------------------------------------------------
-# @file: iwyu.sh
-# -----------------------------------------------------------------------------
 
 set -xeuo pipefail
 
 IWYU_MAP=$(cd "$(dirname "$0")" && pwd)/mappings
 EXEC_ROOT=$(bazel info execution_root)
+BAZEL_BIN=$(bazel info bazel-bin)
+CMDS_PATH=$BAZEL_BIN/script/iwyu/compile_commands.json
+
+echo "EXEC_ROOT: $EXEC_ROOT"
+echo "BAZEL_BIN: $BAZEL_BIN"
+echo "CMDS_PATH: $CMDS_PATH"
 
 # gen compile_commands.json
 bazel build //script/iwyu:example_compdb --check_visibility=false
 
 # patch compile_commands.json
-CMDS_PATH=$(bazel info bazel-bin)/script/iwyu/compile_commands.json
 sed -i 's/-fno-canonical-system-headers//g' $CMDS_PATH
 sed -i 's/-Wunused-but-set-parameter/-Wunused-parameter/g' $CMDS_PATH
 sed -i 's/-Wno-free-nonheap-object/-Wno-sequence-point/g' $CMDS_PATH

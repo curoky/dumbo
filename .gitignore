@@ -5,5 +5,7 @@
 bazel-*
 compile_commands.json
 
+clang-analysis
+
 # binary
 *.out

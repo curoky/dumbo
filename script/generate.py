@@ -23,7 +23,7 @@ WORKSPACE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file_
 
 print(f"WORKSPACE: {WORKSPACE}")
 
-FBTHRIFT_BIN_PATH = '/home/linuxbrew/.linuxbrew/opt/fbthrift/bin/thrift1'
+FBTHRIFT_BIN_PATH = '/home/linuxbrew/.linuxbrew/opt/fbthrift@2020.12.14/bin/thrift1'
 THRIFT_BIN_PATH = '/home/linuxbrew/.linuxbrew/opt/thrift@0.13.0/bin/thrift'
 
 
