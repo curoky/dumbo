@@ -17,9 +17,9 @@
 
 #pragma once
 
-#include <string>
+#include <string_view>
 
-static const std::string json_data = R"~(
+static const std::string_view json_data = R"~(
 {
     "key_int": 1,
     "key_str": "value2",

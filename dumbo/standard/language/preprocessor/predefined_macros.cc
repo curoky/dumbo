@@ -21,7 +21,7 @@
 #include <string>       // for basic_string, operator""s, operator==, allocator
 #include <string_view>  // for literals
 
-using namespace std::literals;
+using namespace std::literals;  // NOLINT
 
 TEST_CASE("[PredefinedMacros]: simple test") {
   REQUIRE(__cplusplus == 201709L);

@@ -51,7 +51,7 @@ std::string ThriftToString(const ThriftStruct& ts) {
   uint8_t* buf;
   uint32_t size;
   buffer->getBuffer(&buf, &size);
-  return std::string((char*)buf, (unsigned int)size);
+  return std::string((char*)buf, (unsigned int)size);  // NOLINT
 }
 
 template <typename ThriftStruct, typename Protocol>

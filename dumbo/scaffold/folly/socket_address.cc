@@ -87,7 +87,7 @@ TEST_CASE("[SocketAddress]: get host/ip") {
   }
   {
     folly::SocketAddress addr("::1", 1100);
-    // TODO: it's "localhost" on ubuntu
+    // TODO(@curoky): it's "localhost" on ubuntu
     // REQUIRE(addr.getHostStr() == "::1");
     REQUIRE(addr.getPort() == 1100);
   }

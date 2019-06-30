@@ -25,9 +25,9 @@ std::uint64_t Fibonacci(std::uint64_t number) {
 }
 
 TEST_CASE("Fibonacci") {
-  CHECK(Fibonacci(0) == 1);
+  REQUIRE(Fibonacci(0) == 1);
   // some more asserts..
-  CHECK(Fibonacci(5) == 8);
+  REQUIRE(Fibonacci(5) == 8);
   // some more asserts..
 
   // now let's benchmark:

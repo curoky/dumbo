@@ -17,18 +17,14 @@
 
 #include <assert.h>          // for assert
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <peglib.h>          // for any_cast, SemanticValues, parser, Definition, peg
+#include <peglib.h>          // for any_cast, SemanticValues, parser, Definition
 
-#include <iostream>  // for std
-#include <string>    // for stoi
-#include <vector>    // for vector
-
-using namespace peg;
-using namespace std;
+#include <string>  // for stoi
+#include <vector>  // for vector
 
 TEST_CASE("[Cpp-peglib]: basic usage") {
   // (2) Make a parser
-  parser parser(R"(
+  peg::parser parser(R"(
         # Grammar for Calculator...
         Additive    <- Multitive '+' Additive / Multitive
         Multitive   <- Primary '*' Multitive / Primary
@@ -40,25 +36,27 @@ TEST_CASE("[Cpp-peglib]: basic usage") {
   assert(static_cast<bool>(parser) == true);
 
   // (3) Setup actions
-  parser["Additive"] = [](const SemanticValues& sv) {
+  parser["Additive"] = [](const peg::SemanticValues& sv) {
     switch (sv.choice()) {
       case 0:  // "Multitive '+' Additive"
-        return any_cast<int>(sv[0]) + any_cast<int>(sv[1]);
+        return peg::any_cast<int>(sv[0]) + peg::any_cast<int>(sv[1]);
       default:  // "Multitive"
-        return any_cast<int>(sv[0]);
+        return peg::any_cast<int>(sv[0]);
     }
   };
 
-  parser["Multitive"] = [](const SemanticValues& sv) {
+  parser["Multitive"] = [](const peg::SemanticValues& sv) {
     switch (sv.choice()) {
       case 0:  // "Primary '*' Multitive"
-        return any_cast<int>(sv[0]) * any_cast<int>(sv[1]);
+        return peg::any_cast<int>(sv[0]) * peg::any_cast<int>(sv[1]);
       default:  // "Primary"
-        return any_cast<int>(sv[0]);
+        return peg::any_cast<int>(sv[0]);
     }
   };
 
-  parser["Number"] = [](const SemanticValues& sv) { return stoi(sv.token(), nullptr, 10); };
+  parser["Number"] = [](const peg::SemanticValues& sv) {
+    return std::stoi(sv.token(), nullptr, 10);
+  };
 
   // (4) Parse
   parser.enable_packrat_parsing();  // Enable packrat parsing.

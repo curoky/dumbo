@@ -15,6 +15,7 @@
  *
  */
 
+#pragma once
 #include <stddef.h>  // for size_t
 
 #include <algorithm>  // for copy_n, fill_n
@@ -76,7 +77,7 @@ class CowString {
 
   const char& operator[](size_t pos) const noexcept { return *(begin() + pos); }
 
-  long use_count() const noexcept {
+  long use_count() const noexcept {  // NOLINT
     if (counter_ != nullptr) {
       return counter_->load();
     } else {

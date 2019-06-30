@@ -41,7 +41,7 @@ struct Add {
 };
 
 TEST_CASE("[Functional]: base test") {
-  using namespace std::placeholders;
+  using namespace std::placeholders;  // NOLINT
   std::function<int(int, int)> f1 = [](int a, int b) { return a + b; };
   std::function<int(int, int)> f2 = std::bind(add, _1, _2);
   std::function<int(int, int)> f3 = Add();

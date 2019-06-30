@@ -30,7 +30,7 @@
 #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
 
 typedef std::chrono::duration<int, std::ratio<60 * 60 * 24>> days_type;
-using namespace std::string_literals;
+using namespace std::string_literals;  // NOLINT
 
 TEST_CASE("[Chrono]: calculate") {
   std::chrono::minutes t1(10);
@@ -65,6 +65,13 @@ TEST_CASE("[Chrono]: time_point calculate") {
   ss2 << std::put_time(std::localtime(&next), "%F %T");
   // Next day, the time was
   // REQUIRE(ss2.str() == "2020-01-28 20:52:29"s);
+}
+
+TEST_CASE("[Chrono]: format") {
+  // 1607422087564370033
+  // CHECK(std::chrono::system_clock::now().time_since_epoch().count() == 111);
+  // 1607422087
+  // CHECK(time(nullptr) == 111);
 }
 
 TEST_CASE("[Chrono]: clock") {

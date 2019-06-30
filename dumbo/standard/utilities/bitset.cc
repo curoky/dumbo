@@ -15,23 +15,21 @@
  *
  */
 
-#pragma once
-#include <cstdio>
-#include <string>
+#include <catch2/catch.hpp>
 
-struct Constructor {
-  explicit Constructor(const std::string& name) : name(name) {
-    printf("[Constructor]: %s\n", name.c_str());
-  }
-  ~Constructor() { printf("[~Constructor]: %s\n", name.c_str()); }
-  std::string name;
-};
+#include <bitset>
 
-extern Constructor c1;
-extern Constructor c2;
-extern Constructor c3;
+TEST_CASE("[Bitset]: basic usage") {
+  std::bitset<8> b;
+  // b.test(11);
 
-static Constructor c10(std::string("global static in") + __FILE__);
+  // REQUIRE(b == "11111111");
+  // std::cout << b << '\n';
+  // std::cout << b.set() << '\n';
+  // std::cout << b.reset() << '\n';
 
-void global_init_101() __attribute__((constructor(101)));
-void global_init_102() __attribute__((constructor(102)));
+  // for (size_t i = 1; i < b.size(); i += 2) {
+  //   b.set(i);
+  // }
+  // std::cout << b << '\n';
+}

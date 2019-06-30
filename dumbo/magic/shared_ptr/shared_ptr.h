@@ -23,7 +23,7 @@ namespace cry {
 template <typename T>
 class SharedPtr {
  public:
-  SharedPtr(T *ptr) : ptr_(ptr) { counter_ = new std::atomic_long(1); }
+  explicit SharedPtr(T *ptr) : ptr_(ptr) { counter_ = new std::atomic_long(1); }
 
   SharedPtr(SharedPtr<T> &other) noexcept { *this = other; }
   SharedPtr<T> &operator=(SharedPtr<T> &other) noexcept {
@@ -46,7 +46,7 @@ class SharedPtr {
     }
   }
 
-  long use_count() const noexcept {
+  long use_count() const noexcept {  // NOLINT
     if (counter_ != nullptr) {
       return counter_->load();
     } else {

@@ -27,7 +27,7 @@ void *stack_top() {
   asm("movq %%rbp, %0" : "=r"(top));  // set top to %rbp - replace with %ebp for 32-bit x86
   // if top is higher in memory than the variable, then still part of the stack.
   while ((uintptr_t)*top > (uintptr_t)&top) {
-    top = (void **)*top;
+    top = (void **)*top;  // NOLINT
   }
   return top;
 }

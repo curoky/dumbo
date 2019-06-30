@@ -34,7 +34,7 @@ void __register_signal__();
 
 class Destructor {
  public:
-  Destructor(size_t sleep_time) : sleep_time(sleep_time) {
+  explicit Destructor(size_t sleep_time) : sleep_time(sleep_time) {
     std::cout << "[Destructor]: construct!" << std::endl;
   }
 

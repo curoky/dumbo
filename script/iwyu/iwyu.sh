@@ -61,4 +61,4 @@ iwyu_tool.py -j 190 -p $EXEC_ROOT $EXEC_ROOT/dumbo -- \
   -Xiwyu --max_line_length=160 \
   -Xiwyu --cxx17ns >iwyu.out
 
-fix_includes.py --comments -b --reorder -p $EXEC_ROOT <iwyu.out
+fix_includes.py --comments -b --reorder -p $EXEC_ROOT --ignore_re=--ignore_re="(usr/include)｜(gen-cpp)|(gen-cpp2)" <iwyu.out

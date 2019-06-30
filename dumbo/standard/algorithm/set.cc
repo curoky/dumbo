@@ -74,8 +74,8 @@ TEST_CASE("[Set]: set_intersection") {
 TEST_CASE("[Set]: set_symmetric_difference") {
   // (A ∪ B) - (A ∩ B)
   // clang-format off
-  std::vector<int> v1{1,2,3,4,5,6,7,8     };
-  std::vector<int> v2{        5,  7,  9,10};
+  std::vector<int> v1{1,2,3,4,5,6,7,8     }; // NOLINT
+  std::vector<int> v2{        5,  7,  9,10}; // NOLINT
   // clang-format on
 
   std::vector<int> v_symDifference;

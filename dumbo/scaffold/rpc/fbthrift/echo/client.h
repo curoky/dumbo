@@ -15,6 +15,5 @@
  *
  */
 
-// #include "example"
-
+#pragma once
 #include "gen-cpp2/EchoService.h"

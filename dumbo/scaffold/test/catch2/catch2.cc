@@ -20,7 +20,7 @@
 TEST_CASE("[Catch2]: floating point comparisons") {
   REQUIRE(2 == Approx(2.000000000001));
 
-  using namespace Catch::literals;
+  using namespace Catch::literals;  // NOLINT
   REQUIRE(2 == 2.000000000001_a);
 
   SECTION("epsilon") {

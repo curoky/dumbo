@@ -21,7 +21,7 @@
 #include <experimental/source_location>
 
 namespace std {
-using namespace experimental;
+using namespace experimental;  // NOLINT
 }
 #endif
 

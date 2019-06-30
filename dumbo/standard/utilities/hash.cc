@@ -28,15 +28,15 @@ TEST_CASE("[Hash]: basic types") {
   REQUIRE(std::hash<bool>()(true) == 1);
   REQUIRE(std::hash<char>()('1') == 49);
   REQUIRE(std::hash<int>()(1) == 1);
-  REQUIRE(std::hash<long>()(1) == 1);
-  REQUIRE(std::hash<long int>()(1) == 1);
-  REQUIRE(std::hash<long long>()(1) == 1);
-  REQUIRE(std::hash<long long int>()(1) == 1);
+  REQUIRE(std::hash<long>()(1) == 1);           //  NOLINT
+  REQUIRE(std::hash<long int>()(1) == 1);       //  NOLINT
+  REQUIRE(std::hash<long long>()(1) == 1);      //  NOLINT
+  REQUIRE(std::hash<long long int>()(1) == 1);  //  NOLINT
 
-  REQUIRE(std::hash<unsigned long>()(1) == 1);
-  REQUIRE(std::hash<unsigned long int>()(1) == 1);
-  REQUIRE(std::hash<unsigned long long>()(1) == 1);
-  REQUIRE(std::hash<unsigned long long int>()(1) == 1);
+  REQUIRE(std::hash<unsigned long>()(1) == 1);           //  NOLINT
+  REQUIRE(std::hash<unsigned long int>()(1) == 1);       //  NOLINT
+  REQUIRE(std::hash<unsigned long long>()(1) == 1);      //  NOLINT
+  REQUIRE(std::hash<unsigned long long int>()(1) == 1);  //  NOLINT
 
   // library types
   REQUIRE(std::hash<std::string>()("000") == 9952612648141622413UL);

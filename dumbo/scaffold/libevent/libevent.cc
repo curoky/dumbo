@@ -30,7 +30,7 @@ struct event;
 struct event_base;
 struct event_config;
 
-using namespace std::string_literals;
+using namespace std::string_literals;  // NOLINT
 
 TEST_CASE("[Libevent]: version") {
   // REQUIRE(event_get_version() == "2.1.11-stable"s);

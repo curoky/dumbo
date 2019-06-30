@@ -25,7 +25,7 @@
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 
 namespace rp = rapidjson;
-using namespace std::literals;
+using namespace std::literals;  // NOLINT
 
 TEST_CASE("[Rapidjson]: parse json") {
   rp::Document doc;

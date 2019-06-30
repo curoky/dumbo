@@ -20,11 +20,11 @@
 namespace {
 
 class A {
-  static void foo(int) { ; };
+  static void foo(int) {}
 };
 
 class B : public A {
-  static void foo(int) { ; };
+  static void foo(int) {}
 };
 
 }  // namespace

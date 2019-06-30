@@ -33,7 +33,7 @@ TEST_CASE("[Taskflow]: BaseTest") {
       [&] { b = a + 1; },
       [&] { c = a + 1; },
       [&] { d = b + c; }
-  );
+);
   // clang-format on
   //  task dependency graph
   //
@@ -72,7 +72,7 @@ TEST_CASE("[Taskflow]: throw exception ") {
         b = a + 1;
         throw std::exception();
       }
-  );
+);
   // clang-format on
 
   //   bool throwed = false;

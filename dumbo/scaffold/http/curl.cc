@@ -21,7 +21,7 @@
 #include <string>  // for allocator, string, size_t
 
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
-  ((std::string*)userp)->append((char*)contents, size * nmemb);
+  ((std::string*)userp)->append((char*)contents, size * nmemb);  // NOLINT
   return size * nmemb;
 }
 

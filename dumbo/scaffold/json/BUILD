@@ -7,7 +7,7 @@ cc_test(
         "*.h",
         "*.cc",
     ]),
-    copts = ["-std=c++14"],
+    copts = ["-std=c++17"],
     deps = [
         "//dumbo/utilities:catch2_main",
         "@com_github_cjson//:cjson",

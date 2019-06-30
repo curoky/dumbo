@@ -17,9 +17,8 @@
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, Section, SECTION, SectionInfo
 
-#include <memory>       // for allocator
-#include <type_traits>  // for remove_reference<>::type
-#include <utility>      // for move
+#include <memory>   // for allocator
+#include <utility>  // for move
 
 #include "dumbo/utilities/class_utils.h"  // for ClassMetrics, ClassMetrics::Counter
 

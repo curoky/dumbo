@@ -15,23 +15,8 @@
  *
  */
 
-#pragma once
-#include <cstdio>
-#include <string>
+#include <catch2/catch.hpp>
 
-struct Constructor {
-  explicit Constructor(const std::string& name) : name(name) {
-    printf("[Constructor]: %s\n", name.c_str());
-  }
-  ~Constructor() { printf("[~Constructor]: %s\n", name.c_str()); }
-  std::string name;
-};
-
-extern Constructor c1;
-extern Constructor c2;
-extern Constructor c3;
-
-static Constructor c10(std::string("global static in") + __FILE__);
-
-void global_init_101() __attribute__((constructor(101)));
-void global_init_102() __attribute__((constructor(102)));
+TEST_CASE("[Socket]: basic usage") {
+  //
+}

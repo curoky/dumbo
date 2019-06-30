@@ -34,7 +34,7 @@ TEST_CASE("[Alignof]: different with sizeof") {
   // basic type
   Sizeof_Alignof_Equal(char, 1);
   Sizeof_Alignof_Equal(bool, 1);
-  Sizeof_Alignof_Equal(short, 2);
+  Sizeof_Alignof_Equal(short, 2);  // NOLINT
   Sizeof_Alignof_Equal(int, 4);
   Sizeof_Alignof_Equal(int32_t, 4);
   Sizeof_Alignof_Equal(float, 4);
@@ -49,7 +49,7 @@ TEST_CASE("[Alignof]: different with sizeof") {
   };
   using StructEmpty = struct {};
   using StructEmpty64 = struct alignas(64) {};
-  using StructMember = struct { int m; };
+  using StructMember = struct { int m; };  // NOLINT
   using StructMember2 = struct {
     int32_t m;
     int64_t n;

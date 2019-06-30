@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 # Copyright 2020 curoky(cccuroky@gmail.com).
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

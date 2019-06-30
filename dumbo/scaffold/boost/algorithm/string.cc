@@ -32,7 +32,7 @@
 #include <string_view>  // for literals
 #include <vector>       // for vector, operator==
 
-using namespace std::literals;
+using namespace std::literals;  // NOLINT
 
 TEST_CASE("[String]: JoinSplitTest") {
   std::vector<std::string> nubs = {"1", "2", "3", "4"};

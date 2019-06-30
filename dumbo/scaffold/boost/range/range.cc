@@ -16,6 +16,7 @@
  */
 
 #include <boost/algorithm/string/join.hpp>       // for join
+#include <boost/iterator/iterator_facade.hpp>    // for operator!=
 #include <boost/range/adaptor/argument_fwd.hpp>  // for forwarder
 #include <boost/range/adaptor/map.hpp>  // for select_first_range, select_second_mutable_range, operator|, map_keys, map_keys_forwarder, map_values
 #include <boost/range/adaptor/transformed.hpp>  // for transformed_range, operator|, transform_holder, transformed

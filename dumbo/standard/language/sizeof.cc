@@ -18,9 +18,9 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <folly/Demangle.h>  // for demangle
 #include <folly/FBString.h>  // for operator==, basic_fbstring, operator<<, fbstring_core::category_type, fbstring
-#include <stdint.h>  // for int64_t, uint32_t
-#include <stdlib.h>  // for free
 
+#include <cstdint>     // for int64_t, uint32_t
+#include <cstdlib>     // for free
 #include <functional>  // for function
 #include <string>      // for string
 #include <typeinfo>    // for type_info

@@ -38,14 +38,14 @@ TEST_CASE("[NumberLiteral]: integer type") {
   REQUIRE_TYPE(1, int);
   REQUIRE_TYPE(1u, unsigned int);
   REQUIRE_TYPE(1U, unsigned int);
-  REQUIRE_TYPE(1l, long);
-  REQUIRE_TYPE(1L, long);
-  REQUIRE_TYPE(1ll, long long);
-  REQUIRE_TYPE(1LL, long long);
-  REQUIRE_TYPE(1lu, unsigned long);
-  REQUIRE_TYPE(1LU, unsigned long);
-  REQUIRE_TYPE(1llu, unsigned long long int);
-  REQUIRE_TYPE(1LLU, unsigned long long int);
+  REQUIRE_TYPE(1l, long);                      // NOLINT
+  REQUIRE_TYPE(1L, long);                      // NOLINT
+  REQUIRE_TYPE(1ll, long long);                // NOLINT
+  REQUIRE_TYPE(1LL, long long);                // NOLINT
+  REQUIRE_TYPE(1lu, unsigned long);            // NOLINT
+  REQUIRE_TYPE(1LU, unsigned long);            // NOLINT
+  REQUIRE_TYPE(1llu, unsigned long long int);  // NOLINT
+  REQUIRE_TYPE(1LLU, unsigned long long int);  // NOLINT
 }
 
 TEST_CASE("[NumberLiteral]: bool type") {

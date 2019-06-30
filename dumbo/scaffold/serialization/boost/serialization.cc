@@ -34,7 +34,7 @@ class gps_position {
   int degrees;
   int minutes;
   float seconds;
-  gps_position(){};
+  gps_position() {}
   gps_position(int d, int m, float s) : degrees(d), minutes(m), seconds(s) {}
 };
 

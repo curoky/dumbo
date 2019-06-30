@@ -46,7 +46,7 @@ TEST_CASE("[Forward]: base test") {
   REQUIRE(add_proxy(1) == 1);
   REQUIRE(add_proxy(1, 2) == 3);
 
-  using namespace std::placeholders;
+  using namespace std::placeholders;  // NOLINT
   REQUIRE(proxy(std::bind(static_cast<int (*)(int)>(&add), _1), 1) == 1);
   REQUIRE(proxy(std::bind(static_cast<int (*)(int, int)>(&add), _1, _2), 1, 2) == 3);
   REQUIRE(proxy(std::bind(&Oper::add, _1, _2, _3, _4), Oper(), 1, 2, 3) == 6);

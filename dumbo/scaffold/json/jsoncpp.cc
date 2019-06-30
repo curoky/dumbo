@@ -16,10 +16,11 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <json/json.h>  // for Value, String, CharReader, CharReaderBuilder, JSONCPP_STRING
+#include <json/json.h>  // for Value, String, CharReader, ValueConstIterator, CharReaderBuilder, JSONCPP_STRING, ValueIteratorBase
 
-#include <memory>  // for unique_ptr
-#include <string>  // for operator==, string, basic_string
+#include <memory>       // for unique_ptr
+#include <string>       // for operator==, basic_string
+#include <string_view>  // for string_view
 
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 
@@ -28,7 +29,7 @@ TEST_CASE("[Jsoncpp]: parse json") {
   JSONCPP_STRING err;
   Json::CharReaderBuilder builder;
   const std::unique_ptr<Json::CharReader> reader(builder.newCharReader());
-  REQUIRE(reader->parse(json_data.c_str(), json_data.c_str() + json_data.size(), &params, &err));
+  REQUIRE(reader->parse(json_data.data(), json_data.data() + json_data.size(), &params, &err));
 
   REQUIRE(params.isObject());
   REQUIRE(params.get("123", "123").asString() == "123");

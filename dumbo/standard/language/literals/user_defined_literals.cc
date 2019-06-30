@@ -24,7 +24,7 @@
 // using namespace std::literals;
 
 TEST_CASE("[UserDefinedLiterals]: ChronoTest") {
-  using namespace std::chrono_literals;
+  using namespace std::chrono_literals;  // NOLINT
   REQUIRE(std::chrono::duration_cast<std::chrono::milliseconds>(1s).count() == 1000);
   REQUIRE(std::chrono::duration_cast<std::chrono::seconds>(1min).count() == 60);
   REQUIRE(std::chrono::duration_cast<std::chrono::minutes>(1h).count() == 60);
@@ -33,14 +33,14 @@ TEST_CASE("[UserDefinedLiterals]: ChronoTest") {
 }
 
 TEST_CASE("[UserDefinedLiterals]: ComplexTest") {
-  using namespace std::complex_literals;
+  using namespace std::complex_literals;  // NOLINT
   REQUIRE(std::complex<double>(0, 100) == 100i);
   REQUIRE(std::complex<float>(0, 100) == 100if);
   REQUIRE(std::complex<long double>(0, 100) == 100il);
 }
 
 TEST_CASE("[UserDefinedLiterals]: StringLiteralsTest") {
-  using namespace std::string_literals;
+  using namespace std::string_literals;  // NOLINT
   std::string s1 = "abc\0\0def";
   std::string s2 = "abc\0\0def"s;
   CAPTURE(s1);

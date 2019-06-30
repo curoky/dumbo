@@ -38,7 +38,7 @@ TEST_CASE("[Fmt]: format test") {
 
   REQUIRE(fmt::format("{a}-{b}-{c}", fmt::arg("a", 1), fmt::arg("b", "2"), fmt::arg("c", 3)) ==
           "1-2-3");
-  using namespace fmt::literals;
+  using namespace fmt::literals;  // NOLINT
   REQUIRE(fmt::format("{a}-{b}-{c}", "a"_a = 1, "b"_a = "2", "c"_a = 3) == "1-2-3");
   REQUIRE("{}"_format(1) == "1");
 }

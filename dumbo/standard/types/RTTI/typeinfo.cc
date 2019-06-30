@@ -47,7 +47,7 @@ struct AA { struct A {}; };
 }  // namespace
 
 TEST_CASE("[Typeinfo]: ExtendTest") {
-  using namespace std::literals;
+  using namespace std::literals;  // NOLINT
   // 应用于多态类型的表达式时，typeid 表达式的求值可能涉及运行时开销（虚表查找），
   // 其他情况下 typeid 表达式都在编译时解决。
 

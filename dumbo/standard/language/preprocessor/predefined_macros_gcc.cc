@@ -22,7 +22,7 @@
 #include <catch2/catch.hpp>
 
 #include <string>
-using namespace std::literals;
+using namespace std::literals;  // NOLINT
 
 TEST_CASE("[PredefinedMacrosGcc]: __COUNTER__") {
   REQUIRE(__COUNTER__ == 2);

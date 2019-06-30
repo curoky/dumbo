@@ -1,0 +1,24 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+Standard: c++20
+
+ColumnLimit: 100
+
+IncludeCategories:
+  - Regex: '^<ext/.*\.[hp]+>'
+    Priority: 2
+    SortPriority: 0
+  - Regex: '^<.*\.[hp]+>'
+    Priority: 1
+    SortPriority: 0
+  - Regex: '^<.*'
+    Priority: 2
+    SortPriority: 0
+  - Regex: '.*'
+    Priority: 3
+    SortPriority: 0
+
+---
+Language: Proto
+BasedOnStyle: Google

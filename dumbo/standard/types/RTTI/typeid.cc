@@ -21,7 +21,7 @@
 #include <string>    // for operator""s, operator==, basic_string, string_literals
 #include <typeinfo>  // for type_info
 
-using namespace std::string_literals;
+using namespace std::string_literals;  // NOLINT
 
 TEST_CASE("[Typeid]: basic type") {
   REQUIRE(typeid(char).name() == "c"s);
@@ -34,13 +34,13 @@ TEST_CASE("[Typeid]: basic type") {
   REQUIRE(typeid(signed int).name() == "i"s);
   REQUIRE(typeid(unsigned int).name() == "j"s);
 
-  REQUIRE(typeid(short).name() == "s"s);
-  REQUIRE(typeid(short int).name() == "s"s);
-  REQUIRE(typeid(long).name() == "l"s);
-  REQUIRE(typeid(long long).name() == "x"s);
+  REQUIRE(typeid(short).name() == "s"s);      // NOLINT
+  REQUIRE(typeid(short int).name() == "s"s);  // NOLINT
+  REQUIRE(typeid(long).name() == "l"s);       // NOLINT
+  REQUIRE(typeid(long long).name() == "x"s);  // NOLINT
 
-  REQUIRE(typeid(long int).name() == "l"s);
-  REQUIRE(typeid(long long int).name() == "x"s);
+  REQUIRE(typeid(long int).name() == "l"s);       // NOLINT
+  REQUIRE(typeid(long long int).name() == "x"s);  // NOLINT
 
   REQUIRE(typeid(float).name() == "f"s);
   REQUIRE(typeid(double).name() == "d"s);

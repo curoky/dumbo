@@ -25,7 +25,7 @@
 
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 
-using namespace std::literals;
+using namespace std::literals;  // NOLINT
 
 TEST_CASE("[Cjson]: parse json") {
   cJSON* params = cJSON_Parse(json_data.data());

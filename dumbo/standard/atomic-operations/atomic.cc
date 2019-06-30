@@ -32,7 +32,7 @@ TEST_CASE("[Atomic]: lock free") {
   REQUIRE(std::atomic<bool>{}.is_lock_free());
   REQUIRE(std::atomic<int>{}.is_lock_free());
   REQUIRE(std::atomic<double>{}.is_lock_free());
-  REQUIRE(std::atomic<long long>{}.is_lock_free());
+  REQUIRE(std::atomic<long long>{}.is_lock_free());  // NOLINT
   REQUIRE(std::atomic<LockFreeType>{}.is_lock_free());
   REQUIRE_FALSE(std::atomic<NolockFreeType>{}.is_lock_free());
 }
