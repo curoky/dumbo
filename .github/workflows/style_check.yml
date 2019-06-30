@@ -1,0 +1,120 @@
+name: code style check
+
+on:
+  - push
+
+jobs:
+  yapf:
+    name: check with yapf
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install yapf
+        run: brew install yapf
+      - name: run yapf
+        run: yapf --diff --recursive . --verbose
+
+  cpplint:
+    name: check with cpplint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+      - name: install cpplint
+        run: pip install cpplint
+      - name: run cpplint
+        run: |
+          cpplint --recursive \
+          --exclude="dumbo/scaffold/serialization/fbthrift/gen-cpp2/*.*" \
+          --exclude="dumbo/scaffold/serialization/thrift/gen-cpp/*.*" \
+          --exclude="dumbo/standard/language/operator_alternative.cc" \
+          --exclude="dumbo/tools/sanitizers/address/global-buffer-overflow.cc" \
+          --exclude="dumbo/tools/sanitizers/address/stack-buffer-overflow.cc" \
+          --exclude="dumbo/tools/sanitizers/address/use-after-return.cc" \
+          --exclude="dumbo/tools/sanitizers/address/use-after-scope.cc" \
+          --exclude="dumbo/tools/sanitizers/address/memory-leaks.cc" \
+          --exclude="dumbo/scaffold/fatal/fatal.cc" \
+          .
+
+  shfmt:
+    name: check with shfmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install shfmt
+        run: brew install shfmt
+      - name: run shfmt
+        run: shfmt -i 2 -d -s -l -ln bash .
+
+  prettier:
+    name: check with prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install prettier
+        run: brew install prettier
+      - name: run prettier
+        run: prettier -c .
+
+  clangformat:
+    name: check with clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: clang-format lint
+        uses: DoozyX/clang-format-lint-action@v0.11
+        with:
+          clangFormatVersion: 11
+
+  cppcheck:
+    name: check with cppcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install cppcheck
+        run: brew install cppcheck
+      - name: run cppcheck
+        run: cppcheck  --enable=all --inconclusive .
+
+  shellcheck:
+    name: check with shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install shellcheck
+        run: brew install shellcheck
+      - name: run shellcheck
+        shell: bash
+        # https://github.com/koalaman/shellcheck/issues/143#issuecomment-367992333
+        run: |
+          for f in $({ find . -type f -regex ".*\.\w*sh"
+                      file ./* | grep 'shell script' | cut -d: -f1
+                    } | sort -u); do  # note that we remove potential duplicates
+            shellcheck "$f"
+          done
+
+  iwyu:
+    name: check with include-what-you-use
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: prepare deps
+        run: |
+          brew tap curoky/tap
+          brew install bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
+      - name: install include-what-you-use
+        run: brew install include-what-you-use
+      - name: run include-what-you-use
+        run: |
+          cd script/iwyu
+          bash ./iwyu.sh
+      - name: show iwyu out
+        run: cat script/iwyu/iwyu.out
+      - name: show diff
+        run: git --no-pager diff
+
+  # - name: publish report
+  #   uses: mikeal/publish-to-github-action@master
+  #   env:
+  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     BRANCH_NAME: 'main' # your branch name goes here

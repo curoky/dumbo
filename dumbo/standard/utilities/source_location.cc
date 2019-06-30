@@ -44,7 +44,7 @@ TEST_CASE("[SourceLocation]: basic usage") {
   auto ret = log("hahaha");
   REQUIRE(ret.size() == 4);
   REQUIRE_THAT(ret[0], Catch::Matchers::EndsWith("source_location.cc"));
-  REQUIRE(ret[1] == "45");
+  REQUIRE(ret[1] == "44");
   REQUIRE(ret[2] == "0");
   REQUIRE(ret[3] == "____C_A_T_C_H____T_E_S_T____0");
 }
