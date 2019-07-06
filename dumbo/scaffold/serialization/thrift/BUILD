@@ -1,5 +1,6 @@
-load("@rules_cc//cc:defs.bzl", "cc_test")
 load("@rules_3rd//third_party/thrift:build_defs.bzl", "thrift_library")
+load("@rules_cc//cc:defs.bzl", "cc_test")
+load("//dumbo:copts.bzl", "DUMBO_DEFAULT_LINKOPTS", "DUMBO_TEST_COPTS")
 
 thrift_library(
     name = "mock_thrift",
@@ -15,10 +16,8 @@ cc_test(
         "*.h",
         "*.cc",
     ]) + [":mock_thrift"],
-    copts = [
-        "-g",
-        "-std=c++17",
-    ],
+    copts = DUMBO_TEST_COPTS,
+    linkopts = DUMBO_DEFAULT_LINKOPTS,
     deps = [
         "//dumbo/utilities:catch2_main",
         "@com_github_apache_thrift//:thrift",

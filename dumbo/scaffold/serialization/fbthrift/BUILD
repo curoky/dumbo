@@ -1,5 +1,6 @@
-load("@rules_cc//cc:defs.bzl", "cc_test")
 load("@rules_3rd//third_party/fbthrift:build_defs.bzl", "fbthrift_library")
+load("@rules_cc//cc:defs.bzl", "cc_test")
+load("//dumbo:copts.bzl", "DUMBO_DEFAULT_LINKOPTS", "DUMBO_TEST_COPTS")
 
 fbthrift_library(
     name = "mock_fbthrift",
@@ -15,10 +16,8 @@ cc_test(
         "*.h",
         "*.cc",
     ]) + [":mock_fbthrift"],
-    copts = [
-        "-g",
-        "-std=c++17",
-    ],
+    copts = DUMBO_TEST_COPTS,
+    linkopts = DUMBO_DEFAULT_LINKOPTS,
     deps = [
         "//dumbo/utilities:catch2_main",
         "@com_github_facebook_fbthrift//:fbthrift",

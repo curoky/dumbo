@@ -16,9 +16,8 @@
 
 #include <bits/exception.h>  // for exception
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <taskflow/taskflow.hpp>  // for Task, Taskflow, Executor
+#include <taskflow/taskflow.hpp>  // for Task, Taskflow, Executor, Future
 
-#include <future>    // for future
 #include <iostream>  // for cout
 #include <memory>    // for allocator
 

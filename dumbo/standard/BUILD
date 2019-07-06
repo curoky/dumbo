@@ -1,11 +1,12 @@
 load("@rules_cc//cc:defs.bzl", "cc_test")
+load("//dumbo:copts.bzl", "DUMBO_DEFAULT_LINKOPTS", "DUMBO_TEST_COPTS")
 
 cc_test(
-    name = "standard_test",
+    name = "example",
     testonly = False,
     srcs = glob(["**/*.cc"]),
-    copts = ["-std=c++2a"],
-    linkopts = ["-latomic"],
+    copts = DUMBO_TEST_COPTS,
+    linkopts = DUMBO_DEFAULT_LINKOPTS,
     deps = [
         "//dumbo/utilities",
         "//dumbo/utilities:catch2_main",

@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+/*
+ * CULR:
+ * Question 1: When is curl_global_init() necessary at all?
+ * +>: https://stackoverflow.com/questions/6087886/when-is-curl-global-init-necessary-at-all
+ *
+ */
 #include <catch2/catch.hpp>  // for StringRef, SourceLineInfo, AssertionHandler, operator""_catch_sr, CAPTURE, Capturer, REQUIRE, TEST_CASE
 #include <curl/curl.h>  // for CURLE_OK, curl_easy_cleanup, curl_easy_init, curl_easy_perform, curl_easy_setopt, curl_global_cleanup, curl_global_init
 
