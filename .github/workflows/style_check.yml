@@ -151,8 +151,14 @@ jobs:
       - name: run markdownlint
         run: markdownlint '**/*.md'
 
-  # - name: publish report
-  #   uses: mikeal/publish-to-github-action@master
-  #   env:
-  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #     BRANCH_NAME: 'main' # your branch name goes here
+  buildifier:
+    name: check with buildifier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install buildifier
+        run: |
+          brew tap curoky/tap
+          brew install bazel-buildtools
+      - name: run buildifier
+        run: buildifier --lint=warn --warnings=all -r .
