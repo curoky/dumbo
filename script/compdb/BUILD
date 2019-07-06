@@ -2,13 +2,13 @@
 load("@com_grail_bazel_compdb//:aspects.bzl", "compilation_database")
 
 compilation_database(
-    name = "example_compdb",
+    name = "compdb",
     # [Optional]
     # If your exec root (value returned by `bazel info execution_root`)
     # is constant across your users, then you can supply the value here.
     # Otherwise, the default is `__EXEC_ROOT__` which you can replace in
     # the output file using `sed` or similar tool (see below).
-    # exec_root = "/path/to/bazel/exec_root",
+    exec_root = "/shm/bazel/execroot/com_github_curoky_dumbo",
     # bazel query '//dumbo/...' | xargs -n 1 | awk '{print "\""$1"\","}'
     targets = [
         "//dumbo/tools/sanitizers/address:use-after-scope",
@@ -20,6 +20,7 @@ compilation_database(
         "//dumbo/tools/sanitizers/address:global-buffer-overflow",
         "//dumbo/tools/pmap:case0",
         "//dumbo/tools/pmap:asm",
+        "//dumbo/tools/gdb:main",
         "//dumbo/system/signal:signal_kill",
         "//dumbo/system/pthread:thread_name",
         "//dumbo/standard:standard_test",
@@ -27,19 +28,19 @@ compilation_database(
         "//dumbo/scaffold/text/diff:google-diff",
         "//dumbo/scaffold/test/catch2:catch2_example",
         "//dumbo/scaffold/serialization/thrift:example",
-        "//dumbo/scaffold/serialization/thrift:mock_thrift",
+        # "//dumbo/scaffold/serialization/thrift:mock_thrift",
         "//dumbo/scaffold/serialization/protobuf:type_test",
-        # "//dumbo/scaffold/serialization/protobuf:mock_cc_proto",
+        "//dumbo/scaffold/serialization/protobuf:mock_cc_proto",
         # "//dumbo/scaffold/serialization/protobuf:mock_proto",
         "//dumbo/scaffold/serialization/msgpack:example",
-        "//dumbo/scaffold/serialization/boost:example",
         "//dumbo/scaffold/serialization/flatbuffers:type_test",
         # "//dumbo/scaffold/serialization/flatbuffers:mock_flat_includes",
-        # "//dumbo/scaffold/serialization/flatbuffers:mock_flat",
+        "//dumbo/scaffold/serialization/flatbuffers:mock_flat",
         # "//dumbo/scaffold/serialization/flatbuffers:mock_flat_srcs",
         "//dumbo/scaffold/serialization/fbthrift:example",
-        "//dumbo/scaffold/serialization/fbthrift:mock_fbthrift",
+        "//dumbo/scaffold/serialization/boost:example",
         "//dumbo/scaffold/rpc/fbthrift/echo:example",
+        # "//dumbo/scaffold/serialization/fbthrift:mock_fbthrift",
         "//dumbo/scaffold/reflection/usrefl:example",
         "//dumbo/scaffold/reflection/refl-cpp:example",
         "//dumbo/scaffold/reflection/nameof:example",
@@ -70,8 +71,10 @@ compilation_database(
         "//dumbo/scaffold/benchmark/google_benmark/simple:example",
         "//dumbo/scaffold/benchmark/catch2:example",
         "//dumbo/scaffold/abseil:abseil_example",
+        "//dumbo/magic/template_meta:example",
         "//dumbo/magic/shared_ptr:shared_ptr_test",
         "//dumbo/magic/shared_ptr:shared_ptr",
+        "//dumbo/magic/sfinae:example",
         "//dumbo/magic/macro:comma_in_macro",
         "//dumbo/magic/judge_main_thread:solution",
         "//dumbo/magic/init_order:main",
@@ -84,6 +87,7 @@ compilation_database(
         "//dumbo/magic/dlopen_plugin/plugin:libaction",
         "//dumbo/magic/cow:cow_string_test",
         "//dumbo/magic/cow:cow_string",
+        "//dumbo/intel/simd:example",
         "//dumbo/design-pattern:design_pattern",
         "//dumbo/utilities:catch2_main",
         "//dumbo/bug/stack_overflow:thread_overflow",

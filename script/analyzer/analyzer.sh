@@ -24,14 +24,13 @@ echo "BAZEL_BIN: $BAZEL_BIN"
 echo "CMDS_PATH: $CMDS_PATH"
 
 # gen compile_commands.json
-bazel build //script/iwyu:example_compdb --check_visibility=false
+bazel build //script/compdb:compdb --check_visibility=false
 
 # patch compile_commands.json
 sed -i 's/-fno-canonical-system-headers//g' $CMDS_PATH
 sed -i 's/-Wunused-but-set-parameter/-Wunused-parameter/g' $CMDS_PATH
 sed -i 's/-Wno-free-nonheap-object/-Wno-sequence-point/g' $CMDS_PATH
 sed -i 's%__EXEC_ROOT__%/shm/bazel/execroot/com_github_curoky_dumbo%g' $CMDS_PATH
->>>>>>> 374b11e (fixup! [script]: update iwyu and clang analyzer)
 cp -f $CMDS_PATH $EXEC_ROOT/compile_commands.json
 
 analyze-build --verbose --cdb $EXEC_ROOT/compile_commands.json -o clang-analysis \
