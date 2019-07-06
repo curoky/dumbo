@@ -15,17 +15,18 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
-#include <folly/SocketAddress.h>              // for SocketAddress
-#include <folly/io/async/AsyncSocket.h>       // for AsyncSocket, AsyncSocket::UniquePtr
-#include <folly/io/async/EventBase.h>         // for EventBase
-#include <gen-cpp2/EchoServiceAsyncClient.h>  // for EchoServiceAsyncClient
-#include <gen-cpp2/mock_types.h>              // for MockRequest, MockResponse
-#include <glog/logging.h>                     // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
+#include <folly/SocketAddress.h>         // for SocketAddress
+#include <folly/io/async/AsyncSocket.h>  // for AsyncSocket, AsyncSocket::UniquePtr
+#include <folly/io/async/EventBase.h>    // for EventBase
+#include <glog/logging.h>                // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
 #include <thrift/lib/cpp/concurrency/ThreadManager.h>  // for ThreadManager, ThreadManager::Observer, ThreadManager::RunStats
 #include <thrift/lib/cpp/protocol/TProtocolTypes.h>     // for T_BINARY_PROTOCOL
 #include <thrift/lib/cpp2/async/HeaderClientChannel.h>  // for HeaderClientChannel
 #include <thrift/lib/cpp2/server/BaseThriftServer.h>    // for ThriftServerAsyncProcessorFactory
 #include <thrift/lib/cpp2/server/ThriftServer.h>        // for ThriftServer
+
+#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/EchoServiceAsyncClient.h"  // for EchoServiceAsyncClient
+#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/mock_types.h"  // for MockRequest, MockResponse
 // #include <thrift/perf/cpp2/util/Util.h>
 
 #include <atomic>   // for atomic, atomic_bool, __atomic_base

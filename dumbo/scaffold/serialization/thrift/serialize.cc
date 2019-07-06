@@ -18,7 +18,7 @@
 
 #include <string>  // for allocator, string
 
-#include "gen-cpp/mock_types.h"  // for MockRequest, operator<<
+#include "dumbo/scaffold/serialization/thrift/gen-cpp/mock_types.h"  // for MockRequest, operator<<
 #include "serialize_helper.h"  // for BinaryToThrift, JsonToThrift, ThriftToBinary, ThriftToDebug, ThriftToJson
 
 TEST_CASE("[Serialize]: json string") {

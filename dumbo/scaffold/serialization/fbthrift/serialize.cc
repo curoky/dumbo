@@ -20,7 +20,7 @@
 
 #include <utility>  // for forward
 
-#include "gen-cpp2/mock_types.h"  // for MockRequest
+#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/mock_types.h"  // for MockRequest
 
 TEST_CASE("[Serialize]: zero copy") {
   {

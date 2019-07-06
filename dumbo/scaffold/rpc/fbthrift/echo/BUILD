@@ -6,14 +6,14 @@ cc_test(
     srcs = glob([
         "*.h",
         "*.cc",
-    ]),
+    ]) + ["//dumbo/scaffold/serialization/fbthrift:mock_fbthrift"],
     copts = [
         "-g",
         "-std=c++17",
     ],
     deps = [
-        "//dumbo/scaffold/serialization/fbthrift:mock_fbthrift",
+        # "//dumbo/scaffold/serialization/fbthrift:mock_fbthrift",
         "//dumbo/utilities:catch2_main",
-        "@com_github_facebook_fbthrift//:thriftcpp2",
+        "@com_github_facebook_fbthrift//:fbthrift",
     ],
 )

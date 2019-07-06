@@ -1,12 +1,11 @@
-load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+load("@rules_cc//cc:defs.bzl", "cc_test")
+load("@rules_3rd//third_party/thrift:build_defs.bzl", "thrift_library")
 
-cc_library(
+thrift_library(
     name = "mock_thrift",
-    srcs = glob(["gen-cpp/*.cc"]),
-    hdrs = glob(["gen-cpp/*.h"]),
-    deps = [
-        "@com_github_apache_thrift//:thrift",
-    ],
+    srcs = ["mock.thrift"],
+    include_prefix = "dumbo/scaffold/serialization/thrift",
+    services = ["EchoService"],
 )
 
 cc_test(
@@ -15,13 +14,12 @@ cc_test(
     srcs = glob([
         "*.h",
         "*.cc",
-    ]),
+    ]) + [":mock_thrift"],
     copts = [
         "-g",
         "-std=c++17",
     ],
     deps = [
-        ":mock_thrift",
         "//dumbo/utilities:catch2_main",
         "@com_github_apache_thrift//:thrift",
     ],

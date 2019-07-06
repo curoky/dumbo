@@ -23,8 +23,8 @@
 #include <typeinfo>  // for type_info
 #include <vector>    // for vector
 
-#include "gen-cpp/mock_constants.h"  // for g_mock_constants, mockConstants
-#include "gen-cpp/mock_types.h"      // for MockRequest, EnumType::type, EnumType
+#include "dumbo/scaffold/serialization/thrift/gen-cpp/mock_constants.h"  // for g_mock_constants, mockConstants
+#include "dumbo/scaffold/serialization/thrift/gen-cpp/mock_types.h"  // for MockRequest, EnumType::type, EnumType
 
 #define REQUIRE_TYPE(var, type) REQUIRE(typeid(var) == typeid(type));
 
