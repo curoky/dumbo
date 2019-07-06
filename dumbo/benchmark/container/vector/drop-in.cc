@@ -12,12 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
-#include <benchmark/benchmark.h>  // for State, Benchmark, BENCHMARK_TEMPLATE, DoNotOptimize, BENCHMARK_MAIN
+#include <benchmark/benchmark.h>  // for State, Benchmark, BENCHMARK_TEMPLATE, State::StateIterator, DoNotOptimize, BENCHMARK_MAIN
 #include <folly/FBVector.h>      // for fbvector
 #include <folly/small_vector.h>  // for small_vector
+#include <malloc.h>              // for malloc_usable_size
+#include <stdlib.h>              // for free
 
 #include <vector>  // for vector
 
