@@ -1,9 +1,0 @@
-[
-   {include: ["<json/config.h>", private, "<json/json.h>", public]},
-   {include: ["<json/reader.h>", private, "<json/json.h>", public]},
-   {include: ["<json/value.h>", private, "<json/json.h>", public]},
-
-   {include: ["\"json/config.h\"", private, "<json/json.h>", public]},
-   {include: ["\"json/reader.h\"", private, "<json/json.h>", public]},
-   {include: ["\"json/value.h\"", private, "<json/json.h>", public]},
-]

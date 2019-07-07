@@ -1,4 +1,0 @@
-[
-   {include: ["@<spdlog/.*>", private, "<spdlog/spdlog.h>", public]},
-   {include: ["@\"spdlog/.*\"", private, "<spdlog/spdlog.h>", public]},
-]

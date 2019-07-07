@@ -1,4 +1,0 @@
-[
-   {include: ["@<taskflow/core/.*>", private, "<taskflow/taskflow.hpp>", public]},
-   {include: ["@\"taskflow/core/.*\"", private, "<taskflow/taskflow.hpp>", public]},
-]

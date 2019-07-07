@@ -1,4 +1,0 @@
-[
-   {include: ["@<msgpack/.*>", private, "<msgpack.hpp>", public]},
-   {include: ["@\"msgpack/.*\"", private, "<msgpack.hpp>", public]},
-]

@@ -15,50 +15,34 @@
 
 set -xeuo pipefail
 
-IWYU_MAP=$(cd "$(dirname "$0")" && pwd)/mappings
 EXEC_ROOT=$(bazel info execution_root)
 BAZEL_BIN=$(bazel info bazel-bin)
+IWYU_MAP=$(bazel info output_base)/external/com_github_curoky_iwyu_imp/iwyu.imp
 CMDS_PATH=$BAZEL_BIN/script/compdb/compile_commands.json
 
 echo "EXEC_ROOT: $EXEC_ROOT"
 echo "BAZEL_BIN: $BAZEL_BIN"
 echo "CMDS_PATH: $CMDS_PATH"
+echo "IWYU_MAP: $IWYU_MAP"
 
 # gen compile_commands.json
+bazel build @com_github_curoky_iwyu_imp//:iwyu_mappings
 bazel build //script/compdb:compdb --check_visibility=false
 
 # patch compile_commands.json
 sed -i 's/-fno-canonical-system-headers//g' $CMDS_PATH
 sed -i 's/-Wunused-but-set-parameter/-Wunused-parameter/g' $CMDS_PATH
 sed -i 's/-Wno-free-nonheap-object/-Wno-sequence-point/g' $CMDS_PATH
-sed -i 's/-Wno-free-nonheap-object/-Wno-sequence-point/g' $CMDS_PATH
 cp -f $CMDS_PATH $EXEC_ROOT/compile_commands.json
 
 # direct gen
-iwyu_tool.py -j 190 -p $EXEC_ROOT $EXEC_ROOT/dumbo -- \
-  -Xiwyu --mapping_file=$IWYU_MAP/boost-all-private.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/boost-all.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/boost-extra.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/gflags.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/glog.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/gtest.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/libcxx-extra.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/libcxx.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/libstdcpp.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/libunwind.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/llvm.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/openssl.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/system-linux.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/nlohmann_json.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/cpr.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/spdlog.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/cpp-taskflow.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/fmt.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/jsoncpp.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/msgpack.imp \
-  -Xiwyu --mapping_file=$IWYU_MAP/taro.imp \
+iwyu_tool.py -j 180 -p $EXEC_ROOT "$(bazel info workspace)" -- \
+  -Xiwyu --no_default_mappings \
+  -Xiwyu --mapping_file=$IWYU_MAP \
   -Xiwyu --transitive_includes_only \
+  -Xiwyu --verbose=3 \
+  -Xiwyu --no_fwd_decls \
   -Xiwyu --max_line_length=160 \
   -Xiwyu --cxx17ns >iwyu.out
 
-fix_includes.py --comments -b --reorder -p $EXEC_ROOT --ignore_re=--ignore_re="(usr/include)｜(gen-cpp)|(gen-cpp2)" <iwyu.out
+fix_includes.py --comments -b --reorder -p $EXEC_ROOT --only_re="com_github_curoky_dumbo/dumbo" <iwyu.out

@@ -1,4 +1,0 @@
-[
-   {include: ["@<nlohmann/.*>", private, "<nlohmann/json.hpp>", public]},
-   {include: ["@\"nlohmann/.*\"", private, "<nlohmann/json.hpp>", public]},
-]
