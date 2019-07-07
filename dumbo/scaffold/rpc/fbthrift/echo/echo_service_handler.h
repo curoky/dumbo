@@ -26,7 +26,7 @@
 #include <utility>  // for forward
 
 #include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/EchoService.h"  // for EchoServiceSvIf
-#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/mock_types.h"  // for MockRequest (ptr only), MockResponse
+#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/mock_types.h"  // for MockRequest, MockResponse
 
 class EchoServiceHandler : public idl::thrift::cpp2::EchoServiceSvIf {
  public:

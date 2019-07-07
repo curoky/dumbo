@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
-#include <folly/executors/ThreadedExecutor.h>
-#include <folly/futures/Future.h>
+#include <bits/exception.h>  // for exception
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, operator""_catch_sr, AssertionHandler, TEST_CASE, REQUIRE, REQUIRE_THROWS_AS
+#include <folly/Unit.h>      // for Unit
+#include <folly/futures/Future.h>   // for Future, FutureInvalid (ptr only)
+#include <folly/futures/Promise.h>  // for BrokenPromise
+
+#include <type_traits>  // for decay<>::type, remove_reference<>::type
+#include <utility>      // for move
 
 TEST_CASE("[Future]: make empty ") {
   auto f = folly::Future<int>::makeEmpty();

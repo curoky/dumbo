@@ -52,7 +52,7 @@ float vector_dot2(uint32_t len, const float* a, const float* b) {
     sum += C[0];
   }
   for (; i < len; i++) sum += a[i] * b[i];
-  return (float)sum;
+  return static_cast<float>(sum);
 }
 
 int main() {

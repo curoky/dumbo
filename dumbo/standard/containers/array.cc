@@ -20,7 +20,7 @@
 #include <array>      // for array
 #include <iostream>   // for operator<<, basic_ostream::operator<<, cout, basic_ostream, ostream
 #include <iterator>   // for ostream_iterator
-#include <string>     // for allocator, operator<<, string
+#include <string>     // for allocator, string, operator<<, basic_string
 
 TEST_CASE("[Array]: base test") {
   // construction uses aggregate initialization

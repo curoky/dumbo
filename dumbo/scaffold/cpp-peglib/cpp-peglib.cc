@@ -16,9 +16,9 @@
 
 #include <assert.h>          // for assert
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <peglib.h>          // for any_cast, SemanticValues, parser, Definition
+#include <peglib.h>          // for SemanticValues, parser, Definition
 
-#include <string>  // for stoi
+#include <any>     // for any_cast
 #include <vector>  // for vector
 
 TEST_CASE("[Cpp-peglib]: basic usage") {
@@ -38,24 +38,22 @@ TEST_CASE("[Cpp-peglib]: basic usage") {
   parser["Additive"] = [](const peg::SemanticValues& sv) {
     switch (sv.choice()) {
       case 0:  // "Multitive '+' Additive"
-        return peg::any_cast<int>(sv[0]) + peg::any_cast<int>(sv[1]);
+        return std::any_cast<int>(sv[0]) + std::any_cast<int>(sv[1]);
       default:  // "Multitive"
-        return peg::any_cast<int>(sv[0]);
+        return std::any_cast<int>(sv[0]);
     }
   };
 
   parser["Multitive"] = [](const peg::SemanticValues& sv) {
     switch (sv.choice()) {
       case 0:  // "Primary '*' Multitive"
-        return peg::any_cast<int>(sv[0]) * peg::any_cast<int>(sv[1]);
+        return std::any_cast<int>(sv[0]) * std::any_cast<int>(sv[1]);
       default:  // "Primary"
-        return peg::any_cast<int>(sv[0]);
+        return std::any_cast<int>(sv[0]);
     }
   };
 
-  parser["Number"] = [](const peg::SemanticValues& sv) {
-    return std::stoi(sv.token(), nullptr, 10);
-  };
+  parser["Number"] = [](const peg::SemanticValues& sv) { return sv.token_to_number<int>(); };
 
   // (4) Parse
   parser.enable_packrat_parsing();  // Enable packrat parsing.

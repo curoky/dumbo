@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
-#include <string>
+#include <iostream>  // for endl, cout, ostream, basic_ostream, basic_ostream<>::__ostream_type
+#include <string>    // for operator<<, operator+, allocator, string
 
 namespace {
 class ICoffee {

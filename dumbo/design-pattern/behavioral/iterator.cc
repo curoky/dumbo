@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <algorithm>
-#include <iostream>
-#include <vector>
+#include <algorithm>  // for find
+#include <iostream>   // for endl, basic_ostream<>::__ostream_type, cout, ostream
+#include <vector>     // for vector<>::iterator, vector
 
 namespace {
 class RadioStation {

@@ -16,10 +16,10 @@
 
 #include <dlfcn.h>  // for dlerror, dlopen, dlsym, RTLD_LAZY
 
-#include <iostream>  // for operator<<, basic_ostream, endl, ostream, cerr, char_traits, cout
+#include <iostream>  // for operator<<, basic_ostream, endl, ostream, cerr, cout
 #include <map>       // for map
-#include <memory>    // for shared_ptr, __shared_ptr_access
-#include <string>    // for string, operator<<, basic_string
+#include <memory>    // for allocator, shared_ptr, __shared_ptr_access
+#include <string>    // for string, char_traits, operator+, basic_string, operator<<
 #include <vector>    // for vector
 
 #include "plugin/action.h"  // for Action

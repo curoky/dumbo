@@ -27,8 +27,8 @@ TEST_CASE("[Serialize]: pb serialize") {
   req.set_var_float(1);
 
   req.set_var_enum(idl::pb::MockRequest_EnumType::MockRequest_EnumType_ONE);
-  req.add_var_int32_list(1);
-  req.add_var_string_list();
+  req.add_var_int32_lists(1);
+  req.add_var_string_lists();
 
   std::string serialize_data;
   SECTION("debug string") {

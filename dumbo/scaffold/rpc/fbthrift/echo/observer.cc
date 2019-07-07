@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef
 #include <folly/SocketAddress.h>         // for SocketAddress
 #include <folly/io/async/AsyncSocket.h>  // for AsyncSocket, AsyncSocket::UniquePtr
 #include <folly/io/async/EventBase.h>    // for EventBase
+#include <folly/io/async/Request.h>      // for RequestContext
 #include <glog/logging.h>                // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
 #include <thrift/lib/cpp/concurrency/ThreadManager.h>  // for ThreadManager, ThreadManager::Observer, ThreadManager::RunStats
 #include <thrift/lib/cpp/protocol/TProtocolTypes.h>     // for T_BINARY_PROTOCOL
@@ -31,16 +32,12 @@
 
 #include <atomic>   // for atomic, atomic_bool, __atomic_base
 #include <chrono>   // for seconds
-#include <memory>   // for unique_ptr, make_shared, __shared_ptr_access, shared_ptr, make_unique
+#include <memory>   // for unique_ptr, make_shared, __shared_ptr_access, shared_ptr, make_un...
 #include <ostream>  // for basic_ostream::operator<<, operator<<, basic_ostream
 #include <thread>   // for sleep_for, thread
 #include <utility>  // for move
 
 #include "echo_service_handler.h"  // for EchoServiceHandler
-
-namespace folly {
-class RequestContext;
-}  // namespace folly
 
 std::unique_ptr<apache::thrift::ThriftServer> create_echo_server(int port) {
   auto handler = std::make_shared<EchoServiceHandler>();

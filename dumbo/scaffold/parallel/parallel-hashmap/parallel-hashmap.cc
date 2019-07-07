@@ -18,8 +18,8 @@
 #include <parallel_hashmap/phmap.h>  // for flat_hash_map, BitMask, operator!=, raw_hash_set<>::iterator, raw_hash_map
 
 #include <iostream>  // for operator<<, basic_ostream, cout, ostream
-#include <map>       // for pair
 #include <string>    // for string, operator<<, char_traits, basic_string
+#include <utility>   // for pair
 
 TEST_CASE("[Parallel-hashmap]: basic usage") {
   // Create an unordered_map of three strings (that map to strings)

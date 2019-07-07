@@ -16,9 +16,11 @@
 
 #pragma once
 #include <glog/logging.h>  // for COMPACT_GOOGLE_LOG_INFO, LOG, LogMessage
+#include <stddef.h>        // for size_t
 
 #include <iostream>  // for operator<<
 #include <memory>
+#include <ostream>  // for operator<<
 #include <string>   // for size_t
 #include <utility>  // for move
 

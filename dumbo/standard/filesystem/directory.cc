@@ -15,12 +15,13 @@
  */
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE, REQUIRE_THROWS_AS
-#include <folly/FileUtil.h>
+#include <folly/FileUtil.h>  // for readFile
 
 #include <chrono>      // for filesystem
-#include <filesystem>  // for create_directory, remove_all, remove, exists, create_directories, is_directory, is_regular_file, copy, copy_file, direct...
-#include <fstream>     // for ofstream, basic_ostream::put
-#include <string>      // for operator==, allocator, string, basic_string
+#include <filesystem>  // for create_directory, remove_all, remove, exists, create_directories, is_directory, is_regular_file, begin, copy, copy_file, directory_iterator, end, operator!=, recursive_directory_iterator, filesystem_error, copy_options, copy_options::recursive
+#include <fstream>     // for basic_ofstream
+#include <iosfwd>      // for ofstream
+#include <string>      // for string, operator==, basic_string
 #include <system_error>  // for error_code
 
 namespace fs = std::filesystem;

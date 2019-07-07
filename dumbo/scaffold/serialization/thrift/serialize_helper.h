@@ -18,25 +18,14 @@
 #include <stdint.h>                           // for uint8_t, uint32_t
 #include <thrift/protocol/TBinaryProtocol.h>  // for TBinaryProtocol
 #include <thrift/protocol/TCompactProtocol.h>
-#include <thrift/protocol/TDebugProtocol.h>
+#include <thrift/protocol/TDebugProtocol.h>  // for TDebugProtocol
 #include <thrift/protocol/THeaderProtocol.h>
-#include <thrift/protocol/TJSONProtocol.h>
+#include <thrift/protocol/TJSONProtocol.h>  // for TJSONProtocol
 #include <thrift/transport/TBufferTransports.h>  // for TMemoryBuffer, TMemoryBuffer::COPY, TMemoryBuffer::MemoryPolicy
+#include <thrift/transport/TTransport.h>  // for TTransport
 
 #include <memory>  // for shared_ptr
 #include <string>  // for string
-
-namespace apache::thrift::protocol {
-class TDebugProtocol;
-class TJSONProtocol;
-}  // namespace apache::thrift::protocol
-namespace apache::thrift::transport {
-class TTransport;
-}  // namespace apache::thrift::transport
-
-using apache::thrift::protocol::TBinaryProtocol;
-using apache::thrift::protocol::TDebugProtocol;
-using apache::thrift::protocol::TJSONProtocol;
 
 namespace detail {
 template <typename ThriftStruct, typename Protocol>
@@ -68,19 +57,25 @@ ThriftStruct StringToThrift(const std::string& str) {
 }  // namespace detail
 
 template <typename ThriftStruct>
-const auto ThriftToJson = detail::ThriftToString<ThriftStruct, TJSONProtocol>;
+const auto ThriftToJson =
+    detail::ThriftToString<ThriftStruct, apache::thrift::protocol::TJSONProtocol>;
 
 template <typename ThriftStruct>
-const auto ThriftToDebug = detail::ThriftToString<ThriftStruct, TDebugProtocol>;
+const auto ThriftToDebug =
+    detail::ThriftToString<ThriftStruct, apache::thrift::protocol::TDebugProtocol>;
 
 template <typename ThriftStruct>
-const auto ThriftToBinary = detail::ThriftToString<ThriftStruct, TBinaryProtocol>;
+const auto ThriftToBinary =
+    detail::ThriftToString<ThriftStruct, apache::thrift::protocol::TBinaryProtocol>;
 
 template <typename ThriftStruct>
-const auto JsonToThrift = detail::StringToThrift<ThriftStruct, TJSONProtocol>;
+const auto JsonToThrift =
+    detail::StringToThrift<ThriftStruct, apache::thrift::protocol::TJSONProtocol>;
 
 // template <typename ThriftStruct>
-// const auto DebugToThrift = detail::StringToThrift<ThriftStruct, TDebugProtocol>;
+// const auto DebugToThrift = detail::StringToThrift<ThriftStruct,
+// apache::thrift::protocol::TDebugProtocol>;
 
 template <typename ThriftStruct>
-const auto BinaryToThrift = detail::StringToThrift<ThriftStruct, TBinaryProtocol>;
+const auto BinaryToThrift =
+    detail::StringToThrift<ThriftStruct, apache::thrift::protocol::TBinaryProtocol>;

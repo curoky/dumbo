@@ -20,14 +20,15 @@
 #include <boost/range/adaptor/map.hpp>  // for select_first_range, select_second_mutable_range, operator|, map_keys, map_keys_forwarder, map_values
 #include <boost/range/adaptor/transformed.hpp>  // for transformed_range, operator|, transform_holder, transformed
 #include <boost/range/algorithm/copy.hpp>  // for copy
+#include <boost/range/begin.hpp>           // for begin
+#include <boost/range/end.hpp>             // for end
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
-#include <algorithm>  // for copy, equal
-#include <iterator>   // for back_insert_iterator, back_inserter
-#include <list>       // for list, operator==, operator!=
-#include <map>        // for map, operator==
-#include <string>     // for basic_string, allocator, operator==, string, to_string
-#include <vector>     // for vector, operator==
+#include <iterator>  // for back_insert_iterator, back_inserter
+#include <list>      // for list, operator==
+#include <map>       // for map, operator==
+#include <string>    // for basic_string, allocator, operator==, string, to_string
+#include <vector>    // for vector, operator==
 
 TEST_CASE("[Range]: copy") {
   std::map<int, int> foo = {{1, 2}, {2, 3}};

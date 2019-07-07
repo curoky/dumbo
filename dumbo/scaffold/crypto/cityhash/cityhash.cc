@@ -18,8 +18,7 @@
 #include <city.h>  // for uint128, CityHash128WithSeed, CityHash64WithSeed, CityHash64WithSeeds, uint64, CityHash128, CityHash32, CityHash64, Hash...
 
 #include <cstring>  // for strlen
-#include <map>      // for pair
-#include <utility>  // for operator==
+#include <utility>  // for operator==, pair
 
 TEST_CASE("[Cityhash]: BaseTest") {
   char message[] = "this is a message";

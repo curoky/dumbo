@@ -17,7 +17,7 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
 #include <chrono>      // for filesystem
-#include <filesystem>  // for read_symlink, operator<<, operator==, path, create_directories, create_directory_symlink, create_symlink, directory_entry
+#include <filesystem>  // for read_symlink, operator<<, operator==, path, directory_iterator, begin, create_directories, create_directory_symlink, create_symlink, directory_entry, end, is_symlink, operator!=, remove_all
 #include <iostream>    // for operator<<, basic_ostream, cout, ostream
 #include <sstream>  // for basic_stringbuf<>::int_type, basic_stringbuf<>::pos_type, basic_stringbuf<>::__streambuf_type
 #include <string>  // for char_traits, basic_string

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <iostream>
+#include <iostream>  // for basic_ostream::operator<<, endl, basic_ostream<>::__ostream_type, cout, ostream
 
 void func(int x) {
   switch (x) {

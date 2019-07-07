@@ -17,9 +17,9 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, Section, TEST_CASE, CAPTURE, Capturer, SECTION
 #include <folly/Subprocess.h>  // for ProcessReturnCode, Subprocess, Subprocess::Options
 
-#include <map>     // for pair
-#include <string>  // for string, operator==, allocator, basic_string
-#include <vector>  // for vector
+#include <string>   // for string, basic_string, allocator, operator==
+#include <utility>  // for pair
+#include <vector>   // for vector
 
 TEST_CASE("[SubProcess]: basic usage") {
   std::vector<std::string> args = {"/bin/ls", "-la"};

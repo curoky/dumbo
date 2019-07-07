@@ -26,7 +26,7 @@
 #include <stdio.h>                            // for printf
 
 #include <chrono>  // for seconds
-#include <string>  // for operator==, basic_string, string
+#include <string>  // for basic_string, operator==, string
 #include <thread>  // for thread
 
 TEST_CASE("[EventBase]: simple test") {

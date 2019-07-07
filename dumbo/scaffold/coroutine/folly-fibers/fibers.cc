@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
-#include <folly/fibers/Baton.h>
+#include <catch2/catch.hpp>      // for SourceLineInfo, StringRef, TEST_CASE
+#include <folly/fibers/Baton.h>  // for Baton
 #include <folly/fibers/Fiber.h>
-#include <folly/fibers/FiberManager.h>
-#include <folly/fibers/FiberManagerMap.h>
-#include <folly/io/async/EventBase.h>
+#include <folly/fibers/FiberManager.h>     // for FiberManager
+#include <folly/fibers/FiberManagerMap.h>  // for getFiberManager
+#include <folly/io/async/EventBase.h>      // for EventBase
 
-#include <iostream>
+#include <iostream>  // for operator<<, endl, basic_ostream, cout, ostream
 
 TEST_CASE("[Fibers]: basic usage") {
   folly::EventBase evb;

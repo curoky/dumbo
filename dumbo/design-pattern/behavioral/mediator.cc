@@ -20,7 +20,7 @@
 #include <ctime>     // for localtime, time, time_t
 #include <iomanip>   // for operator<<, put_time
 #include <iostream>  // for operator<<, basic_ostream, endl, cout, ostream
-#include <string>    // for string, allocator, operator<<, char_traits
+#include <string>    // for allocator, string, operator<<, char_traits
 
 namespace {
 class User;

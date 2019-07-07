@@ -17,8 +17,9 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, Section, TEST_CASE, SECTION, SectionInfo, CAP...
 
 #include <functional>   // for function
-#include <string>       // for operator==, string, move, basic_string, allocator, forward
+#include <string>       // for operator==, string, basic_string, allocator
 #include <type_traits>  // for remove_reference<>::type, integral_constant<>::value, is_lvalue_reference, is_rvalue_reference
+#include <utility>      // for move, forward
 
 TEST_CASE("[Reference]: lvalue and rvalue reference") {
   std::string msg = "12345";

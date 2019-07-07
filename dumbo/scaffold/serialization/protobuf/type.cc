@@ -49,8 +49,8 @@ TEST_CASE("[Type]: pb enum") {
 
 TEST_CASE("[Type]: pb container") {
   idl::pb::MockRequest req;
-  REQUIRE_TYPE(req.var_int32_list(), google::protobuf::RepeatedField<int32_t>);
-  REQUIRE_TYPE(req.var_string_list(), google::protobuf::RepeatedPtrField<std::string>);
+  REQUIRE_TYPE(req.var_int32_lists(), google::protobuf::RepeatedField<int32_t>);
+  REQUIRE_TYPE(req.var_string_lists(), google::protobuf::RepeatedPtrField<std::string>);
   using MapI32Str = google::protobuf::Map<int32_t, std::string>;
   REQUIRE_TYPE(req.var_map(), MapI32Str);
 }

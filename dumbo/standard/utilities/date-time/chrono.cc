@@ -17,12 +17,13 @@
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE, AssertionHandler, operator""_catch_sr, REQUIRE
 #include <cxxabi.h>  // for __forced_unwind
 
-#include <chrono>  // for system_clock, duration, minutes, operator-, seconds, system_clock::time_point, time_point, duration_cast, time_point_cast
+#include <chrono>  // for duration, system_clock, minutes, operator-, seconds, system_clock::time_point, time_point, duration_cast, time_point_cast, hours, steady_clock
 #include <ctime>   // for localtime, time_t
-#include <iomanip>   // for operator<<, put_time
-#include <iostream>  // for char_traits, stringstream, basic_ostream
-#include <ratio>     // for ratio
-#include <string>    // for string_literals
+#include <iomanip>  // for operator<<, put_time
+#include <iosfwd>   // for stringstream
+#include <ostream>  // for basic_ostream
+#include <ratio>    // for ratio
+#include <string>   // for char_traits, string_literals
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-variable"

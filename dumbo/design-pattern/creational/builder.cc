@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
+#include <iostream>  // for operator<<, cout, ostream, basic_ostream::operator<<, endl
 
 namespace {
 class Burger {
  public:
   class BurgerBuilder;
+
   void showFlavors() {
     std::cout << size_;
     if (cheese_) std::cout << "-cheese";

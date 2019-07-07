@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-#include <boost/context/detail/exception.hpp>  // for forced_unwind
 #include <boost/coroutine2/coroutine.hpp>  // for coroutine<>::push_type, coroutine<>::pull_type, coroutine
 #include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
 #include <cxxabi.h>  // for __forced_unwind
 
-#include <algorithm>   // for copy, max
 #include <functional>  // for bind, ref, _1
 #include <vector>      // for vector, allocator, operator==
 

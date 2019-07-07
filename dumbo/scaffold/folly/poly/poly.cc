@@ -18,9 +18,10 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <folly/Poly.h>  // for Poly, PolyMembers, poly_call
 
-#include <memory>  // for allocator_traits<>::value_type
-#include <string>  // for operator==, string, basic_string
-#include <vector>  // for vector, __alloc_traits<>::value_type, allocator
+#include <ext/alloc_traits.h>  // for __alloc_traits<>::value_type
+#include <memory>              // for allocator, allocator_traits<>::value_type
+#include <string>              // for operator==, string, basic_string
+#include <vector>              // for vector
 
 namespace {
 

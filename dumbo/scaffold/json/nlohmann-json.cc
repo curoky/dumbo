@@ -23,10 +23,11 @@
 
 #include <functional>        // for equal_to
 #include <initializer_list>  // for initializer_list
+#include <map>               // for map
 #include <stdexcept>         // for out_of_range
-#include <string>            // for string, basic_string, operator==, hash
+#include <string>            // for string, allocator, operator==, hash, operator<=>
 #include <unordered_map>     // for unordered_map
-#include <vector>            // for vector, allocator
+#include <vector>            // for vector
 
 #include "dumbo/scaffold/json/json_data.h"  // for json_data
 
@@ -124,4 +125,33 @@ TEST_CASE("[Nlohmann-json]: tbb to/from json") {
     tbb::concurrent_unordered_map<int, std::string> map;
     j["map"] = map;
   }
+}
+
+// custom struct
+namespace nj {
+struct Foo {
+  std::vector<int> v1;
+  std::map<std::string, std::vector<int>> v2;
+};
+void to_json(nlohmann::json& j, const Foo& foo) {
+  j["v1"] = foo.v1;
+  j["v2"] = foo.v2;
+}
+}  // namespace nj
+
+TEST_CASE("[json]: basic usage") {
+  json j;
+  nj::Foo foo;
+  foo.v1 = {1, 2, 3};
+  foo.v2 = {{"123", {1, 2, 3}}};
+  j["data"] = foo;
+  /*
+  {
+    "data": {
+      "v1": [1, 2, 3],
+      "v2": { "123": [1, 2, 3] }
+    }
+  }
+   */
+  // REQUIRE(j.dump(2) == "23");
 }

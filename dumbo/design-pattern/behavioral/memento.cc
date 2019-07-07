@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
-#include <memory>
-#include <string>
+#include <iostream>  // for endl, basic_ostream, cout, ostream
+#include <memory>    // for allocator, make_shared, __shared_ptr_access, shared_ptr
+#include <string>    // for string, operator<<, operator+
 
 namespace {
 class EditorMemento {

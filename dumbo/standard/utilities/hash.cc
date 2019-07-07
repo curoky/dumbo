@@ -19,7 +19,8 @@
 
 #include <iosfwd>         // for size_t
 #include <string>         // for allocator, hash, string, u16string, u32string, wstring
-#include <unordered_map>  // for hash, unordered_map, pair
+#include <unordered_map>  // for hash, unordered_map
+#include <utility>        // for pair
 #include <variant>        // for hash
 
 TEST_CASE("[Hash]: basic types") {

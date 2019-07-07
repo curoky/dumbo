@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <gflags/gflags.h>
+#include <gflags/gflags.h>  // for ParseCommandLineFlags, DEFINE_int32
 
-#include <iostream>
-#include <thread>
+#include <iostream>  // for basic_ostream::operator<<, operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream
+#include <thread>    // for thread
 
 DEFINE_int32(pre_stack_size, 1, "preallocate stack size(MB)");
 

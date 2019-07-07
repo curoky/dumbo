@@ -18,8 +18,9 @@
 #include <cpr/cpr.h>  // for Response, Get, Post, Url, Header, Body, Authentication, Cookies, Parameters, Payload
 #include <nlohmann/json.hpp>  // for basic_json<>::object_t
 
-#include <map>     // for map<>::mapped_type, map
-#include <string>  // for string, to_string, move, allocator, basic_string
+#include <map>      // for map<>::mapped_type, map
+#include <string>   // for string, to_string, allocator
+#include <utility>  // for move
 
 #include "dumbo/scaffold/http/httpbin.h"  // for MapString, HttpBin, json
 

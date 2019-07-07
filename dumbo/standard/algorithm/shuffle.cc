@@ -17,7 +17,7 @@
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
 #include <algorithm>  // for copy, shuffle
-#include <iostream>   // for operator<<, cout, ostream
+#include <iostream>   // for operator<<, basic_ostream::operator<<, cout, basic_ostream, ostream
 #include <iterator>   // for ostream_iterator
 #include <random>     // for random_device, mt19937
 #include <vector>     // for vector

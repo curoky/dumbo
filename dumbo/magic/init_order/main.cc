@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#include <cstdio>
+#include <cstdio>  // for printf
 
-#include "lib.h"
+#include "lib.h"  // IWYU pragma: keep
 
 int main(int argc, char const *argv[]) {
   printf("main\n");

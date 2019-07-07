@@ -20,8 +20,9 @@
 #include <folly/io/IOBufQueue.h>  // for IOBufQueue
 
 #include <iostream>  // for endl, operator<<, cout, ostream, basic_ostream<>::__ostream_type, basic_ostream
-#include <memory>  // for allocator, unique_ptr
-#include <string>  // for move, string
+#include <memory>   // for allocator, unique_ptr
+#include <string>   // for string
+#include <utility>  // for move
 
 /*
  *  +-------+

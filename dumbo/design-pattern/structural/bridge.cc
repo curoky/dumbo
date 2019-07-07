@@ -17,7 +17,7 @@
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
 #include <iostream>  // for endl, basic_ostream, cout, ostream
-#include <string>    // for string, operator+, operator<<, allocator
+#include <string>    // for string, allocator, operator+, operator<<
 
 namespace {
 class Theme {

@@ -18,8 +18,8 @@
 
 #include <algorithm>  // for all_of, any_of, count, count_if, none_of, mismatch, search
 #include <iterator>   // for distance
-#include <map>        // for pair
 #include <string>     // for basic_string, string, allocator
+#include <utility>    // for pair
 #include <vector>     // for vector
 
 TEST_CASE("[NoModify]: OfTest") {

@@ -17,7 +17,8 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
 #include <algorithm>      // for max
-#include <unordered_map>  // for unordered_map, pair
+#include <unordered_map>  // for unordered_map
+#include <utility>        // for pair
 
 TEST_CASE("[UnorderedMap]: insert when exists") {
   std::unordered_map<int, int> mp = {{1, 1}};

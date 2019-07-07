@@ -15,4 +15,4 @@
  */
 
 #pragma once
-#include "gen-cpp2/EchoService.h"
+#include "dumbo/scaffold/serialization/fbthrift/gen-cpp2/EchoService.h"  // for EchoServiceSvIf

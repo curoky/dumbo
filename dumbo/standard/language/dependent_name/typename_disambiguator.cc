@@ -15,7 +15,7 @@
  */
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
-#include <folly/Demangle.h>  // IWYU pragma: keep
+#include <folly/Demangle.h>
 
 #include <vector>  // for vector
 // https://en.cppreference.com/w/cpp/language/dependent_name#The_typename_disambiguator_for_dependent_names

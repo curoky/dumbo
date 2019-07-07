@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
-#include <vector>
+#include <iostream>  // for operator<<, endl, basic_ostream, cout, ostream
+#include <vector>    // for vector
+
 namespace {
 class SortStrategy {
  public:

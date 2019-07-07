@@ -17,7 +17,7 @@
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
 #include <iostream>  // for operator<<, basic_ostream, endl, cout, ostream, basic_ostream<>::__ostream_type
-#include <string>  // for string, allocator, operator<<, char_traits
+#include <string>  // for allocator, string, operator<<, char_traits
 
 namespace {
 class Account {

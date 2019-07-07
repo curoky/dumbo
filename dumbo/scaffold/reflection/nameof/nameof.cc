@@ -17,9 +17,9 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <nameof.hpp>  // for cstring, operator==, operator<<, NAMEOF, is_nameof_enum_supported, is_nameof_type_supported, NAMEOF_ENUM_SUPPORTED, NAME...
 
-#include <map>          // for pair
 #include <string>       // for string
 #include <string_view>  // for basic_string_view, operator==
+#include <utility>      // for pair
 
 TEST_CASE("[Nameof]: check compiler support") {
   // check is nameof_type supported compiler

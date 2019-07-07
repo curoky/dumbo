@@ -22,8 +22,9 @@
  */
 #include <catch2/catch.hpp>  // for StringRef, SourceLineInfo, AssertionHandler, operator""_catch_sr, CAPTURE, Capturer, REQUIRE, TEST_CASE
 #include <curl/curl.h>  // for CURLE_OK, curl_easy_cleanup, curl_easy_init, curl_easy_perform, curl_easy_setopt, curl_global_cleanup, curl_global_init
+#include <stddef.h>     // for size_t
 
-#include <string>  // for allocator, string, size_t
+#include <string>  // for allocator, string
 
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
   ((std::string*)userp)->append((char*)contents, size * nmemb);  // NOLINT

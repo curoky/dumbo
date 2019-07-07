@@ -22,12 +22,8 @@
 #include <stdint.h>        // for int16_t
 
 #include <algorithm>  // for equal
-#include <set>        // for set, operator==, operator!=
-#include <string>  // for string, operator==, operator""s, basic_string, allocator, operator<, string_literals
-
-struct event;
-struct event_base;
-struct event_config;
+#include <set>        // for operator==, set
+#include <string>  // for string, allocator, operator""s, operator==, basic_string, operator<=>, string_literals
 
 using namespace std::string_literals;  // NOLINT
 

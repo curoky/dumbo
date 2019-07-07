@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE, Section, SECTION, Sec...
 
-#include <memory>  // for shared_ptr, __shared_ptr_access, operator==, make_shared, allocator
-#include <string>  // for string, operator==, basic_string, move
+#include <memory>   // for shared_ptr, __shared_ptr_access, operator==, make_shared, allocator
+#include <string>   // for string, basic_string, operator==
+#include <utility>  // for move
 
-#include "dumbo/utilities/class_utils.h"
+#include "dumbo/utilities/class_utils.h"  // for ClassMetrics, ClassMetrics::Counter
 
 TEST_CASE("[SharedPtr]: make_shared with move constructor") {
   std::string msg = "123";

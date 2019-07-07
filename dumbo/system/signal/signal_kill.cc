@@ -17,13 +17,13 @@
 // REF: https://www.cnblogs.com/clover-toeic/p/4126594.html
 #include <pthread.h>  // for pthread_self, pthread_t
 #include <signal.h>  // for signal, sigaddset, pthread_kill, pthread_sigmask, sigemptyset, sigwait, SIGINT, SIGTERM, sigset_t, SIGPIPE, SIG_IGN, SIG_SETMASK
-#include <stddef.h>  // for NULL
+#include <stddef.h>  // for size_t, NULL
 
 #include <chrono>      // for seconds
 #include <functional>  // for ref
-#include <iostream>  // for operator<<, basic_ostream, char_traits, endl, basic_ostream<>::__ostream_type, basic_ostream::operator<<, cout, ostream
-#include <memory>    // for make_shared, allocator, __shared_ptr_access, shared_ptr
-#include <string>    // for operator<<, size_t, string
+#include <iostream>  // for operator<<, basic_ostream, endl, basic_ostream<>::__ostream_type, basic_ostream::operator<<, cout, ostream
+#include <memory>    // for allocator, make_shared, __shared_ptr_access, shared_ptr
+#include <string>    // for char_traits, operator<<, string
 #include <thread>    // for sleep_for, thread
 
 #define INFO std::cout << "[" << pthread_self() << "]: " << __func__ << ": "

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_...
+#include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
 
 #include <iostream>  // for operator<<, cout, endl, ostream
-#include <string>    // for string, allocator, basic_string
+#include <string>    // for basic_string, allocator, operator==, string
 
 TEST_CASE("[Adl]: simple test") {
   std::cout << "Test\n";            // There is no operator<< in global namespace, but ADL

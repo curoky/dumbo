@@ -17,6 +17,9 @@
 #pragma once
 #include <bits/types/time_t.h>
 #include <ctype.h>
+#include <features.h>      // for __THROW
+#include <net/ppp_defs.h>  // for time_t
+#include <sys/types.h>     // for time_t
 
 extern "C" {
 extern time_t mytime(time_t *__timer) __THROW;

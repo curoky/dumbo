@@ -18,12 +18,13 @@
 // Run: pmap -X $(pidof case0) > pmap.log
 
 #include <pthread.h>  // for pthread_t, pthread_attr_init, pthread_attr_setstacksize, pthread_attr_t, pthread_create, pthread_join
-#include <sys/types.h>  // for int8_t
+#include <stddef.h>   // for size_t
+#include <stdint.h>   // for int8_t
 
 #include <cassert>  // for assert
 #include <chrono>   // for seconds
 #include <thread>   // for sleep_for
-#include <vector>   // for vector, size_t
+#include <vector>   // for vector
 
 static const size_t KB = 1024;
 static const size_t MB = 1024 * KB;

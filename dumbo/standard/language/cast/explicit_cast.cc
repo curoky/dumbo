@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_...
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 #include <stdio.h>  // for printf
 
-#include <iostream>  // for endl, operator<<, basic_ostream::operator<<, cout, ostream, basic_ostream, basic...
-#include <string>  // for basic_string, operator==, string, allocator
+#include <iostream>  // for endl, operator<<, basic_ostream::operator<<, cout, ostream, basic_ostream, basic_ostream<>::__ostream_type
+#include <string>    // for operator==, allocator, string, basic_string
 
 TEST_CASE("[ExplicitCast]: StaticCastTest") {
   // 完成编译器认可的隐式类型转换

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iomanip>
-#include <iostream>
+#include <iomanip>   // for operator<<, setfill, setiosflags, setprecision, setw
+#include <iostream>  // for basic_ostream::operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream, ios
 
 TEST_CASE("[Cout]: prefix zero") {
   //

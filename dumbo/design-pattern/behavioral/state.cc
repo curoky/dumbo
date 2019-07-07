@@ -19,7 +19,7 @@
 
 #include <algorithm>  // for transform
 #include <iostream>   // for endl, basic_ostream, cout, ostream
-#include <memory>     // for make_shared, shared_ptr, allocator, __shared_ptr_access
+#include <memory>     // for allocator, make_shared, shared_ptr, __shared_ptr_access
 #include <string>     // for string, operator<<
 
 namespace {

@@ -14,18 +14,23 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE, CAPTURE, Capturer, AssertionHandler, operator""_catch_sr, REQUIRE
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE, AssertionHandler, operator""_catch_sr, CAPTURE, Capturer, REQUIRE
 #include <nlohmann/json.hpp>            // for basic_json<>::object_t, json
 #include <restclient-cpp/connection.h>  // for Connection
 #include <restclient-cpp/restclient.h>  // for Response, disable, init, HeaderFields, get
+#include <restclient-cpp/version.h>     // for RESTCLIENT_VERSION
 
-#include <map>     // for map, operator!=
+#include <map>     // for map, operator==
 #include <memory>  // for allocator, make_unique, unique_ptr
-#include <string>  // for string, to_string, operator+, char_traits, basic_string
+#include <string>  // for string, to_string, char_traits, operator+, operator==, basic_string
 
 #include "dumbo/scaffold/http/httpbin.h"  // for MapString, HttpBin
 
 using json = nlohmann::json;
+
+TEST_CASE("[Restclient-cpp]: check version") {
+  REQUIRE(RESTCLIENT_VERSION == std::string("0.5.2"));
+}
 
 TEST_CASE("[Restclient-cpp]: simple test") {
   RestClient::Response r = RestClient::get("http://httpbin.org/get");

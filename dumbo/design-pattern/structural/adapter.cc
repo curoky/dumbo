@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
+#include <iostream>  // for operator<<, endl, basic_ostream, cout, ostream
+
 namespace {
 class Lion {
  public:

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, Section, SECTION, SectionInfo, TEST_CASE
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, Section, SECTION, SectionInfo
 
-#include <vector>  // for move, allocator, vector
+#include <utility>  // for move
+#include <vector>   // for allocator, vector
 
 #include "dumbo/utilities/class_utils.h"  // for ClassMetrics, ClassMetrics::Counter
 

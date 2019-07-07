@@ -17,9 +17,10 @@
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
 #include <iostream>  // for basic_ostream::operator<<, operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream
-#include <memory>    // for unique_ptr, _MakeUniq<>::__single_object, allocator, make_unique
+#include <memory>    // for unique_ptr, allocator, _MakeUniq<>::__single_object, make_unique
 #include <string>    // for string, hash, operator==
-#include <unordered_map>  // for unordered_map, operator==, unordered_map<>::iterator, _Map_base<>::mapped_type, _Node_iterator_base, pair
+#include <unordered_map>  // for unordered_map, _Node_iterator, operator!=, operator==, _Node_iterator_base, unordered_map<>::iterator, _Map_base<>::mapped_type
+#include <utility>        // for pair
 
 namespace {
 // Anything that will be cached is flyweight.

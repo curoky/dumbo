@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
-#include <string>
-#include <vector>
+#include <iostream>  // for operator<<, basic_ostream, endl, cout, ostream
+#include <string>    // for allocator, operator<<, string, char_traits
+#include <vector>    // for vector
 
 namespace {
 class JobPost {

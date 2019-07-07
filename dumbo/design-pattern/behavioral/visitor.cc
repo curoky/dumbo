@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
+#include <iostream>  // for operator<<, endl, basic_ostream, cout, ostream
+
 namespace {
 class AnimalOperation;
 
@@ -26,9 +27,9 @@ class Animal {
   virtual void Accept(AnimalOperation& operation) = 0;
 };
 
-class Monkey;
-class Lion;
 class Dolphin;
+class Lion;
+class Monkey;
 
 // visitor
 class AnimalOperation {

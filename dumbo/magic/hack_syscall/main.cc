@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <stdlib.h>  // for rand, rand_r, NULL
+#include <time.h>    // for time
 
-#include <iostream>
+#include <iostream>  // for operator<<, basic_ostream::operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream
 
 int main(int argc, char const *argv[]) {
   std::cout << "time: " << time(NULL) << std::endl;

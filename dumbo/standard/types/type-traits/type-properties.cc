@@ -18,7 +18,7 @@
 
 #include <array>        // for array
 #include <cstddef>      // for nullptr_t
-#include <type_traits>  // for integral_constant<>::value, is_scalar_v, is_arithmetic_v, is_base_of, is_class, is_enum, is_trivial_v, is_union, is_const_v
+#include <type_traits>  // for integral_constant<>::value, is_scalar_v, is_arithmetic_v, is_base_of, is_class, is_enum, is_trivial_v, is_union, is_const_v, is_floating_point, is_fundamental_v, is_integral, is_object_v, is_array, is_function, is_lvalue_reference_v, is_reference_v, is_rvalue_reference_v, is_member_pointer_v, is_null_pointer, is_pointer, is_pointer_v, is_void, is_volatile_v, is_compound_v, is_member_function_pointer_v, is_member_object_pointer_v, is_pod_v, remove_reference, remove_reference<>::type
 
 namespace {
 struct ClassType {

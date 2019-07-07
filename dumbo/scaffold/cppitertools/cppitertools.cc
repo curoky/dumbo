@@ -17,8 +17,8 @@
 #include <catch2/catch.hpp>      // for SourceLineInfo, StringRef, TEST_CASE
 #include <cppitertools/zip.hpp>  // for Zipped, Zipped<>::Iterator, zip
 
-#include <iostream>  // for operator<<, basic_ostream, basic_ostream::operator<<, char_traits, cout, ostream, basic_ostream<>::__ostream_type
-#include <string>    // for string, basic_string, allocator, operator<<
+#include <iostream>  // for operator<<, basic_ostream, basic_ostream::operator<<, cout, ostream, basic_ostream<>::__ostream_type
+#include <string>    // for string, allocator, basic_string, operator<<, char_traits
 #include <vector>    // for vector
 
 TEST_CASE("[Cppitertools]: zip") {

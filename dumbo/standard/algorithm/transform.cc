@@ -15,11 +15,12 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
+#include <stddef.h>  // for size_t
 
 #include <algorithm>  // for transform
 #include <iterator>   // for back_insert_iterator, back_inserter
-#include <string>     // for string, to_string, basic_string, operator==
-#include <vector>     // for vector, size_t
+#include <string>     // for string, basic_string, to_string, operator==
+#include <vector>     // for vector
 
 TEST_CASE("[Transform]: base test") {
   std::vector<int> ids = {0, 1, 2, 3, 4, 5};

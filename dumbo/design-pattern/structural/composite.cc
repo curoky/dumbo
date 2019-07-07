@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <iostream>
-#include <string>
-#include <vector>
+#include <iostream>  // for operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream
+#include <string>  // for allocator, string
+#include <vector>  // for vector
 
 namespace {
 

@@ -22,11 +22,15 @@
 #include <boost/algorithm/string/predicate.hpp>  // for contains, ends_with, iequals, starts_with
 #include <boost/algorithm/string/replace.hpp>    // for replace_all_copy
 #include <boost/algorithm/string/split.hpp>      // for split
-#include <boost/algorithm/string/trim.hpp>  // for trim_copy, trim_copy_if, trim_left_copy, trim_left_copy_if, trim_right_copy, trim_right_copy_if
-#include <boost/iterator/iterator_traits.hpp>  // for iterator_value<>::type
+#include <boost/algorithm/string/trim.hpp>  // for trim_copy, trim_copy_if, trim_left_copy, trim_left_copy_if, trim_right_copy, trim_right_...
+#include <boost/core/addressof.hpp>                // for addressof
+#include <boost/function/function_base.hpp>        // for has_empty_target
+#include <boost/iterator/iterator_facade.hpp>      // for operator!=
+#include <boost/iterator/iterator_traits.hpp>      // for iterator_value<>::type
+#include <boost/range/distance.hpp>                // for distance
+#include <boost/type_index/type_index_facade.hpp>  // for operator==
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
-#include <algorithm>    // for equal
 #include <string>       // for string, basic_string, operator==, operator""s, allocator
 #include <string_view>  // for literals
 #include <vector>       // for vector, operator==
