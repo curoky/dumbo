@@ -95,11 +95,16 @@ jobs:
 
   iwyu:
     name: check with include-what-you-use
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    env:
+      CC: gcc-10
+      CXX: g++-10
     steps:
       - uses: actions/checkout@v2
       - name: prepare deps
         run: |
+          sudo apt update
+          sudo apt install gcc-10 g++-10 linux-libc-dev
           brew tap curoky/tap
           brew install bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
       - name: install include-what-you-use
