@@ -1,6 +1,6 @@
 workspace(name = "com_github_curoky_dumbo")
 
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "rules_3rd",
@@ -32,14 +32,13 @@ git_repository(
     remote = "https://github.com/google/benchmark.git",
 )
 
-new_git_repository(
+# local_repository(
+#     name = "com_github_curoky_iwyu_imp",
+#     path = "/home/curoky/repos/cpp/iwyu-imp",
+# )
+
+git_repository(
     name = "com_github_curoky_iwyu_imp",
     branch = "master",
-    build_file_content = """
-filegroup(
-    name = "iwyu_mappings",
-    srcs = glob(["**/*.imp"]),
-)
-        """,
     remote = "https://github.com/curoky/iwyu-imp.git",
 )
