@@ -45,6 +45,9 @@ jobs:
         if: ${{ github.event_name == 'schedule' }}
         run: rm -rf ~/.cache/bazel
 
+      - name: bazel sync
+        run: bazel sync
+
       - name: bazel build
         run: bazel build //...
 
