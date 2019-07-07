@@ -22,27 +22,35 @@ namespace cry {
 template <typename T>
 class SharedPtr {
  public:
-  explicit SharedPtr(T *ptr) : ptr_(ptr) { counter_ = new std::atomic_long(1); }
+  explicit SharedPtr(T *ptr) : ptr_(ptr) {
+    if (ptr_ != nullptr) {
+      counter_ = new std::atomic_long(1);
+    }
+  }
 
   SharedPtr(SharedPtr<T> &other) noexcept { *this = other; }
+
   SharedPtr<T> &operator=(SharedPtr<T> &other) noexcept {
     reset();
 
     ptr_ = other.ptr_;
     counter_ = other.counter_;
-    counter_->fetch_add(1);
+    if (counter_) {
+      counter_->fetch_add(1);
+    }
     return *this;
   }
 
   void reset() noexcept {
     if (counter_ != nullptr) {
       if (counter_->fetch_sub(1) == 1) {
-        delete counter_;
-        counter_ = nullptr;
         delete ptr_;
-        ptr_ = nullptr;
+        delete counter_;
       }
     }
+
+    ptr_ = nullptr;
+    counter_ = nullptr;
   }
 
   long use_count() const noexcept {  // NOLINT
