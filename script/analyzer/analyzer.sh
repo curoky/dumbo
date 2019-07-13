@@ -30,7 +30,6 @@ bazel build //script/compdb:compdb --check_visibility=false
 sed -i 's/-fno-canonical-system-headers//g' $CMDS_PATH
 sed -i 's/-Wunused-but-set-parameter/-Wunused-parameter/g' $CMDS_PATH
 sed -i 's/-Wno-free-nonheap-object/-Wno-sequence-point/g' $CMDS_PATH
-sed -i 's%__EXEC_ROOT__%/shm/bazel/execroot/com_github_curoky_dumbo%g' $CMDS_PATH
 cp -f $CMDS_PATH $EXEC_ROOT/compile_commands.json
 
 analyze-build --verbose --cdb $EXEC_ROOT/compile_commands.json -o clang-analysis \
