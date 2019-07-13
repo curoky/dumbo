@@ -30,26 +30,19 @@
 namespace detail {
 template <typename ThriftStruct, typename Protocol>
 std::string ThriftToString(const ThriftStruct& ts) {
-  using apache::thrift::transport::TMemoryBuffer;
-  using apache::thrift::transport::TTransport;
-  TMemoryBuffer* buffer = new TMemoryBuffer;
-  std::shared_ptr<TTransport> trans(buffer);
-  Protocol protocol(trans);
+  auto mbuffer = std::make_shared<apache::thrift::transport::TMemoryBuffer>();
+  Protocol protocol(mbuffer);
   ts.write(&protocol);
-  uint8_t* buf;
-  uint32_t size;
-  buffer->getBuffer(&buf, &size);
-  return std::string((char*)buf, (unsigned int)size);  // NOLINT
+  return mbuffer->getBufferAsString();  // NOLINT
 }
 
 template <typename ThriftStruct, typename Protocol>
 ThriftStruct StringToThrift(const std::string& str) {
   using apache::thrift::transport::TMemoryBuffer;
-  using apache::thrift::transport::TTransport;
   uint8_t* buf = reinterpret_cast<uint8_t*>(const_cast<char*>(str.data()));
-  TMemoryBuffer* buffer = new TMemoryBuffer(buf, str.size(), TMemoryBuffer::MemoryPolicy::COPY);
-  std::shared_ptr<TTransport> trans(buffer);
-  Protocol protocol(trans);
+  auto mbuffer =
+      std::make_shared<TMemoryBuffer>(buf, str.size(), TMemoryBuffer::MemoryPolicy::OBSERVE);
+  Protocol protocol(mbuffer);
   ThriftStruct result;
   result.read(&protocol);
   return result;
