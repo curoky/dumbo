@@ -20,9 +20,7 @@
 #include <type_traits>  // for conditional, false_type, true_type
 #include <utility>      // for declval
 
-class Foo1;
-class Foo2;
-
+#include "foo.h"
 namespace detail {
 template <typename... Ts>
 struct helper {};
@@ -35,7 +33,7 @@ template <class Container>
 struct has_method<
     Container,
     typename std::conditional<
-        false, detail::helper<decltype(std::declval<Container>().var_func_void_int())>, int>::type>
+        false, detail::helper<decltype(std::declval<Container>().var_func_void_int())>, void>::type>
     : std::true_type {};
 
 template <class Container>

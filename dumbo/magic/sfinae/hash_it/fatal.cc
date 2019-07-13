@@ -19,8 +19,7 @@
 
 #include <type_traits>  // for integral_constant<>::value
 
-class Foo1;
-class Foo2;
+#include "foo.h"
 
 FATAL_HAS_TYPE(has_type_int, type_int);
 
