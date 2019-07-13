@@ -18,8 +18,7 @@
 
 #include <atomic>              // for atomic
 #include <chrono>              // for seconds
-#include <condition_variable>  // for condition_variable, cv_status, cv_status::timeout
-#include <mutex>               // for mutex, unique_lock
+#include <condition_variable>  // for condition_variable, cv_status, mutex, unique_lock, cv_status::timeout
 #include <ostream>             // for operator<<
 #include <thread>              // for thread
 

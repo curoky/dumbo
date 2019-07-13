@@ -19,10 +19,9 @@
 #include <fmt/format.h>  // for format, arg, operator""_a, parse_nonnegative_int, join, udl_arg, operator""_format, print, format_to, udl_formatter, FMT_STRING, format_error, literals
 #include <fmt/printf.h>  // IWYU pragma: keep
 
-#include <ctime>     // for localtime, time, time_t
-#include <iterator>  // for back_insert_iterator, back_inserter
-#include <string>    // for operator==, basic_string, string
-#include <vector>    // for vector
+#include <ctime>   // for localtime, time, time_t
+#include <string>  // for operator==, basic_string, back_insert_iterator, back_inserter, string
+#include <vector>  // for vector
 
 TEST_CASE("[Fmt]: print test") {
   fmt::print("Hello, {}!", "world");   // Python-like format string syntax

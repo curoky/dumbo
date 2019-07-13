@@ -16,11 +16,10 @@
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <algorithm>  // for copy, shuffle
-#include <iostream>   // for operator<<, basic_ostream::operator<<, cout, basic_ostream, ostream
-#include <iterator>   // for ostream_iterator
-#include <random>     // for random_device, mt19937
-#include <vector>     // for vector
+#include <iostream>  // for operator<<, cout, basic_ostream, ostream
+#include <iterator>  // for ostream_iterator
+#include <random>    // for random_device, mt19937
+#include <vector>    // for vector, copy, shuffle
 
 TEST_CASE("[Shuffle]: base test") {
   std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

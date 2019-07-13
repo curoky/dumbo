@@ -1,5 +1,5 @@
-load("//dumbo:copts.bzl", "DUMBO_DEFAULT_LINKOPTS", "DUMBO_TEST_COPTS")
 load("@rules_cc//cc:defs.bzl", "cc_binary")
+load("//dumbo:copts.bzl", "DUMBO_DEFAULT_LINKOPTS", "DUMBO_TEST_COPTS")
 
 cc_binary(
     name = "container",

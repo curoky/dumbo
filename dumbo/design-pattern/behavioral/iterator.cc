@@ -16,9 +16,8 @@
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, TEST_CASE
 
-#include <algorithm>  // for find
-#include <iostream>   // for endl, basic_ostream<>::__ostream_type, cout, ostream
-#include <vector>     // for vector<>::iterator, vector
+#include <iostream>  // for endl, basic_ostream<>::__ostream_type, cout, ostream
+#include <vector>    // for vector<>::iterator, vector, find
 
 namespace {
 class RadioStation {

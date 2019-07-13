@@ -18,8 +18,7 @@
 #include <cxxabi.h>  // for __forced_unwind
 
 #include <functional>  // for _Bind_helper<>::type, bind
-#include <future>      // for packaged_task, future
-#include <memory>      // for shared_ptr
+#include <future>      // for packaged_task, future, shared_ptr
 #include <thread>      // for thread
 #include <utility>     // for move
 

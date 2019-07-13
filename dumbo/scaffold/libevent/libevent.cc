@@ -18,12 +18,11 @@
 // https://www.gitbook.com/book/aceld/libevent
 
 #include <catch2/catch.hpp>  // for SourceLineInfo, AssertionHandler, operator""_catch_sr, StringRef, Section, REQUIRE, SECTION, SectionInfo, TEST_CASE
-#include <event2/event.h>  // for event_base_get_method, event_base_loop, event_base_dispatch, event_base_free, event_base_got_exit, event_base_new, event...
+#include <event2/event.h>  // for event_base_get_method, event_base_loop, event_base_dispatch, event_base_free, event_base_got_exit, event_base_new, event_base, event_add, event_base_loopbreak, event_base_new_with_config, event_config_avoid_method, event_config_free, event_config_new, event_free, event_get_supported_methods, event_new, EVLOOP_NONBLOCK, EVLOOP_ONCE, EV_READ, event, event_config
 #include <stdint.h>        // for int16_t
 
-#include <algorithm>  // for equal
-#include <set>        // for operator==, set
-#include <string>  // for string, allocator, operator""s, operator==, basic_string, operator<=>, string_literals
+#include <set>  // for operator==, set
+#include <string>  // for string, allocator, operator""s, operator==, basic_string, equal, string_literals
 
 using namespace std::string_literals;  // NOLINT
 

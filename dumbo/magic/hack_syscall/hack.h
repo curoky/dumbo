@@ -15,10 +15,10 @@
  */
 
 #pragma once
-#include <bits/types/time_t.h>
 #include <ctype.h>
 #include <features.h>      // for __THROW
 #include <net/ppp_defs.h>  // for time_t
+#include <sys/cdefs.h>     // for __THROW
 #include <sys/types.h>     // for time_t
 
 extern "C" {

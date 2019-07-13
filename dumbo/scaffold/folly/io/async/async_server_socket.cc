@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include <bits/exception.h>  // for exception
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, operator""_catch_sr, AssertionHandler, TEST_CASE, Section, REQUIRE, SECTION
 #include <folly/SocketAddress.h>               // for SocketAddress
 #include <folly/io/async/AsyncServerSocket.h>  // for AsyncServerSocket

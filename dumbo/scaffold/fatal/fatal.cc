@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include <bits/exception.h>                  // for exception
 #include <fatal/container/legacy_variant.h>  // for auto_variant, legacy_variant
 #include <fatal/container/unitary_union.h>   // for fatal
 #include <fatal/test/string.h>               // for parse
@@ -39,15 +38,15 @@
 #include <fatal/type/type.h>                 // for type_of
 #include <fatal/type/unique.h>               // for adjacent_unique
 
-#include <iostream>  // for operator<<, endl, cout, ostream, basic_ostream, basic_istream, boolalpha, istringstream, basic_ostream<>::__ostream_type, cerr, cin
+#include <exception>  // for exception
+#include <iostream>  // for operator<<, endl, cout, ostream, basic_ostream, size_t, basic_istream, boolalpha, istringstream, basic_ostream<>::__ostream_type, cerr, cin
 #include <sstream>   // IWYU pragma: keep
 #include <stdexcept>  // for invalid_argument, runtime_error
-#include <string>  // for string, basic_string, operator<<, operator==, getline, hash, operator>>, char_traits
-#include <type_traits>  // for integral_constant<>::value, is_same
-#include <unordered_map>  // for operator==, _Node_iterator, unordered_map, _Node_iterator_base, unordered_map<>::iterator
-#include <utility>  // for move, forward, pair
-#include <vector>   // for vector
-#include <version>  // for size_t
+#include <string>  // for string, basic_string, operator<<, getline, hash, operator>>, char_traits
+#include <type_traits>    // for integral_constant<>::value, is_same
+#include <unordered_map>  // for operator==, _Node_iterator, unordered_map, _Node_iterator_base, pair, unordered_map<>::iterator
+#include <utility>        // for move, forward
+#include <vector>         // for vector
 
 using namespace fatal;
 

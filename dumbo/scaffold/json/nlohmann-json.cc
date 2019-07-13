@@ -15,17 +15,16 @@
  */
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, REQUIRE_FALSE, TEST_CASE
-#include <nlohmann/json.hpp>  // for basic_json, basic_json<>::object_t, operator==, operator<<, basic_json<>::type_error, basic_json<>::value...
+#include <nlohmann/json.hpp>  // for basic_json, basic_json<>::object_t, operator==, operator<<, basic_json<>::type_error, basic_json<>::value_type, json
 #include <tbb/concurrent_unordered_map.h>  // for concurrent_unordered_map, operator!=, tbb_hash
 #include <tbb/concurrent_unordered_set.h>  // for concurrent_unordered_set
 #include <tbb/concurrent_vector.h>         // for concurrent_vector, operator!=, operator-
 #include <tbb/tbb_allocator.h>             // for tbb_allocator
 
-#include <functional>        // for equal_to
 #include <initializer_list>  // for initializer_list
 #include <map>               // for map
 #include <stdexcept>         // for out_of_range
-#include <string>            // for string, allocator, operator==, hash, operator<=>
+#include <string>            // for string, allocator, operator==, hash, equal_to
 #include <unordered_map>     // for unordered_map
 #include <vector>            // for vector
 

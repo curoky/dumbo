@@ -16,9 +16,8 @@
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
-#include <chrono>              // for milliseconds
-#include <condition_variable>  // for cv_status, condition_variable, cv_status::no_timeout, cv_status::timeout
-#include <mutex>               // for mutex
+#include <chrono>  // for milliseconds
+#include <condition_variable>  // for cv_status, condition_variable, cv_status::no_timeout, cv_status::timeout, mutex
 
 TEST_CASE("[ConditionVariable]: wait after notify") {
   std::mutex cv_m;

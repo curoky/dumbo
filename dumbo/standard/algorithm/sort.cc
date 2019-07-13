@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_...
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE, REQUIRE_FALSE
 
-#include <algorithm>  // for is_sorted_until, is_sorted, nth_element, partial_sort, sort
-#include <array>      // for array
-#include <iterator>   // for distance, begin, end
-#include <vector>     // for vector
+#include <array>     // for array, begin, end
+#include <iterator>  // for distance
+#include <vector>    // for vector, is_sorted_until, is_sorted, nth_element, partial_sort, sort
 
 TEST_CASE("[Sort]: SortTest") {
   int digits[] = {3, 1, 4, 1, 5};

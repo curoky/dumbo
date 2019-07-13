@@ -18,9 +18,8 @@
 
 #include <iostream>  // for basic_ostream::operator<<, operator<<, endl, basic_ostream, basic_ostream<>::__ostream_type, cout, ostream
 #include <memory>    // for unique_ptr, allocator, _MakeUniq<>::__single_object, make_unique
-#include <string>    // for string, hash, operator==
-#include <unordered_map>  // for unordered_map, _Node_iterator, operator!=, operator==, _Node_iterator_base, unordered_map<>::iterator, _Map_base<>::mapped_type
-#include <utility>        // for pair
+#include <string>    // for string, hash
+#include <unordered_map>  // for unordered_map, _Node_iterator, operator!=, operator==, _Node_iterator_base, unordered_map<>::iterator, _Map_base<>::mapped_type, pair
 
 namespace {
 // Anything that will be cached is flyweight.

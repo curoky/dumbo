@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-#include <catch2/catch.hpp>
+#include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
+
+#include <condition_variable>  // for make_shared, shared_ptr
+#include <type_traits>         // for integral_constant<>::value, enable_if, false_type, true_type
 
 template <typename T>
 struct isSharedPtr : std::false_type {};

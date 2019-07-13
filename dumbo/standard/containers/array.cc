@@ -16,11 +16,10 @@
 
 #include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
 
-#include <algorithm>  // for sort, reverse_copy
-#include <array>      // for array
-#include <iostream>   // for operator<<, basic_ostream::operator<<, cout, basic_ostream, ostream
-#include <iterator>   // for ostream_iterator
-#include <string>     // for allocator, string, operator<<, basic_string
+#include <array>     // for array
+#include <iostream>  // for operator<<, basic_ostream::operator<<, cout, basic_ostream, ostream
+#include <iterator>  // for ostream_iterator
+#include <string>    // for allocator, sort, string, operator<<, reverse_copy, basic_string
 
 TEST_CASE("[Array]: base test") {
   // construction uses aggregate initialization

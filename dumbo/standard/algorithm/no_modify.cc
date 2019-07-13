@@ -16,11 +16,9 @@
 
 #include <catch2/catch.hpp>  // for AssertionHandler, operator""_catch_sr, SourceLineInfo, StringRef, REQUIRE, TEST_CASE
 
-#include <algorithm>  // for all_of, any_of, count, count_if, none_of, mismatch, search
-#include <iterator>   // for distance
-#include <string>     // for basic_string, string, allocator
-#include <utility>    // for pair
-#include <vector>     // for vector
+#include <string>  // for basic_string, string, all_of, any_of, count, count_if, distance, none_of, allocator, mismatch, search
+#include <utility>  // for pair
+#include <vector>   // for vector
 
 TEST_CASE("[NoModify]: OfTest") {
   std::vector<int> number = {0, 1, 2, 3, 4, 5};

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include <bits/exception.h>  // for exception
 #include <catch2/catch.hpp>  // for SourceLineInfo, StringRef, operator""_catch_sr, AssertionHandler, TEST_CASE, REQUIRE, REQUIRE_THROWS_AS
 #include <folly/Unit.h>      // for Unit
 #include <folly/futures/Future.h>   // for Future, FutureInvalid (ptr only)
