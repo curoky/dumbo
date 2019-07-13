@@ -20,4 +20,5 @@ DUMBO_DEFAULT_LINKOPTS = [
     "-fsanitize=address",
     "-latomic",
     "-lpthread",
+    "-ldl",
 ]

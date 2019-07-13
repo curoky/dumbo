@@ -7,9 +7,7 @@ cc_binary(
         "action_service.cc",
     ],
     copts = DUMBO_TEST_COPTS,
-    linkopts = DUMBO_DEFAULT_LINKOPTS + [
-        "-ldl",
-    ],
+    linkopts = DUMBO_DEFAULT_LINKOPTS,
     deps = [
         "//dumbo/magic/dlopen_plugin/plugin:libaction",
     ],
