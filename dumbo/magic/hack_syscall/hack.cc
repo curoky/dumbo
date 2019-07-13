@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
+// Ref:
+// https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
+
 #include "hack.h"
 
-// #include <stdlib.h>
-// #include <time.h>
+#include <dlfcn.h>
 
-// extern int __clock_gettime(clockid_t clock_id, struct timespec *ts);
+typedef time_t (*orig_time_type)(time_t *__timer);
 
 time_t mytime(time_t *__timer) __THROW {
-  // struct timespec ts;
-  // __clock_gettime(CLOCK_REALTIME, &ts);
-
-  // if (__timer) *__timer = ts.tv_sec;
-  // return ts.tv_sec / 1000;
-  return 10010;
+  orig_time_type gtime = (orig_time_type)dlsym(RTLD_NEXT, "time");
+  return gtime(nullptr);
 }
 
 int myrand(void) __THROW {
