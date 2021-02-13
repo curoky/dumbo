@@ -38,6 +38,6 @@ TEST_CASE("[]: example") {
   REQUIRE(isSharedPtr<int>::value == false);
   REQUIRE(isSharedPtr<std::shared_ptr<int>>::value == true);
 
-  REQUIRE(is_ptr(int(1)) == false);
+  REQUIRE(is_ptr(1) == false);
   REQUIRE(is_ptr(std::make_shared<int>(1)) == true);
 }

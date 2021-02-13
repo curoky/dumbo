@@ -96,17 +96,14 @@ jobs:
   iwyu:
     name: check with include-what-you-use
     runs-on: ubuntu-20.04
-    env:
-      CC: gcc-10
-      CXX: g++-10
+    container:
+      image: curoky/compile:ubuntu21.04
     steps:
       - uses: actions/checkout@v2
       - name: prepare deps
         run: |
-          sudo apt update
-          sudo apt install gcc-10 g++-10 linux-libc-dev
-          brew tap curoky/tap
-          brew install bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
+          brew install bazel@3 tbb qt@5.13.2 libiberty
+          brew reinstall qt@5.13.2
       - name: install include-what-you-use
         run: brew install include-what-you-use
       - name: run include-what-you-use
@@ -122,12 +119,14 @@ jobs:
   clang_analyzer:
     name: check with clang analyzer
     runs-on: ubuntu-latest
+    container:
+      image: curoky/compile:ubuntu21.04
     steps:
       - uses: actions/checkout@v2
       - name: install clang analyzer
         run: |
-          brew tap curoky/tap
-          brew install llvm bazel@3 tbb python@3.9 gperf qt@5.13.2 libiberty
+          brew install bazel@3 tbb qt@5.13.2 libiberty
+          brew reinstall qt@5.13.2
           pip install scan-build
       - name: check version
         run: which scan-build

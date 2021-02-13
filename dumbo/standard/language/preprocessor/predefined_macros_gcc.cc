@@ -32,7 +32,7 @@ TEST_CASE("[PredefinedMacrosGcc]: __COUNTER__") {
 TEST_CASE("[PredefinedMacrosGcc]: __GNUC__") {
   REQUIRE(__GNUC__ == 10);
   // REQUIRE(__GNUC_MINOR__ == 1);
-  REQUIRE(__GNUC_PATCHLEVEL__ == 0);
+  // REQUIRE(__GNUC_PATCHLEVEL__ == 0);
 }
 
 TEST_CASE("[PredefinedMacrosGcc]: __GNUG__") { REQUIRE(__GNUG__ == 10); }

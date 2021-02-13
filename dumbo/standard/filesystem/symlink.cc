@@ -25,17 +25,17 @@
 namespace fs = std::filesystem;
 
 TEST_CASE("[Symlink]: CreateTest") {
-  fs::create_directories("sandbox/subdir");
-  fs::create_symlink("target", "sandbox/sym1");
-  fs::create_directory_symlink("subdir", "sandbox/sym2");
+  fs::create_directories("/tmp/sandbox/subdir");
+  fs::create_symlink("/tmp/target", "/tmp/sandbox/sym1");
+  fs::create_directory_symlink("/tmp/subdir", "/tmp/sandbox/sym2");
 
-  for (auto& p : fs::directory_iterator("sandbox")) {
+  for (auto& p : fs::directory_iterator("/tmp/sandbox")) {
     if (fs::is_symlink(p.symlink_status())) {
       std::cout << p.path() << "->" << fs::read_symlink(p.path()) << '\n';
     }
   }
-  REQUIRE(fs::read_symlink("sandbox/sym1") == "target");
-  REQUIRE(fs::read_symlink("sandbox/sym2") == "subdir");
+  REQUIRE(fs::read_symlink("/tmp/sandbox/sym1") == "/tmp/target");
+  REQUIRE(fs::read_symlink("/tmp/sandbox/sym2") == "/tmp/subdir");
 
-  fs::remove_all("sandbox");
+  fs::remove_all("/tmp/sandbox");
 }

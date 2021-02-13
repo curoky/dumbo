@@ -17,6 +17,7 @@
 #include <catch2/catch.hpp>  // for AssertionHandler, SourceLineInfo, StringRef, operator""_catch_sr, REQUIRE, TEST_CASE
 #include <stdint.h>  // for int64_t
 
+#include <iostream>
 #include <vector>  // for vector
 
 TEST_CASE("[Pointer]: pointer transform") {
@@ -29,4 +30,12 @@ TEST_CASE("[Pointer]: pointer transform") {
   const std::vector<int>* nubs_pointer = (const std::vector<int>*)p;
 
   REQUIRE(nubs_pointer->size() == 3);
+}
+
+TEST_CASE("[Pointer]: pointer postion") {
+  int a;
+  int b;
+  int64_t c;
+  char d;
+  std::cout << &a << " " << &b << " " << &c << " " << &d << std::endl;
 }

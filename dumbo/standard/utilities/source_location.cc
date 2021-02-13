@@ -26,9 +26,9 @@ using namespace experimental;  // NOLINT
 
 #include <catch2/catch.hpp>  // for operator""_catch_sr, AssertionHandler, SourceLineInfo, StringRef, CHECK, EndsWith, REQUIRE, REQUIRE_THAT, TEST_CASE
 
-#include <string>  // for string, basic_string, operator==, allocator, to_string
+#include <string>       // for string, basic_string, operator==, allocator, to_string
 #include <string_view>  // for string_view
-#include <vector>  // for vector
+#include <vector>       // for vector
 
 std::vector<std::string> log(std::string_view message, const std::source_location& location =
                                                            std::source_location::current()) {

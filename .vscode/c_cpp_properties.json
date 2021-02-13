@@ -8,7 +8,7 @@
       "cStandard": "c17",
       "cppStandard": "c++20",
       "intelliSenseMode": "gcc-x64",
-      "compileCommands": "${workspaceFolder}/bazel-out/k8-fastbuild/bin/script/compdb/compile_commands.json"
+      "compileCommands": "${workspaceFolder}/bazel-out/k8-dbg/bin/script/compdb/compile_commands.json"
     }
   ],
   "version": 4

@@ -6,6 +6,7 @@ DUMBO_DEFAULT_COPTS = [
     "-fno-omit-frame-pointer",
     "-fsanitize=address",
     "-std=c++2a",
+    # "-rdynamic",
 
     # for lldb
     # https://stackoverflow.com/questions/58578615/cannot-inspect-a-stdstring-variable-in-lldb
@@ -21,4 +22,5 @@ DUMBO_DEFAULT_LINKOPTS = [
     "-latomic",
     "-lpthread",
     "-ldl",
+    "-fuse-ld=lld",
 ]
