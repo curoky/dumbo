@@ -47,6 +47,27 @@ ThriftStruct StringToThrift(const std::string& str) {
   result.read(&protocol);
   return result;
 }
+
+// template <typename ThriftStruct, typename Protocol>
+// std::string ThriftToMessage(
+//     const ThriftStruct& ts, const std::string& method,
+//     ::apache::thrift::protocol::TMessageType mtype = ::apache::thrift::protocol::T_CALL,
+//     int32_t cseqid = 0) {
+//   auto mbuffer = std::make_shared<apache::thrift::transport::TMemoryBuffer>();
+//   Protocol protocol(mbuffer);
+//   protocol.writeMessageBegin(method, mtype, cseqid);
+
+//   xfer += protocol->writeStructBegin("EchoService_echo_pargs");
+//   xfer += protocol->writeFieldBegin("req", ::apache::thrift::protocol::T_STRUCT, /*fieldId =*/1);
+//   xfer += ts.write(&protocol);
+//   xfer += protocol->writeFieldEnd();
+//   xfer += protocol->writeFieldStop();
+//   xfer += protocol->writeStructEnd();
+//   protocol->writeMessageEnd();
+
+//   return mbuffer->getBufferAsString();  // NOLINT
+// }
+
 }  // namespace detail
 
 template <typename ThriftStruct>

@@ -24,3 +24,6 @@ jobs:
 
       - name: bazel test
         run: bazel test //...
+
+      - uses: curoky/actions/tmate@master
+        if: ${{ failure() }}

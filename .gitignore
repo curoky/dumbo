@@ -10,3 +10,5 @@ clang-analysis
 
 # binary
 *.out
+gen-cpp
+gen-cpp2

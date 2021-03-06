@@ -15,11 +15,16 @@ cc_test(
     srcs = glob([
         "*.h",
         "*.cc",
-    ]) + [":mock_fbthrift"],
+    ]) + [
+        ":mock_fbthrift",
+        "//dumbo/scaffold/serialization/thrift:mock_thrift",
+    ],
     copts = DUMBO_TEST_COPTS,
     linkopts = DUMBO_DEFAULT_LINKOPTS,
     deps = [
+        "//dumbo/scaffold/serialization/thrift:serialize_helper",
         "//dumbo/utilities:catch2_main",
+        "@com_github_apache_thrift//:thrift",
         "@com_github_facebook_fbthrift//:fbthrift",
     ],
 )
